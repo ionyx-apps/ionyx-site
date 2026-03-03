@@ -60,5 +60,12 @@ export default defineConfig({
   trailingSlash: 'never',
   build: {
     format: 'directory'
+  },
+  i18n: {
+    locales: ['en', 'tr'],
+    defaultLocale: 'en',
+    routing: {
+      prefixDefaultLocale: false,
+    }
   }
 });
