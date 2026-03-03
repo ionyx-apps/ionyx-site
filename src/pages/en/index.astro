@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { useTranslations } from '../../utils/i18n';
 
-// Set locale for English
 const locale = 'en';
 const t = useTranslations(locale);
 ---
@@ -18,10 +17,10 @@ const t = useTranslations(locale);
 					{t.hero.description}
 				</p>
 				<div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-					<a href="/docs" class="btn-primary">
+					<a href="/en/docs" class="btn-primary">
 						{t.common.getStarted}
 					</a>
-					<a href="/why-ionyx" class="btn-secondary">
+					<a href="/en/why-ionyx" class="btn-secondary">
 						{t.common.learnMore}
 					</a>
 				</div>
@@ -42,13 +41,13 @@ const t = useTranslations(locale);
 							<button class="px-4 py-2 bg-ionyx-neon-purple text-white rounded-lg transition-colors" onclick="showTab('npm')">
 								npm
 							</button>
-							<button class="px-4 py-2 bg-dark-tertiary text-gray-300 rounded-lg transition-colors hover:bg-dark-primary" onclick="showTab('yarn')">
+							<button class="px-4 py-2 bg-dark-tertiary text-gray-300 rounded-lg transition-colors hover:bg-dark-primary">
 								yarn
 							</button>
-							<button class="px-4 py-2 bg-dark-tertiary text-gray-300 rounded-lg transition-colors hover:bg-dark-primary" onclick="showTab('pnpm')">
+							<button class="px-4 py-2 bg-dark-tertiary text-gray-300 rounded-lg transition-colors hover:bg-dark-primary">
 								pnpm
 							</button>
-							<button class="px-4 py-2 bg-dark-tertiary text-gray-300 rounded-lg transition-colors hover:bg-dark-primary" onclick="showTab('bun')">
+							<button class="px-4 py-2 bg-dark-tertiary text-gray-300 rounded-lg transition-colors hover:bg-dark-primary">
 								bun
 							</button>
 						</div>
