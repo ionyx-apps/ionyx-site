@@ -1,0 +1,399 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Examples - Ionyx Framework">
+	<!-- Hero Section -->
+	<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+		<div class="absolute inset-0 overflow-hidden">
+			<div class="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-purple-500/20 to-transparent rounded-full blur-3xl animate-pulse"></div>
+			<div class="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-br from-blue-500/20 to-transparent rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+			<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-pink-500/20 to-transparent rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+		</div>
+		
+		<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<div class="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-blue-500/20 border border-purple-400/30 backdrop-blur-sm mb-8">
+				<span class="text-purple-300 text-sm font-medium">🎨 Real-World Applications</span>
+			</div>
+			
+			<h1 class="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight">
+				<span class="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Examples</span>
+			</h1>
+			
+			<p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+				Explore real-world applications built with Ionyx Framework. From productivity tools to creative apps.
+			</p>
+			
+			<div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+				<a href="#featured" class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg hover:from-purple-700 hover:to-blue-700 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
+					<span class="relative z-10">Browse Examples</span>
+					<div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition-opacity"></div>
+				</a>
+				<a href="https://github.com/ionyx-apps/ionyx-examples" class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white border border-gray-600 rounded-lg hover:bg-gray-800/50 transform hover:-translate-y-1 transition-all duration-300 backdrop-blur-sm">
+					<span class="relative z-10">View on GitHub</span>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Featured Examples -->
+	<section id="featured" class="relative py-20 bg-gradient-to-br from-gray-900 via-purple-900/50 to-gray-900">
+		<div class="absolute inset-0 overflow-hidden">
+			<div class="absolute -top-20 -right-20 w-64 h-64 bg-gradient-to-br from-purple-500/10 to-transparent rounded-full blur-3xl animate-pulse"></div>
+			<div class="absolute -bottom-20 -left-20 w-64 h-64 bg-gradient-to-br from-blue-500/10 to-transparent rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+		</div>
+		
+		<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-4xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
+					Featured Examples
+				</h2>
+				<p class="text-gray-300 text-lg">
+					Popular examples showcasing Ionyx Framework capabilities
+				</p>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<!-- Todo App -->
+				<div class="group relative bg-white/10 backdrop-blur-sm border border-purple-500/30 rounded-xl overflow-hidden hover:bg-purple-500/10 transition-all duration-300 hover:-translate-y-2">
+					<div class="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-blue-600/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+					<div class="relative z-10">
+						<div class="h-48 bg-gradient-to-br from-purple-600/20 to-blue-600/20 flex items-center justify-center">
+							<div class="text-6xl">📝</div>
+						</div>
+						<div class="p-6">
+							<h3 class="text-xl font-semibold text-white mb-2">Todo App</h3>
+							<p class="text-gray-300 mb-4">
+								A complete todo application with file persistence and notifications
+							</p>
+							<div class="flex flex-wrap gap-2 mb-4">
+								<span class="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded">React</span>
+								<span class="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded">TypeScript</span>
+								<span class="px-2 py-1 bg-green-500/20 text-green-300 text-xs rounded">File System</span>
+							</div>
+							<div class="flex gap-4">
+								<a href="https://github.com/ionyx-apps/ionyx-examples/tree/main/todo-app" class="text-purple-400 hover:text-purple-300 transition-colors">
+									View Code →
+								</a>
+								<a href="#" class="text-blue-400 hover:text-blue-300 transition-colors">
+									Live Demo →
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- File Manager -->
+				<div class="group relative bg-white/10 backdrop-blur-sm border border-blue-500/30 rounded-xl overflow-hidden hover:bg-blue-500/10 transition-all duration-300 hover:-translate-y-2">
+					<div class="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-cyan-600/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+					<div class="relative z-10">
+						<div class="h-48 bg-gradient-to-br from-blue-600/20 to-cyan-600/20 flex items-center justify-center">
+							<div class="text-6xl">📁</div>
+						</div>
+						<div class="p-6">
+							<h3 class="text-xl font-semibold text-white mb-2">File Manager</h3>
+							<p class="text-gray-300 mb-4">
+								Cross-platform file manager with drag-and-drop support
+							</p>
+							<div class="flex flex-wrap gap-2 mb-4">
+								<span class="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded">Vue.js</span>
+								<span class="px-2 py-1 bg-cyan-500/20 text-cyan-300 text-xs rounded">File API</span>
+								<span class="px-2 py-1 bg-orange-500/20 text-orange-300 text-xs rounded">Drag & Drop</span>
+							</div>
+							<div class="flex gap-4">
+								<a href="https://github.com/ionyx-apps/ionyx-examples/tree/main/file-manager" class="text-blue-400 hover:text-blue-300 transition-colors">
+									View Code →
+								</a>
+								<a href="#" class="text-cyan-400 hover:text-cyan-300 transition-colors">
+									Live Demo →
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Music Player -->
+				<div class="group relative bg-white/10 backdrop-blur-sm border border-green-500/30 rounded-xl overflow-hidden hover:bg-green-500/10 transition-all duration-300 hover:-translate-y-2">
+					<div class="absolute inset-0 bg-gradient-to-r from-green-600/20 to-emerald-600/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+					<div class="relative z-10">
+						<div class="h-48 bg-gradient-to-br from-green-600/20 to-emerald-600/20 flex items-center justify-center">
+							<div class="text-6xl">🎵</div>
+						</div>
+						<div class="p-6">
+							<h3 class="text-xl font-semibold text-white mb-2">Music Player</h3>
+							<p class="text-gray-300 mb-4">
+								Desktop music player with playlist management and controls
+							</p>
+							<div class="flex flex-wrap gap-2 mb-4">
+								<span class="px-2 py-1 bg-green-500/20 text-green-300 text-xs rounded">Svelte</span>
+								<span class="px-2 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded">Audio API</span>
+								<span class="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded">Media Controls</span>
+							</div>
+							<div class="flex gap-4">
+								<a href="https://github.com/ionyx-apps/ionyx-examples/tree/main/music-player" class="text-green-400 hover:text-green-300 transition-colors">
+									View Code →
+								</a>
+								<a href="#" class="text-emerald-400 hover:text-emerald-300 transition-colors">
+									Live Demo →
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Code Editor -->
+				<div class="group relative bg-white/10 backdrop-blur-sm border border-orange-500/30 rounded-xl overflow-hidden hover:bg-orange-500/10 transition-all duration-300 hover:-translate-y-2">
+					<div class="absolute inset-0 bg-gradient-to-r from-orange-600/20 to-red-600/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+					<div class="relative z-10">
+						<div class="h-48 bg-gradient-to-br from-orange-600/20 to-red-600/20 flex items-center justify-center">
+							<div class="text-6xl">💻</div>
+						</div>
+						<div class="p-6">
+							<h3 class="text-xl font-semibold text-white mb-2">Code Editor</h3>
+							<p class="text-gray-300 mb-4">
+								Lightweight code editor with syntax highlighting and file management
+							</p>
+							<div class="flex flex-wrap gap-2 mb-4">
+								<span class="px-2 py-1 bg-orange-500/20 text-orange-300 text-xs rounded">Vanilla JS</span>
+								<span class="px-2 py-1 bg-red-500/20 text-red-300 text-xs rounded">Monaco Editor</span>
+								<span class="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded">File API</span>
+							</div>
+							<div class="flex gap-4">
+								<a href="https://github.com/ionyx-apps/ionyx-examples/tree/main/code-editor" class="text-orange-400 hover:text-orange-300 transition-colors">
+									View Code →
+								</a>
+								<a href="#" class="text-red-400 hover:text-red-300 transition-colors">
+									Live Demo →
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Weather App -->
+				<div class="group relative bg-white/10 backdrop-blur-sm border border-pink-500/30 rounded-xl overflow-hidden hover:bg-pink-500/10 transition-all duration-300 hover:-translate-y-2">
+					<div class="absolute inset-0 bg-gradient-to-r from-pink-600/20 to-rose-600/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+					<div class="relative z-10">
+						<div class="h-48 bg-gradient-to-br from-pink-600/20 to-rose-600/20 flex items-center justify-center">
+							<div class="text-6xl">🌤️</div>
+						</div>
+						<div class="p-6">
+							<h3 class="text-xl font-semibold text-white mb-2">Weather App</h3>
+							<p class="text-gray-300 mb-4">
+								Weather application with location services and forecasts
+							</p>
+							<div class="flex flex-wrap gap-2 mb-4">
+								<span class="px-2 py-1 bg-pink-500/20 text-pink-300 text-xs rounded">React</span>
+								<span class="px-2 py-1 bg-rose-500/20 text-rose-300 text-xs rounded">Weather API</span>
+								<span class="px-2 py-1 bg-cyan-500/20 text-cyan-300 text-xs rounded">Location</span>
+							</div>
+							<div class="flex gap-4">
+								<a href="https://github.com/ionyx-apps/ionyx-examples/tree/main/weather-app" class="text-pink-400 hover:text-pink-300 transition-colors">
+									View Code →
+								</a>
+								<a href="#" class="text-rose-400 hover:text-rose-300 transition-colors">
+									Live Demo →
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Chat App -->
+				<div class="group relative bg-white/10 backdrop-blur-sm border border-cyan-500/30 rounded-xl overflow-hidden hover:bg-cyan-500/10 transition-all duration-300 hover:-translate-y-2">
+					<div class="absolute inset-0 bg-gradient-to-r from-cyan-600/20 to-teal-600/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+					<div class="relative z-10">
+						<div class="h-48 bg-gradient-to-br from-cyan-600/20 to-teal-600/20 flex items-center justify-center">
+							<div class="text-6xl">💬</div>
+						</div>
+						<div class="p-6">
+							<h3 class="text-xl font-semibold text-white mb-2">Chat App</h3>
+							<p class="text-gray-300 mb-4">
+								Real-time chat application with WebSocket support
+							</p>
+							<div class="flex flex-wrap gap-2 mb-4">
+								<span class="px-2 py-1 bg-cyan-500/20 text-cyan-300 text-xs rounded">Vue.js</span>
+								<span class="px-2 py-1 bg-teal-500/20 text-teal-300 text-xs rounded">WebSocket</span>
+								<span class="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded">Real-time</span>
+							</div>
+							<div class="flex gap-4">
+								<a href="https://github.com/ionyx-apps/ionyx-examples/tree/main/chat-app" class="text-cyan-400 hover:text-cyan-300 transition-colors">
+									View Code →
+								</a>
+								<a href="#" class="text-teal-400 hover:text-teal-300 transition-colors">
+									Live Demo →
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Categories Section -->
+	<section class="relative py-20 bg-gradient-to-br from-gray-900 via-blue-900/50 to-gray-900">
+		<div class="absolute inset-0 overflow-hidden">
+			<div class="absolute -top-20 -right-20 w-64 h-64 bg-gradient-to-br from-blue-500/10 to-transparent rounded-full blur-3xl animate-pulse"></div>
+			<div class="absolute -bottom-20 -left-20 w-64 h-64 bg-gradient-to-br from-purple-500/10 to-transparent rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+		</div>
+		
+		<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-4xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
+					Browse by Category
+				</h2>
+				<p class="text-gray-300 text-lg">
+					Find examples that match your use case and technology stack
+				</p>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+				<!-- Productivity -->
+				<div class="bg-white/10 backdrop-blur-sm border border-green-500/30 rounded-xl p-6 text-center hover:bg-green-500/10 transition-all duration-300">
+					<div class="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+						<span class="text-3xl">📊</span>
+					</div>
+					<h3 class="text-lg font-semibold text-white mb-2">Productivity</h3>
+					<p class="text-gray-300 text-sm mb-4">
+						Todo apps, calendars, notes, and task managers
+					</p>
+					<a href="#productivity" class="text-green-400 hover:text-green-300 transition-colors">
+						View Examples →
+					</a>
+				</div>
+
+				<!-- Media -->
+				<div class="bg-white/10 backdrop-blur-sm border border-purple-500/30 rounded-xl p-6 text-center hover:bg-purple-500/10 transition-all duration-300">
+					<div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+						<span class="text-3xl">🎬</span>
+					</div>
+					<h3 class="text-lg font-semibold text-white mb-2">Media</h3>
+					<p class="text-gray-300 text-sm mb-4">
+						Music players, video players, and image viewers
+					</p>
+					<a href="#media" class="text-purple-400 hover:text-purple-300 transition-colors">
+						View Examples →
+					</a>
+				</div>
+
+				<!-- Development -->
+				<div class="bg-white/10 backdrop-blur-sm border border-blue-500/30 rounded-xl p-6 text-center hover:bg-blue-500/10 transition-all duration-300">
+					<div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+						<span class="text-3xl">🔧</span>
+					</div>
+					<h3 class="text-lg font-semibold text-white mb-2">Development</h3>
+					<p class="text-gray-300 text-sm mb-4">
+						Code editors, terminals, and developer tools
+					</p>
+					<a href="#development" class="text-blue-400 hover:text-blue-300 transition-colors">
+						View Examples →
+					</a>
+				</div>
+
+				<!-- Communication -->
+				<div class="bg-white/10 backdrop-blur-sm border border-orange-500/30 rounded-xl p-6 text-center hover:bg-orange-500/10 transition-all duration-300">
+					<div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+						<span class="text-3xl">📱</span>
+					</div>
+					<h3 class="text-lg font-semibold text-white mb-2">Communication</h3>
+					<p class="text-gray-300 text-sm mb-4">
+						Chat apps, email clients, and messaging tools
+					</p>
+					<a href="#communication" class="text-orange-400 hover:text-orange-300 transition-colors">
+						View Examples →
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Quick Start Section -->
+	<section class="relative py-20 bg-gradient-to-br from-gray-900 via-green-900/50 to-gray-900">
+		<div class="absolute inset-0 overflow-hidden">
+			<div class="absolute -top-20 -right-20 w-64 h-64 bg-gradient-to-br from-green-500/10 to-transparent rounded-full blur-3xl animate-pulse"></div>
+			<div class="absolute -bottom-20 -left-20 w-64 h-64 bg-gradient-to-br from-blue-500/10 to-transparent rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+		</div>
+		
+		<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-4xl font-bold bg-gradient-to-r from-green-400 via-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
+					Quick Start with Examples
+				</h2>
+				<p class="text-gray-300 text-lg">
+					Get started quickly by cloning and running example projects
+				</p>
+			</div>
+
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+				<div class="bg-white/10 backdrop-blur-sm border border-green-500/30 rounded-xl p-8">
+					<h3 class="text-2xl font-semibold text-white mb-6">🚀 Clone an Example</h3>
+					<div class="space-y-4">
+						<div class="bg-black/50 rounded-lg p-4">
+							<code class="text-green-400">
+# Clone the examples repository<br/>
+git clone https://github.com/ionyx-apps/ionyx-examples.git<br/><br/>
+# Navigate to an example<br/>
+cd ionyx-examples/todo-app<br/><br/>
+# Install dependencies<br/>
+npm install<br/><br/>
+# Run the example<br/>
+npm run ionyx-dev
+							</code>
+						</div>
+					</div>
+				</div>
+
+				<div class="bg-white/10 backdrop-blur-sm border border-blue-500/30 rounded-xl p-8">
+					<h3 class="text-2xl font-semibold text-white mb-6">📦 Create from Template</h3>
+					<div class="space-y-4">
+						<div class="bg-black/50 rounded-lg p-4">
+							<code class="text-blue-400">
+# Create new app from example template<br/>
+npx create-ionyx-app my-app --template todo-app<br/><br/>
+# Navigate to your app<br/>
+cd my-app<br/><br/>
+# Start development<br/>
+npm run ionyx-dev
+							</code>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="text-center mt-12">
+				<a href="https://github.com/ionyx-apps/ionyx-examples" class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-green-600 to-blue-600 rounded-lg hover:from-green-700 hover:to-blue-700 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-green-500/25">
+					<span class="relative z-10">📚 Browse All Examples</span>
+					<div class="absolute inset-0 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition-opacity"></div>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Contribute Section -->
+	<section class="relative py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
+		<div class="absolute inset-0 overflow-hidden">
+			<div class="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-purple-500/20 to-transparent rounded-full blur-3xl animate-pulse"></div>
+			<div class="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-br from-blue-500/20 to-transparent rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+		</div>
+		
+		<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<h2 class="text-4xl font-bold bg-gradient-to-r from-purple-400 via-blue-400 to-pink-400 bg-clip-text text-transparent mb-6">
+				Share Your Example
+			</h2>
+			<p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+				Built something amazing with Ionyx? Share it with the community and help others learn!
+			</p>
+			
+			<div class="flex flex-col sm:flex-row gap-4 justify-center">
+				<a href="https://github.com/ionyx-apps/ionyx-examples" class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg hover:from-purple-700 hover:to-blue-700 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
+					<span class="relative z-10">🎯 Submit Example</span>
+					<div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition-opacity"></div>
+				</a>
+				<a href="https://discord.gg/ionyx" class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white border border-gray-600 rounded-lg hover:bg-gray-800/50 transform hover:-translate-y-1 transition-all duration-300 backdrop-blur-sm">
+					<span class="relative z-10">💬 Share on Discord</span>
+				</a>
+			</div>
+		</div>
+	</section>
+</Layout>
