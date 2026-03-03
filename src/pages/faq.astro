@@ -16,14 +16,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 				</div>
 
 				<div class="space-y-6">
-					<!-- Tauri Relationship -->
+					<!-- Framework Comparison -->
 					<div class="glass-dark rounded-xl overflow-hidden">
 						<button class="w-full p-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors" onclick="this.parentElement.classList.toggle('expanded')">
 							<div class="flex items-center space-x-4">
 								<div class="w-8 h-8 bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-lg flex items-center justify-center flex-shrink-0">
-									<span class="text-white font-bold text-sm">T</span>
+									<span class="text-white font-bold text-sm">F</span>
 								</div>
-								<h3 class="text-xl font-semibold text-white">Tauri ile farkı nedir?</h3>
+								<h3 class="text-xl font-semibold text-white">Diğer framework'lerden farkı nedir?</h3>
 							</div>
 							<svg class="w-5 h-5 text-gray-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -31,17 +31,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 						</button>
 						<div class="px-6 pb-6 text-gray-300 leading-relaxed">
 							<p class="mb-4">
-								<strong class="text-white">Tauri devasa bir ekosistem ve harika bir standarttır.</strong> 
-								Ionyx ise bu standartları koruyarak, sadece en gerekli (core) özelliklere odaklanan, 
-								sub-3MB runtime hedefleyen cerrahi bir araçtır.
+								<strong class="text-white">Ionyx, minimalist desktop uygulama geliştirme için tasarlandı.</strong> 
+								Electron, Tauri™ ve diğer framework'ler harika seçeneklerdir, ancak Ionyx farklı bir yaklaşım sunar:
 							</p>
 							<div class="bg-dark-tertiary rounded-lg p-4 border border-dark-border mb-4">
-								<p class="text-sm text-gray-400 mb-2">🎯 <strong class="text-white">Tauri:</strong> Full-featured, enterprise-ready</p>
-								<p class="text-sm text-gray-400">🎯 <strong class="text-white">Ionyx:</strong> Minimalist, performance-first</p>
+								<p class="text-sm text-gray-400 mb-2">🎯 <strong class="text-white">Electron:</strong> Full-featured, Node.js tabanlı</p>
+								<p class="text-sm text-gray-400 mb-2">🎯 <strong class="text-white">Tauri™:</strong> Rust tabanlı, geniş ekosistem</p>
+								<p class="text-sm text-gray-400">🎯 <strong class="text-white">Ionyx:</strong> Minimalist, ultra-küçük binary</p>
 							</div>
-							<p>
-								Tauri bizim "Büyük Abimiz" ve esin kaynağımızdır. Onların harika çalışmaları olmadan 
-								Ionyx olmazdı. Biz sadece farklı bir nişe odaklanıyoruz: mutlak minimalizm.
+							<p class="mb-4">
+								Ionyx, sadece en temel özelliklere odaklanarak sub-3MB runtime hedefler. 
+								Bu, onu küçük ve hızlı uygulamalar için ideal kılar.
+							</p>
+							<p class="text-xs text-gray-500">
+								TAURI is a trademark of The Tauri Programme within the Commons Conservancy.
 							</p>
 						</div>
 					</div>
