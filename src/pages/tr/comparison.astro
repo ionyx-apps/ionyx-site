@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../utils/i18n';
+
+const locale = 'tr';
+const t = useTranslations(locale);
+---
+
+<BaseLayout title="Framework Karşılaştırması - Ionyx Framework" description="Ionyx'i diğer masaüstü uygulama çatıları ile karşılaştırın">
+	<section class="py-20 hero-gradient relative overflow-hidden">
+		<div class="container mx-auto px-6 relative z-10">
+			<div class="max-w-4xl mx-auto text-center">
+				<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-[10px] font-bold uppercase tracking-widest mb-6">
+					Analiz & Kıyaslama
+				</div>
+				<h1 class="text-5xl md:text-6xl font-black text-white mb-6 tracking-tighter">
+					Framework Karşılaştırması
+				</h1>
+				<p class="text-xl text-slate-400 mb-8 leading-relaxed font-light max-w-2xl mx-auto">
+					Ionyx'in modern masaüstü uygulama ekosistemindeki yerini teknik verilerle keşfedin.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="py-10">
+		<div class="container mx-auto px-6">
+			<div class="max-w-6xl mx-auto">
+				<div class="glass-dark rounded-2xl overflow-hidden border border-white/5 shadow-2xl">
+					<div class="overflow-x-auto">
+						<table class="w-full border-collapse">
+							<thead>
+								<tr class="bg-white/[0.02] border-b border-white/10">
+									<th class="px-6 py-6 text-left text-gray-500 font-bold uppercase tracking-widest text-[10px]">Özellik</th>
+									<th class="px-6 py-6 text-center bg-purple-500/5">
+										<span class="text-purple-400 font-black italic tracking-tighter text-lg">IONYX</span>
+									</th>
+									<th class="px-6 py-6 text-center text-gray-400 font-semibold text-sm">Tauri™</th>
+									<th class="px-6 py-6 text-center text-gray-400 font-semibold text-sm">Electron™</th>
+								</tr>
+							</thead>
+							<tbody class="divide-y divide-white/5">
+								<tr class="hover:bg-white/[0.02] transition-colors">
+									<td class="px-6 py-5 text-gray-300 font-medium text-sm">Çalıştırma (Binary) Boyutu</td>
+									<td class="px-6 py-5 text-center bg-purple-500/5">
+										<span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 font-bold text-xs border border-emerald-500/20">~1.66 MB</span>
+									</td>
+									<td class="px-6 py-5 text-center text-yellow-500/80 text-sm">~10-50 MB</td>
+									<td class="px-6 py-5 text-center text-red-500/80 text-sm">~100-200 MB</td>
+								</tr>
+								<tr class="hover:bg-white/[0.02] transition-colors">
+									<td class="px-6 py-5 text-gray-300 font-medium text-sm">Backend Çekirdeği</td>
+									<td class="px-6 py-5 text-center bg-purple-500/5">
+										<span class="text-white font-bold text-sm">Rust + WRY + TAO</span>
+									</td>
+									<td class="px-6 py-5 text-center text-gray-400 text-sm">Rust + WRY</td>
+									<td class="px-6 py-5 text-center text-gray-400 text-sm">Node.js</td>
+								</tr>
+								<tr class="hover:bg-white/[0.02] transition-colors">
+									<td class="px-6 py-5 text-gray-300 font-medium text-sm">Bellek Kullanımı (Boşta)</td>
+									<td class="px-6 py-5 text-center bg-purple-500/5">
+										<span class="text-emerald-400 font-bold text-sm">10-20 MB</span>
+									</td>
+									<td class="px-6 py-5 text-center text-yellow-500/80 text-sm">20-50 MB</td>
+									<td class="px-6 py-5 text-center text-red-500/80 text-sm">100-200 MB</td>
+								</tr>
+								<tr class="hover:bg-white/[0.02] transition-colors">
+									<td class="px-6 py-5 text-gray-300 font-medium text-sm">Açılış Hızı</td>
+									<td class="px-6 py-5 text-center bg-purple-500/5">
+										<span class="text-emerald-400 font-bold text-sm">&lt; 30ms</span>
+									</td>
+									<td class="px-6 py-5 text-center text-yellow-500/80 text-sm">~100ms</td>
+									<td class="px-6 py-5 text-center text-red-500/80 text-sm">~500ms</td>
+								</tr>
+								<tr class="hover:bg-white/[0.02] transition-colors">
+									<td class="px-6 py-5 text-gray-300 font-medium text-sm">WebView Stratejisi</td>
+									<td class="px-6 py-5 text-center bg-purple-500/5 text-slate-300 text-sm italic">Yerel Sistem</td>
+									<td class="px-6 py-5 text-center text-gray-400 text-sm italic">Yerel Sistem</td>
+									<td class="px-6 py-5 text-center text-gray-400 text-sm italic">Gömülü (Bundled)</td>
+								</tr>
+								<tr class="hover:bg-white/[0.02] transition-colors">
+									<td class="px-6 py-5 text-gray-300 font-medium text-sm">Güvenlik Yapısı</td>
+									<td class="px-6 py-5 text-center bg-purple-500/5">
+										<span class="text-emerald-400 font-bold text-xs uppercase tracking-tighter">✅ Sandbox</span>
+									</td>
+									<td class="px-6 py-5 text-center text-emerald-500/60 text-xs font-bold uppercase tracking-tighter">✅ Sandbox</td>
+									<td class="px-6 py-5 text-center text-red-500/60 text-xs font-bold uppercase tracking-tighter">❌ Sınırlı</td>
+								</tr>
+								<tr class="hover:bg-white/[0.02] transition-colors border-b-0">
+									<td class="px-6 py-5 text-gray-300 font-medium text-sm">Ekosistem Durumu</td>
+									<td class="px-6 py-5 text-center bg-purple-500/5">
+										<span class="text-purple-400 font-bold text-xs uppercase tracking-tighter italic">Hızla Gelişiyor</span>
+									</td>
+									<td class="px-6 py-5 text-center text-gray-500 text-xs font-bold uppercase tracking-tighter">Olgun</td>
+									<td class="px-6 py-5 text-center text-gray-500 text-xs font-bold uppercase tracking-tighter">Kurumsal</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+					<div class="glass-dark rounded-2xl p-8 border border-white/5 hover:border-emerald-500/20 transition-all group">
+						<div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+							<svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+						</div>
+						<h3 class="text-xl font-bold text-white mb-4">Ionyx Avantajları</h3>
+						<ul class="space-y-3 text-sm text-slate-400">
+							<li class="flex items-center gap-2 italic"> Ultra-küçük dosya boyutu</li>
+							<li class="flex items-center gap-2 italic"> Minimalist kaynak tüketimi</li>
+							<li class="flex items-center gap-2 italic"> Anlık tepki veren başlangıç</li>
+							<li class="flex items-center gap-2 italic"> Modern ve temiz API yapısı</li>
+						</ul>
+					</div>
+
+					<div class="glass-dark rounded-2xl p-8 border border-white/5 hover:border-blue-500/20 transition-all group">
+						<div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+							<svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+						</div>
+						<h3 class="text-xl font-bold text-white mb-4">Ne Zaman Seçilmeli?</h3>
+						<ul class="space-y-3 text-sm text-slate-400">
+							<li class="flex items-center gap-2"> Hafif yardımcı araçlar (Utilities)</li>
+							<li class="flex items-center gap-2"> Performans odaklı masaüstü projeleri</li>
+							<li class="flex items-center gap-2"> Kısıtlı donanım kaynaklı ortamlar</li>
+							<li class="flex items-center gap-2"> Hızlı prototipleme ihtiyaçları</li>
+						</ul>
+					</div>
+
+					<div class="glass-dark rounded-2xl p-8 border border-white/5 hover:border-yellow-500/20 transition-all group">
+						<div class="w-10 h-10 rounded-lg bg-yellow-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+							<svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+						</div>
+						<h3 class="text-xl font-bold text-white mb-4">Mevcut Durum</h3>
+						<ul class="space-y-3 text-sm text-slate-400">
+							<li class="flex items-center gap-2 opacity-70"> Yeni gelişen ekosistem</li>
+							<li class="flex items-center gap-2 opacity-70"> Aktif geliştirme süreci</li>
+							<li class="flex items-center gap-2 opacity-70"> Niş topluluk desteği</li>
+							<li class="flex items-center gap-2 opacity-70"> Odaklanmış özellik seti</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="mt-24 text-center">
+					<div class="glass p-12 rounded-3xl max-w-3xl mx-auto border border-white/10 relative">
+                        <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-purple-600 text-white text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest shadow-xl">Karar Sizin</div>
+						<h2 class="text-3xl font-bold text-white mb-6 tracking-tight">
+							Doğru Framework'ü Seçin
+						</h2>
+						<p class="text-slate-400 mb-8 max-w-lg mx-auto leading-relaxed">
+							Her projenin ihtiyacı farklıdır. Ionyx, hızı ve sadeliği ön planda tutan geliştiriciler için inşa edildi.
+						</p>
+						<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+							<a href="/tr/docs" class="btn-primary px-10 py-4 rounded-xl text-sm font-bold w-full sm:w-auto transition-all hover:scale-105 active:scale-95">
+								Ionyx'i Deneyin
+							</a>
+							<a href="https://github.com/ionyx-apps/ionyx" class="btn-secondary px-10 py-4 rounded-xl text-sm font-bold w-full sm:w-auto border border-white/10 hover:bg-white/5">
+								GitHub'da Yıldızlayın
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</BaseLayout>

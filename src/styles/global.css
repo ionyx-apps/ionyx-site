@@ -1,0 +1,256 @@
+/* Tema Değişkenleri */
+:root {
+  --bg-primary: #000000;
+  --text-primary: #f3f4f6;
+  --border-primary: rgba(255, 255, 255, 0.05);
+  --card-primary: rgba(17, 24, 39, 0.5);
+  --hover-primary: rgba(31, 41, 55, 0.5);
+}
+
+/* Karanlık Tema */
+html.dark {
+  --bg-primary: #000000;
+  --text-primary: #f3f4f6;
+  --border-primary: rgba(255, 255, 255, 0.05);
+  --card-primary: rgba(17, 24, 39, 0.5);
+  --hover-primary: rgba(31, 41, 55, 0.5);
+}
+
+html.dark body {
+  background-color: #000000;
+  color: #f3f4f6;
+}
+
+html.dark .glass-dark {
+  background: rgba(17, 24, 39, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+}
+
+html.dark .glass {
+  background: rgba(17, 24, 39, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+}
+
+html.dark .hero-gradient {
+  background: linear-gradient(135deg, #000000 0%, #111827 100%);
+}
+
+/* Açık Tema */
+html.light {
+  --bg-primary: #ffffff;
+  --text-primary: #111827;
+  --border-primary: rgba(0, 0, 0, 0.1);
+  --card-primary: rgba(249, 250, 251, 0.8);
+  --hover-primary: rgba(243, 244, 246, 0.8);
+}
+
+html.light body {
+  background-color: #ffffff;
+  color: #111827;
+}
+
+html.light .glass-dark {
+  background: rgba(249, 250, 251, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(16px);
+}
+
+html.light .glass {
+  background: rgba(249, 250, 251, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(16px);
+}
+
+html.light .hero-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+}
+
+/* Sistem Teması */
+html.system body {
+  background-color: #ffffff;
+  color: #111827;
+}
+
+html.system .glass-dark {
+  background: rgba(249, 250, 251, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(16px);
+}
+
+html.system .glass {
+  background: rgba(249, 250, 251, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(16px);
+}
+
+html.system .hero-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+}
+
+html.system {
+  --bg-primary: #ffffff;
+  --text-primary: #111827;
+  --border-primary: rgba(0, 0, 0, 0.1);
+  --card-primary: rgba(249, 250, 251, 0.8);
+  --hover-primary: rgba(243, 244, 246, 0.8);
+}
+
+@media (prefers-color-scheme: dark) {
+  html.system {
+    --bg-primary: #000000;
+    --text-primary: #f3f4f6;
+    --border-primary: rgba(255, 255, 255, 0.05);
+    --card-primary: rgba(17, 24, 39, 0.5);
+    --hover-primary: rgba(31, 41, 55, 0.5);
+  }
+
+  html.system body {
+    background-color: #000000;
+    color: #f3f4f6;
+  }
+
+  html.system .glass-dark {
+    background: rgba(17, 24, 39, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+  }
+
+  html.system .glass {
+    background: rgba(17, 24, 39, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+  }
+
+  html.system .hero-gradient {
+    background: linear-gradient(135deg, #000000 0%, #111827 100%);
+  }
+}
+
+/* Geçişler */
+* {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+/* Font weight iyileştirmeleri */
+.font-black {
+  font-weight: 900;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+/* Tracking iyileştirmeleri */
+.tracking-tighter {
+  letter-spacing: -0.05em;
+}
+
+.tracking-tight {
+  letter-spacing: -0.025em;
+}
+
+/* Özel renkler - her temada aynı */
+.text-purple-400 { color: #a855f7 !important; }
+.text-blue-400 { color: #3b82f6 !important; }
+.text-emerald-400 { color: #10b981 !important; }
+.text-green-400 { color: #22c55e !important; }
+.text-yellow-400 { color: #f59e0b !important; }
+.text-red-400 { color: #ef4444 !important; }
+
+.bg-purple-500 { background-color: #a855f7 !important; }
+.bg-blue-500 { background-color: #3b82f6 !important; }
+.bg-emerald-500 { background-color: #10b981 !important; }
+.bg-green-500 { background-color: #22c55e !important; }
+.bg-yellow-500 { background-color: #f59e0b !important; }
+.bg-red-500 { background-color: #ef4444 !important; }
+
+/* Gradient'ler her temada aynı */
+.from-ionyx-neon-purple { --tw-gradient-from: #a855f7 !important; }
+.to-ionyx-neon-blue { --tw-gradient-to: #3b82f6 !important; }
+.from-purple-500 { --tw-gradient-from: #a855f7 !important; }
+.to-blue-500 { --tw-gradient-to: #3b82f6 !important; }
+
+/* Beyaz temada navbar için */
+html.light .sticky.top-0 {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px);
+}
+
+html.light header {
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Sistem temasında navbar için */
+html.system .sticky.top-0 {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px);
+}
+
+html.system header {
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  html.system .sticky.top-0 {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(16px);
+  }
+
+  html.system header {
+    border-bottom-color: rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* Buton renkleri */
+html.light .btn-primary {
+  background: linear-gradient(135deg, #a855f7 0%, #3b82f6 100%);
+  color: white;
+}
+
+html.light .btn-secondary {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #111827;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+html.light .btn-secondary:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Sistem teması butonları */
+html.system .btn-primary {
+  background: linear-gradient(135deg, #a855f7 0%, #3b82f6 100%);
+  color: white;
+}
+
+html.system .btn-secondary {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #111827;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+html.system .btn-secondary:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  html.system .btn-secondary {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #f3f4f6;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  html.system .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}

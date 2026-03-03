@@ -1,0 +1,174 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../utils/i18n';
+
+const locale = 'tr';
+const t = useTranslations(locale);
+---
+
+<BaseLayout title={t.hero.title} description={t.hero.description}>
+	<section class="py-20 hero-gradient">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto text-center">
+				<h1 id="hero-title" class="text-5xl md:text-6xl font-bold text-white mb-6">
+					{t.hero.title}
+				</h1>
+				<p class="text-xl text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto">
+					{t.hero.description}
+				</p>
+				<div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+					<a href="/tr/docs" class="btn-primary">
+						{t.common.getStarted}
+					</a>
+					<a href="/tr/why-ionyx" class="btn-secondary">
+						{t.common.learnMore}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="py-20 bg-dark-secondary">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto">
+				<h2 class="text-3xl font-bold text-white mb-8 text-center">
+					Hemen Başlayın
+				</h2>
+				<div class="glass-dark p-8 rounded-xl border border-white/5 shadow-2xl">
+					<div class="mb-6">
+						<div class="flex flex-wrap justify-center gap-2 mb-4">
+							<button class="tab-btn px-4 py-2 bg-ionyx-neon-purple text-white rounded-lg transition-colors" data-tab="npm">
+								npm
+							</button>
+							<button class="tab-btn px-4 py-2 bg-dark-tertiary text-gray-300 rounded-lg transition-colors hover:bg-dark-primary" data-tab="yarn">
+								yarn
+							</button>
+							<button class="tab-btn px-4 py-2 bg-dark-tertiary text-gray-300 rounded-lg transition-colors hover:bg-dark-primary" data-tab="pnpm">
+								pnpm
+							</button>
+							<button class="tab-btn px-4 py-2 bg-dark-tertiary text-gray-300 rounded-lg transition-colors hover:bg-dark-primary" data-tab="bun">
+								bun
+							</button>
+						</div>
+						<div id="command-display" class="bg-dark-primary rounded-lg p-4 font-mono text-sm border border-white/5">
+							<code id="npm-command" class="text-green-400">npm create ionyx@latest my-app</code>
+							<code id="yarn-command" class="text-green-400 hidden">yarn create ionyx my-app</code>
+							<code id="pnpm-command" class="text-green-400 hidden">pnpm create ionyx my-app</code>
+							<code id="bun-command" class="text-green-400 hidden">bun create ionyx my-app</code>
+						</div>
+					</div>
+					<div class="text-center">
+						<p class="text-gray-400 mb-4 font-medium">Projenizi oluşturduktan sonra:</p>
+						<code class="bg-dark-primary rounded-lg px-4 py-2 text-sm border border-white/5 text-purple-300 font-mono">
+							cd my-app && ionyx dev
+						</code>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="py-20">
+		<div class="container mx-auto px-6">
+			<div class="max-w-6xl mx-auto">
+				<h2 class="text-3xl font-bold text-white mb-4 text-center">
+					{t.features.title}
+				</h2>
+				<p class="text-gray-300 text-center mb-12 max-w-2xl mx-auto italic">
+					{t.features.subtitle}
+				</p>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+					<div class="glass-dark p-8 rounded-xl border border-white/5 hover:border-purple-500/30 transition-all">
+						<div class="w-12 h-12 bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-lg flex items-center justify-center mb-6 shadow-lg shadow-purple-500/20 text-white">
+							<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-white mb-4">
+							{t.features.minimalist.title}
+						</h3>
+						<p class="text-gray-400 leading-relaxed text-sm">
+							{t.features.minimalist.description}
+						</p>
+					</div>
+					<div class="glass-dark p-8 rounded-xl border border-white/5 hover:border-purple-500/30 transition-all">
+						<div class="w-12 h-12 bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-lg flex items-center justify-center mb-6 shadow-lg shadow-purple-500/20 text-white">
+							<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-white mb-4">
+							{t.features.fast.title}
+						</h3>
+						<p class="text-gray-400 leading-relaxed text-sm">
+							{t.features.fast.description}
+						</p>
+					</div>
+					<div class="glass-dark p-8 rounded-xl border border-white/5 hover:border-purple-500/30 transition-all">
+						<div class="w-12 h-12 bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-lg flex items-center justify-center mb-6 shadow-lg shadow-purple-500/20 text-white">
+							<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-white mb-4">
+							{t.features.secure.title}
+						</h3>
+						<p class="text-gray-400 leading-relaxed text-sm">
+							{t.features.secure.description}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="py-20 bg-dark-secondary">
+		<div class="container mx-auto px-6 text-center">
+			<div class="max-w-4xl mx-auto">
+				<h2 class="text-3xl font-bold text-white mb-8">
+					Topluluğa Katılın
+				</h2>
+				<p class="text-gray-300 mb-8 max-w-xl mx-auto">
+					Ionyx gelişimine katkıda bulunun ve diğer geliştiricilerle fikir alışverişinde bulunun.
+				</p>
+				<div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-20">
+					<a href="https://github.com/ionyx-apps/ionyx" class="btn-primary flex items-center gap-2">
+						GitHub'da Destekleyin
+					</a>
+					<a href="https://discord.gg/ionyx" class="btn-secondary">
+						Discord'a Katılın
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</BaseLayout>
+
+<script>
+	const buttons = document.querySelectorAll('.tab-btn');
+	
+	buttons.forEach(button => {
+		button.addEventListener('click', (e) => {
+			const tabName = button.getAttribute('data-tab');
+			
+			// Tüm komutları gizle
+			document.querySelectorAll('#command-display code').forEach(code => {
+				code.classList.add('hidden');
+			});
+			
+			// Seçilen komutu göster
+			const targetCode = document.getElementById(`${tabName}-command`);
+			if (targetCode) targetCode.classList.remove('hidden');
+			
+			// Buton stillerini güncelle
+			buttons.forEach(btn => {
+				btn.classList.remove('bg-ionyx-neon-purple', 'text-white');
+				btn.classList.add('bg-dark-tertiary', 'text-gray-300');
+			});
+			
+			// Aktif butonu vurgula
+			button.classList.remove('bg-dark-tertiary', 'text-gray-300');
+			button.classList.add('bg-ionyx-neon-purple', 'text-white');
+		});
+	});
+</script>

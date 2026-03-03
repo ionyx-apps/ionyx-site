@@ -1,6 +1,13 @@
 ---
 const { currentLocale } = Astro.props;
 
+// Get current path without locale prefix
+const currentPath = Astro.url.pathname;
+// Handle root path correctly
+const pathWithoutLocale = currentPath === `/${currentLocale}` || currentPath === `/${currentLocale}/` 
+  ? '/' 
+  : currentPath.replace(new RegExp(`^/${currentLocale}`), '') || '/';
+
 const locales = [
   { code: 'en', name: 'English', flag: '🇺🇸' },
   { code: 'tr', name: 'Türkçe', flag: '🇹🇷' },
@@ -17,10 +24,10 @@ const locales = [
     </svg>
   </label>
   
-  <div class="absolute top-full right-0 mt-1 glass-dark rounded-lg shadow-xl opacity-0 invisible transition-all duration-200 z-50 peer-checked:opacity-100 peer-checked:visible">
+  <div class="absolute top-full right-0 mt-1 bg-gray-800/50 backdrop-blur-sm rounded-lg shadow-xl opacity-0 invisible transition-all duration-200 z-50 peer-checked:opacity-100 peer-checked:visible">
     {locales.map(locale => (
       <a 
-        href={locale.code === 'en' ? '/' : `/${locale.code}`}
+        href={`/${locale.code}${pathWithoutLocale}`}
         class={`flex items-center space-x-2 px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-colors first:rounded-t-lg last:rounded-b-lg ${locale.code === currentLocale ? 'font-semibold' : ''}`}
       >
         <span>{locale.flag}</span>

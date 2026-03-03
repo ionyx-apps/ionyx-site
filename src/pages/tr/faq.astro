@@ -1,0 +1,172 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../utils/i18n';
+
+const locale = 'tr';
+const t = useTranslations(locale);
+---
+
+<BaseLayout title="SSS - Ionyx Framework" description="Ionyx hakkında sıkça sorulan sorular">
+	<section class="py-20 hero-gradient relative overflow-hidden">
+		<div class="container mx-auto px-6 relative z-10">
+			<div class="max-w-4xl mx-auto text-center">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-bold uppercase tracking-widest mb-6">
+					Destek & Bilgi Merkezi
+				</div>
+				<h1 class="text-5xl md:text-6xl font-black text-white mb-6 tracking-tighter">
+					Sıkça Sorulan <span class="bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue bg-clip-text text-transparent italic">Sorular</span>
+				</h1>
+				<p class="text-xl text-slate-400 leading-relaxed font-light max-w-2xl mx-auto">
+					Ionyx mimarisi, performansı ve kullanım alanları hakkında merak ettiğiniz her şey.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="py-20">
+		<div class="container mx-auto px-6">
+			<div class="max-w-3xl mx-auto">
+				<div class="grid gap-4">
+					<div class="faq-item group glass-dark rounded-2xl border border-white/5 overflow-hidden transition-all duration-300">
+						<button class="w-full p-6 text-left flex items-center justify-between group-hover:bg-white/[0.02] outline-none">
+							<div class="flex items-center space-x-4">
+								<div class="w-10 h-10 bg-purple-600/10 rounded-xl flex items-center justify-center border border-purple-500/20 group-hover:scale-110 transition-transform">
+									<span class="text-purple-400 font-black text-sm">F</span>
+								</div>
+								<h3 class="text-lg font-bold text-white tracking-tight">Diğer framework'lerden farkı nedir?</h3>
+							</div>
+							<svg class="w-5 h-5 text-slate-500 transition-transform duration-300 chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+							</svg>
+						</button>
+						<div class="faq-content overflow-hidden transition-all duration-300 ease-in-out">
+							<div class="px-6 pb-6 pt-2 text-slate-400 leading-relaxed">
+                                <p class="mb-4">
+                                    <strong class="text-white">Ionyx, "minimalist" masaüstü geliştirme için tasarlandı.</strong> 
+                                    Electron ve Tauri™ muazzam araçlardır, ancak Ionyx'in odak noktası "fazlalıklardan arınmış" bir deneyimdir:
+                                </p>
+                                <div class="grid gap-3 mb-4">
+                                    <div class="p-3 bg-white/[0.02] border border-white/5 rounded-lg text-xs">
+                                        <strong class="text-purple-400">Electron:</strong> Chromium + Node.js (Yüksek kaynak)
+                                    </div>
+                                    <div class="p-3 bg-white/[0.02] border border-white/5 rounded-lg text-xs">
+                                        <strong class="text-blue-400">Tauri™:</strong> Rust + Geniş Ekosistem (Orta boyut)
+                                    </div>
+                                    <div class="p-3 bg-purple-500/10 border border-purple-500/20 rounded-lg text-xs font-bold text-white">
+                                        Ionyx: Rust + Ultra-Hafif Core (Minimal boyut)
+                                    </div>
+                                </div>
+                            </div>
+						</div>
+					</div>
+
+					<div class="faq-item group glass-dark rounded-2xl border border-white/5 overflow-hidden transition-all duration-300">
+						<button class="w-full p-6 text-left flex items-center justify-between group-hover:bg-white/[0.02] outline-none">
+							<div class="flex items-center space-x-4">
+								<div class="w-10 h-10 bg-emerald-600/10 rounded-xl flex items-center justify-center border border-emerald-500/20 group-hover:scale-110 transition-transform">
+									<span class="text-emerald-400 font-black text-sm">P</span>
+								</div>
+								<h3 class="text-lg font-bold text-white tracking-tight">Performans metrikleri nelerdir?</h3>
+							</div>
+							<svg class="w-5 h-5 text-slate-500 transition-transform duration-300 chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+							</svg>
+						</button>
+						<div class="faq-content overflow-hidden transition-all duration-300 ease-in-out">
+							<div class="px-6 pb-6 pt-2 text-slate-400 leading-relaxed">
+                                <ul class="space-y-3 font-mono text-xs">
+                                    <li class="flex items-center gap-3"><span class="w-1 h-1 bg-emerald-500 rounded-full"></span> <span class="text-emerald-400">BAŞLANGIÇ:</span> &lt; 30ms</li>
+                                    <li class="flex items-center gap-3"><span class="w-1 h-1 bg-emerald-500 rounded-full"></span> <span class="text-emerald-400">BELLEK:</span> 10-20MB</li>
+                                    <li class="flex items-center gap-3"><span class="w-1 h-1 bg-emerald-500 rounded-full"></span> <span class="text-emerald-400">BOYUT:</span> ~1.66MB</li>
+                                </ul>
+                            </div>
+						</div>
+					</div>
+
+					<div class="faq-item group glass-dark rounded-2xl border border-white/5 overflow-hidden transition-all duration-300">
+						<button class="w-full p-6 text-left flex items-center justify-between group-hover:bg-white/[0.02] outline-none">
+							<div class="flex items-center space-x-4">
+								<div class="w-10 h-10 bg-blue-600/10 rounded-xl flex items-center justify-center border border-blue-500/20 group-hover:scale-110 transition-transform">
+									<span class="text-blue-400 font-black text-sm">U</span>
+								</div>
+								<h3 class="text-lg font-bold text-white tracking-tight">Ne tür uygulamalar için uygun?</h3>
+							</div>
+							<svg class="w-5 h-5 text-slate-500 transition-transform duration-300 chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+							</svg>
+						</button>
+						<div class="faq-content overflow-hidden transition-all duration-300 ease-in-out">
+							<div class="px-6 pb-6 pt-2 text-sm italic">
+                                <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-slate-500">
+                                    <li>• Sistem Tepsisi Araçları</li>
+                                    <li>• Geliştirici Dashboardları</li>
+                                    <li>• IoT Kontrol Panelleri</li>
+                                    <li>• Hafif Not Uygulamaları</li>
+                                </ul>
+                            </div>
+						</div>
+					</div>
+				</div>
+
+				<div class="mt-24 text-center">
+					<div class="glass p-12 rounded-3xl max-w-2xl mx-auto border border-white/10 relative shadow-2xl">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-black text-[9px] font-black px-4 py-1 rounded-full uppercase tracking-widest">İletişim</div>
+						<h2 class="text-3xl font-bold text-white mb-4 tracking-tighter">Daha fazla sorunuz mu var?</h2>
+						<p class="text-slate-400 mb-8 font-light italic">Topluluğumuza katılın ve Ionyx'in geleceğini birlikte inşa edelim.</p>
+						<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+							<a href="/tr/docs" class="btn-primary px-8 py-3 rounded-xl text-sm font-bold w-full sm:w-auto">Belgeleri İnceleyin</a>
+							<a href="https://github.com/ionyx-apps/ionyx" class="btn-secondary px-8 py-3 rounded-xl text-sm font-bold w-full sm:w-auto">GitHub Tartışmaları</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</BaseLayout>
+
+<style is:global>
+    /* JavaScript ile kontrol edilen sınıflar için is:global şart */
+    .faq-content {
+        max-height: 0;
+        opacity: 0;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .faq-item.is-active .faq-content {
+        max-height: 500px; /* İçeriğin rahat sığacağı bir değer */
+        opacity: 1;
+    }
+
+    .faq-item.is-active .chevron {
+        transform: rotate(180deg);
+        color: #a855f7;
+    }
+</style>
+
+<script>
+    // Sayfa yüklendiğinde butonları dinle
+    document.addEventListener('astro:page-load', () => {
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const button = item.querySelector('button');
+            button?.addEventListener('click', () => {
+                // Diğerlerini kapatmak istersen:
+                // faqItems.forEach(i => { if(i !== item) i.classList.remove('is-active'); });
+                item.classList.toggle('is-active');
+            });
+        });
+    }, { once: false });
+
+    // İlk yükleme için (Astro View Transitions kullanmıyorsan bile garanti olsun)
+    const initFaq = () => {
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const button = item.querySelector('button');
+            button?.addEventListener('click', () => {
+                item.classList.toggle('is-active');
+            });
+        });
+    };
+    initFaq();
+</script>

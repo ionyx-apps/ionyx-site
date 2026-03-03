@@ -8,7 +8,7 @@
   }
   
   body {
-    @apply font-sans antialiased bg-dark-primary text-gray-100;
+    @apply font-sans antialiased bg-gray-900 text-gray-100;
   }
 }
 
@@ -18,26 +18,26 @@
   }
   
   .glass-dark {
-    @apply bg-black/30 backdrop-blur-lg border border-white/5;
+    @apply bg-gray-800/50 backdrop-blur-sm border border-white/5;
   }
   
   .neon-glow {
-    @apply shadow-lg shadow-ionyx-neon-purple/20;
+    @apply shadow-lg shadow-purple-500/20;
   }
   
   .btn-primary {
-    @apply bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-ionyx-neon-purple/30 transition-all duration-300 transform hover:scale-105;
+    @apply bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300 transform hover:scale-105;
   }
   
   .btn-secondary {
-    @apply glass text-ionyx-400 px-6 py-3 rounded-lg font-semibold hover:bg-white/10 hover:text-ionyx-300 transition-all duration-300 border border-white/10;
+    @apply bg-gray-800/50 backdrop-blur-sm text-blue-400 px-6 py-3 rounded-lg font-semibold hover:bg-white/10 hover:text-blue-300 transition-all duration-300 border border-white/10;
   }
   
   .comparison-table {
-    @apply glass-dark rounded-xl overflow-hidden;
+    @apply bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden;
   }
   
   .hero-gradient {
-    @apply bg-gradient-to-br from-dark-primary via-dark-secondary to-dark-tertiary;
+    @apply bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900;
   }
 }

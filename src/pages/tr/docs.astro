@@ -3,10 +3,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const createCode = `ionyx create my-app --template react`;
 const devCode = `cd my-app\nionyx dev`;
-const configCode = `// ionyx.config.json\n{\n  "window": {\n    "title": "My Ionyx App",\n    "width": 800,\n    "height": 600\n  }\n}`;
+const configCode = `// ionyx.config.json\n{\n  "window": {\n    "title": "Ionyx Uygulamam",\n    "width": 800,\n    "height": 600\n  }\n}`;
 ---
 
-<BaseLayout title="Documentation | Ionyx Framework">
+<BaseLayout title="Dokümantasyon | Ionyx Framework">
   <div class="min-h-screen bg-[#0B0F1A] text-slate-300 selection:bg-purple-500/30">
     
     <div class="max-w-[1440px] mx-auto flex">
@@ -14,23 +14,23 @@ const configCode = `// ionyx.config.json\n{\n  "window": {\n    "title": "My Ion
       <aside class="hidden lg:block w-72 fixed h-screen overflow-y-auto border-r border-slate-800/50 pt-24 pb-10 px-8 bg-[#0B0F1A]/50 backdrop-blur-xl">
         <nav class="space-y-8">
           <div>
-            <h5 class="text-white font-bold mb-4 text-xs tracking-widest uppercase opacity-50">Introduction</h5>
+            <h5 class="text-white font-bold mb-4 text-xs tracking-widest uppercase opacity-50">Giriş</h5>
             <ul class="space-y-3 border-l border-slate-800 ml-1">
-              <li><a href="#why-ionyx" class="block pl-4 -ml-px border-l border-transparent hover:text-purple-400 transition-all">Why Ionyx?</a></li>
-              <li><a href="#comparison" class="block pl-4 -ml-px border-l border-transparent hover:text-purple-400 transition-all text-sm">Tauri & Electron Comparison</a></li>
+              <li><a href="#why-ionyx" class="block pl-4 -ml-px border-l border-transparent hover:text-purple-400 transition-all text-sm">Neden Ionyx?</a></li>
+              <li><a href="#comparison" class="block pl-4 -ml-px border-l border-transparent hover:text-purple-400 transition-all text-sm">Tauri & Electron Karşılaştırması</a></li>
             </ul>
           </div>
           <div>
-            <h5 class="text-white font-bold mb-4 text-xs tracking-widest uppercase opacity-50">Core Guide</h5>
+            <h5 class="text-white font-bold mb-4 text-xs tracking-widest uppercase opacity-50">Temel Rehber</h5>
             <ul class="space-y-3 border-l border-slate-800 ml-1">
-              <li><a href="#installation" class="block pl-4 -ml-px border-l border-transparent hover:text-purple-400 transition-all">Installation</a></li>
-              <li><a href="#quick-start" class="block pl-4 -ml-px border-l border-transparent hover:text-purple-400 transition-all">Quick Start</a></li>
+              <li><a href="#installation" class="block pl-4 -ml-px border-l border-transparent hover:text-purple-400 transition-all text-sm">Kurulum</a></li>
+              <li><a href="#quick-start" class="block pl-4 -ml-px border-l border-transparent hover:text-purple-400 transition-all text-sm">Hızlı Başlangıç</a></li>
             </ul>
           </div>
           <div>
-            <h5 class="text-white font-bold mb-4 text-xs tracking-widest uppercase opacity-50">Legal & Policy</h5>
+            <h5 class="text-white font-bold mb-4 text-xs tracking-widest uppercase opacity-50">Yasal</h5>
             <ul class="space-y-3 border-l border-slate-800 ml-1">
-              <li><a href="#trademarks" class="block pl-4 -ml-px border-l border-transparent hover:text-purple-400 transition-all">Trademark Policy</a></li>
+              <li><a href="#trademarks" class="block pl-4 -ml-px border-l border-transparent hover:text-purple-400 transition-all text-sm">Marka Politikası</a></li>
             </ul>
           </div>
         </nav>
@@ -40,26 +40,27 @@ const configCode = `// ionyx.config.json\n{\n  "window": {\n    "title": "My Ion
         <article class="max-w-4xl mx-auto">
           
           <header class="mb-16">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold mb-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase tracking-widest mb-6">
               <span class="relative flex h-2 w-2">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              <span>v1.0.0 Stable Release</span>
+              <span>v1.0.0 Kararlı Sürüm Yayında</span>
             </div>
-            <h1 id="documentation-title" class="text-5xl font-black text-white mb-6 tracking-tighter">Documentation</h1>
+            <h1 id="dokümantasyon-başlığı" aria-labelledby="dokümantasyon-başlığı" class="text-5xl font-black text-white mb-6 tracking-tighter">Dokümantasyon</h1>
             <p class="text-xl text-slate-400 leading-relaxed font-light">
-                Ionyx is a minimalist, high-performance toolkit for building desktop apps with Rust. It provides the smallest binary size in the ecosystem.
+                Ionyx, Rust ile yüksek performanslı masaüstü uygulamaları geliştirmek için tasarlanmış minimalist bir araç setidir. Ekosistemdeki en küçük binary boyutunu sunar.
             </p>
           </header>
 
           <section id="comparison" class="scroll-mt-32 mb-24">
-            <h2 id="ecosystem-comparison" aria-labelledby="ecosystem-comparison" class="text-3xl font-bold text-white mb-8 tracking-tight">Ecosystem Comparison</h2>
+            <h2 id="ekosistem-karşılaştırması" aria-labelledby="ekosistem-karşılaştırması" class="text-3xl font-bold text-white mb-8 tracking-tight">Ekosistem Karşılaştırması</h2>
+            <h2 class="text-3xl font-bold text-white mb-8 tracking-tight">Ekosistem Karşılaştırması</h2>
             <div class="overflow-hidden bg-slate-800/20 rounded-2xl border border-slate-800">
               <table class="w-full text-left border-collapse">
                 <thead>
                   <tr class="bg-slate-800/50 text-white text-sm">
-                    <th class="p-4 border-b border-slate-700 font-bold uppercase tracking-wider text-[10px] opacity-60">Metric</th>
+                    <th class="p-4 border-b border-slate-700 font-bold uppercase tracking-wider text-[10px] opacity-60">Metrik</th>
                     <th class="p-4 border-b border-slate-700 text-purple-400 font-black italic">IONYX</th>
                     <th class="p-4 border-b border-slate-700 opacity-80 font-semibold">Tauri™</th>
                     <th class="p-4 border-b border-slate-700 opacity-80 font-semibold">Electron™</th>
@@ -67,19 +68,19 @@ const configCode = `// ionyx.config.json\n{\n  "window": {\n    "title": "My Ion
                 </thead>
                 <tbody class="text-sm">
                   <tr class="border-b border-slate-800/30 hover:bg-white/[0.02] transition-colors">
-                    <td class="p-4 font-semibold text-slate-400 tracking-tight">Base Binary Size</td>
+                    <td class="p-4 font-semibold text-slate-400 tracking-tight">Temel Dosya Boyutu</td>
                     <td class="p-4 text-emerald-400 font-bold">1.5 MB</td>
                     <td class="p-4">~3.1 MB</td>
                     <td class="p-4 text-red-400">85+ MB</td>
                   </tr>
                   <tr class="border-b border-slate-800/30 hover:bg-white/[0.02] transition-colors">
-                    <td class="p-4 font-semibold text-slate-400 tracking-tight">Memory Footprint</td>
+                    <td class="p-4 font-semibold text-slate-400 tracking-tight">Bellek Kullanımı (Idle)</td>
                     <td class="p-4 text-emerald-400 font-bold">~24 MB</td>
                     <td class="p-4">~32 MB</td>
                     <td class="p-4">~160 MB</td>
                   </tr>
                   <tr class="border-b border-slate-800/30 hover:bg-white/[0.02] transition-colors">
-                    <td class="p-4 font-semibold text-slate-400 tracking-tight">Build Engine</td>
+                    <td class="p-4 font-semibold text-slate-400 tracking-tight">Derleme Motoru</td>
                     <td class="p-4 font-bold text-slate-200">Rust + WRY + TAO</td>
                     <td class="p-4">Rust + WRY</td>
                     <td class="p-4">Node.js / V8</td>
@@ -90,14 +91,14 @@ const configCode = `// ionyx.config.json\n{\n  "window": {\n    "title": "My Ion
           </section>
 
           <section id="installation" class="scroll-mt-32 mb-24">
-            <h2 id="getting-started" aria-labelledby="getting-started" class="text-3xl font-bold text-white mb-8 tracking-tight">Getting Started</h2>
-            <p class="mb-6">Deploy the Ionyx CLI to your environment via your preferred package manager.</p>
+            <h2 id="başlangıç" aria-labelledby="başlangıç" class="text-3xl font-bold text-white mb-8 tracking-tight">Başlangıç</h2>
+            <p class="mb-6">Ionyx CLI'yı sisteminize tercih ettiğiniz paket yöneticisi ile kurun.</p>
             <div class="p-6 bg-black/40 rounded-2xl border border-slate-800 shadow-2xl backdrop-blur-sm">
               <div class="flex items-center gap-1.5 mb-6 border-b border-slate-800 pb-4">
                 <div class="w-3 h-3 rounded-full bg-slate-700"></div>
                 <div class="w-3 h-3 rounded-full bg-slate-700"></div>
                 <div class="w-3 h-3 rounded-full bg-slate-700"></div>
-                <span class="ml-2 text-[10px] text-slate-500 font-mono">zsh — ionyx-install</span>
+                <span class="ml-2 text-[10px] text-slate-500 font-mono">terminal — ionyx-kurulum</span>
               </div>
               <pre class="text-sm font-mono leading-relaxed"><code class="text-emerald-400">npm install -g ionyx</code></pre>
             </div>
@@ -106,18 +107,18 @@ const configCode = `// ionyx.config.json\n{\n  "window": {\n    "title": "My Ion
           <footer id="trademarks" class="scroll-mt-32 pt-20 border-t border-slate-800/50">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-[11px] leading-relaxed opacity-50">
                 <div>
-                    <h4 class="text-white font-bold mb-4 uppercase tracking-[0.2em]">Trademark Legal Notice</h4>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-[0.2em]">Marka ve Yasal Uyarı</h4>
                     <p class="mb-4 text-justify">
-                      Ionyx is an independent open-source project. **TAURI™** is a trademark of The Tauri Programme within the Commons Conservancy. **ELECTRON™** is a trademark of the OpenJS Foundation. 
+                      Ionyx bağımsız bir açık kaynak projesidir. **TAURI™**, Commons Conservancy bünyesindeki The Tauri Programme'ın; **ELECTRON™** ise OpenJS Foundation'ın ticari markasıdır.
                     </p>
                 </div>
                 <div>
-                    <h4 class="text-white font-bold mb-4 uppercase tracking-[0.2em]">Ownership</h4>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-[0.2em]">Mülkiyet</h4>
                     <p class="mb-6 italic text-justify">
-                      All other content, including the Ionyx brand, logo, and core architecture, is developed by the Ionyx Apps team.
+                      Ionyx markası, logosu ve çekirdek mimarisi dahil olmak üzere diğer tüm içerikler Ionyx Apps ekibi tarafından geliştirilmiştir.
                     </p>
                     <p class="text-white font-medium">
-                      2026 Ionyx Apps and Contributors. All rights reserved.
+                      2026 Ionyx Apps ve Katkıda Bulunanlar. Tüm hakları saklıdır.
                     </p>
                 </div>
             </div>
@@ -127,11 +128,11 @@ const configCode = `// ionyx.config.json\n{\n  "window": {\n    "title": "My Ion
       </main>
 
       <aside class="hidden xl:block w-64 fixed right-[max(0px,calc(50%-720px))] h-screen pt-24 pb-10 px-8">
-        <h5 class="text-white font-bold mb-6 text-[10px] uppercase tracking-[0.2em] opacity-40">On This Page</h5>
+        <h5 class="text-white font-bold mb-6 text-[10px] uppercase tracking-[0.2em] opacity-40">BU SAYFADA</h5>
         <nav class="space-y-4 text-xs font-medium">
-          <a href="#comparison" class="block text-slate-500 hover:text-white transition-all">Ecosystem Comparison</a>
-          <a href="#installation" class="block text-slate-500 hover:text-white transition-all">Quick Start</a>
-          <a href="#trademarks" class="block text-slate-500 hover:text-white transition-all">Trademark & Legal</a>
+          <a href="#comparison" class="block text-slate-500 hover:text-white transition-all">Ekosistem Karşılaştırması</a>
+          <a href="#installation" class="block text-slate-500 hover:text-white transition-all">Hızlı Başlangıç</a>
+          <a href="#trademarks" class="block text-slate-500 hover:text-white transition-all">Marka Politikası</a>
         </nav>
       </aside>
 

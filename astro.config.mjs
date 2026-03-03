@@ -7,7 +7,7 @@ export default defineConfig({
   ],
   site: 'https://ionyx-framework.dev',
   base: '/',
-  trailingSlash: 'never',
+  trailingSlash: 'ignore',
   build: {
     format: 'directory'
   },

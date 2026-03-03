@@ -1,0 +1,96 @@
+---
+title: Installation
+description: Get Ionyx installed and running on your system
+---
+
+# Installation
+
+Get Ionyx installed and running on your system in just a few minutes.
+
+## Prerequisites
+
+Before you begin, make sure you have the following installed:
+
+- **Node.js 18+** - For package management and build tools
+- **Rust 1.70+** - For building native modules and the Ionyx runtime
+
+### Verify Prerequisites
+
+```bash
+# Check Node.js version
+node --version
+
+# Check Rust version
+rustc --version
+```
+
+## Install Ionyx CLI
+
+The Ionyx CLI is the main tool for creating, building, and managing Ionyx applications.
+
+### Using npm
+
+```bash
+npm install -g ionyx
+```
+
+### Using yarn
+
+```bash
+yarn global add ionyx
+```
+
+### Using pnpm
+
+```bash
+pnpm add -g ionyx
+```
+
+## Verify Installation
+
+After installation, verify that Ionyx is properly installed:
+
+```bash
+ionyx --version
+```
+
+You should see something like:
+
+```
+ionyx v1.0.0
+```
+
+## Troubleshooting
+
+### Permission Issues
+
+If you encounter permission errors, you might need to use `sudo` (on macOS/Linux):
+
+```bash
+sudo npm install -g ionyx
+```
+
+### Windows Issues
+
+On Windows, if you encounter issues with global npm packages, try:
+
+1. Run PowerShell as Administrator
+2. Enable script execution: `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
+3. Install with npm: `npm install -g ionyx`
+
+### Rust Toolchain Issues
+
+If you're having issues with Rust, make sure your toolchain is up to date:
+
+```bash
+rustup update
+rustup default stable
+```
+
+## Next Steps
+
+Once Ionyx is installed, you can:
+
+- [Create your first project](/docs/quick-start)
+- [Explore the API reference](/docs/api-reference)
+- [View example applications](/docs/examples)

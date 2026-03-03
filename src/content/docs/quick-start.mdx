@@ -1,0 +1,108 @@
+---
+title: Quick Start
+description: Create your first Ionyx application in minutes
+---
+
+# Quick Start
+
+Create your first Ionyx application in minutes with our intuitive CLI tool.
+
+## Create Your Project
+
+Start by creating a new Ionyx project:
+
+```bash
+ionyx create my-app
+```
+
+This will prompt you to choose a template and configure your project.
+
+## Choose Your Template
+
+Ionyx supports multiple frontend frameworks:
+
+### React
+```bash
+ionyx create my-app --template react
+```
+
+### Vue
+```bash
+ionyx create my-app --template vue
+```
+
+### Svelte
+```bash
+ionyx create my-app --template svelte
+```
+
+### Vanilla JavaScript
+```bash
+ionyx create my-app --template vanilla
+```
+
+## Project Structure
+
+After creating your project, you'll see this structure:
+
+```
+my-app/
+├── src/
+│   ├── frontend/          # Your frontend code
+│   ├── backend/           # Rust backend code
+│   └── assets/            # Static assets
+├── ionyx.config.toml      # Ionyx configuration
+├── package.json           # Node.js dependencies
+└── Cargo.toml            # Rust dependencies
+```
+
+## Development
+
+Navigate to your project and start the development server:
+
+```bash
+cd my-app
+ionyx dev
+```
+
+This will:
+- Start the development server on `http://localhost:3000`
+- Enable hot reload for frontend changes
+- Auto-recompile Rust backend on changes
+
+## Building for Production
+
+When you're ready to deploy, build your application:
+
+```bash
+ionyx build
+```
+
+This creates a standalone binary in the `dist/` directory.
+
+## Configuration
+
+Edit `ionyx.config.toml` to customize your application:
+
+```toml
+[app]
+name = "My App"
+version = "1.0.0"
+description = "A sample Ionyx application"
+
+[window]
+width = 1200
+height = 800
+resizable = true
+title = "My App"
+
+[build]
+target = "production"
+optimize = true
+```
+
+## Next Steps
+
+- [Learn about the API](/docs/api-reference)
+- [Explore configuration options](/docs/configuration)
+- [View deployment guides](/docs/deployment)

@@ -19,17 +19,17 @@ if (locale === 'en') {
 	<section class="py-20 hero-gradient">
 		<div class="container mx-auto px-6">
 			<div class="max-w-4xl mx-auto text-center">
-				<h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+				<h1 id="hero-title" class="text-5xl md:text-6xl font-bold text-white mb-6">
 					{t.hero.title}
 				</h1>
 				<p class="text-xl text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto">
 					{t.hero.description}
 				</p>
 				<div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-					<a href="/docs" class="btn-primary">
+					<a href={locale === 'en' ? '/en/docs' : '/tr/docs'} class="btn-primary">
 						{t.common.getStarted}
 					</a>
-					<a href="/why-ionyx" class="btn-secondary">
+					<a href={locale === 'en' ? '/en/why-ionyx' : '/tr/why-ionyx'} class="btn-secondary">
 						{t.common.learnMore}
 					</a>
 				</div>

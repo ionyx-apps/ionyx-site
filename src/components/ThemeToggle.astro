@@ -1,0 +1,103 @@
+---
+const { currentTheme } = Astro.props;
+
+const themes = [
+  { code: 'dark', name: 'Dark', icon: '🌙' },
+  { code: 'light', name: 'Light', icon: '☀️' },
+  { code: 'system', name: 'System', icon: '💻' },
+];
+---
+
+<div class="relative">
+  <button
+    id="theme-toggle"
+    class="flex items-center justify-center w-10 h-10 rounded-lg bg-gray-800/50 border border-gray-700 text-gray-300 hover:bg-gray-700/50 hover:text-white transition-all duration-200"
+    aria-label="Toggle theme"
+    title="Toggle theme"
+  >
+    <span id="theme-icon" class="text-sm">
+      {themes.find(t => t.code === currentTheme)?.icon || '🌙'}
+    </span>
+  </button>
+</div>
+
+<script>
+  // Tema yönetimi
+  const themeIcons = {
+    dark: '🌙',
+    light: '☀️', 
+    system: '💻'
+  };
+
+  // Mevcut temayı al
+  function getTheme() {
+    const saved = localStorage.getItem('theme');
+    if (saved && ['dark', 'light', 'system'].includes(saved)) return saved;
+    
+    // Sistem temasını kontrol et
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark';
+    }
+    return 'light';
+  }
+
+  // Temayı uygula
+  function applyTheme(theme) {
+    const root = document.documentElement;
+    
+    // Tema sınıflarını temizle
+    root.classList.remove('dark', 'light', 'system');
+    
+    // Yeni temayı uygula
+    root.classList.add(theme);
+    localStorage.setItem('theme', theme);
+    
+    // Icon'u güncelle
+    const icon = document.getElementById('theme-icon');
+    if (icon) {
+      icon.textContent = themeIcons[theme];
+    }
+  }
+
+  // Tema döngüsü
+  function cycleTheme() {
+    const current = getTheme();
+    const themeOrder = ['dark', 'light', 'system'];
+    const currentIndex = themeOrder.indexOf(current);
+    const nextIndex = (currentIndex + 1) % themeOrder.length;
+    const nextTheme = themeOrder[nextIndex];
+    
+    applyTheme(nextTheme);
+  }
+
+  // Sayfa yüklendiğinde veya Astro navigation ile
+  function initTheme() {
+    const theme = getTheme();
+    applyTheme(theme);
+    
+    // Butona tıklayıcı ekle
+    const button = document.getElementById('theme-toggle');
+    if (button) {
+      button.addEventListener('click', cycleTheme);
+    }
+  }
+
+  // Farklı event listener'lar
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTheme);
+  } else {
+    initTheme();
+  }
+
+  // Astro page load event için
+  document.addEventListener('astro:page-load', initTheme);
+
+  // Sistem teması değişirse
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      if (getTheme() === 'system') {
+        applyTheme('system');
+      }
+    });
+  }
+</script>

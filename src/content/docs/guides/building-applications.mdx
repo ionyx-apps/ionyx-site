@@ -1,0 +1,438 @@
+---
+title: Building Applications
+description: Step-by-step guide to building production-ready applications with Ionyx
+---
+
+# Building Applications
+
+Step-by-step guide to building production-ready applications with Ionyx.
+
+## Project Structure
+
+A typical Ionyx application has this structure:
+
+```
+my-app/
+├── src/
+│   ├── frontend/          # Frontend code (React, Vue, etc.)
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── assets/
+│   │   └── main.js
+│   ├── backend/           # Rust backend code
+│   │   ├── main.rs
+│   │   ├── handlers/
+│   │   └── models/
+│   └── shared/            # Shared types and utilities
+├── public/                # Static assets
+├── ionyx.config.toml      # Ionyx configuration
+├── package.json           # Node.js dependencies
+└── Cargo.toml            # Rust dependencies
+```
+
+## Frontend Development
+
+### React Integration
+
+Ionyx provides seamless React integration with hooks for system APIs:
+
+```jsx
+import { useState, useEffect } from 'react';
+import { window, fs, sys } from '@ionyx/runtime';
+
+function App() {
+  const [title, setTitle] = useState('');
+  
+  useEffect(() => {
+    // Load window title
+    const loadTitle = async () => {
+      const savedTitle = await fs.readFile('./title.txt');
+      setTitle(savedTitle);
+    };
+    
+    loadTitle();
+    
+    // Listen for window events
+    const handleResize = (width, height) => {
+      console.log(`Window resized: ${width}x${height}`);
+    };
+    
+    window.onResize(handleResize);
+    
+    return () => {
+      window.offResize(handleResize);
+    };
+  }, []);
+  
+  const handleSaveTitle = async () => {
+    await fs.writeFile('./title.txt', title);
+    sys.showNotification('Success', 'Title saved successfully');
+  };
+  
+  return (
+    <div>
+      <h1>{title || 'My App'}</h1>
+      <input 
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        placeholder="Enter app title"
+      />
+      <button onClick={handleSaveTitle}>Save Title</button>
+    </div>
+  );
+}
+```
+
+### Vue Integration
+
+```vue
+<template>
+  <div>
+    <h1>{{ title || 'My App' }}</h1>
+    <input v-model="title" placeholder="Enter app title" />
+    <button @click="saveTitle">Save Title</button>
+  </div>
+</template>
+
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue';
+import { window, fs, sys } from '@ionyx/runtime';
+
+const title = ref('');
+
+const saveTitle = async () => {
+  await fs.writeFile('./title.txt', title.value);
+  sys.showNotification('Success', 'Title saved successfully');
+};
+
+const handleResize = (width, height) => {
+  console.log(`Window resized: ${width}x${height}`);
+};
+
+onMounted(async () => {
+  const savedTitle = await fs.readFile('./title.txt');
+  title.value = savedTitle;
+  window.onResize(handleResize);
+});
+
+onUnmounted(() => {
+  window.offResize(handleResize);
+});
+</script>
+```
+
+## Backend Development
+
+### Main Application Entry Point
+
+```rust
+// src/backend/main.rs
+use ionyx::prelude::*;
+use ionyx::window::Window;
+use ionyx::fs::FileSystem;
+use ionyx::sys::System;
+
+#[derive(Default)]
+struct AppState {
+    window: Window,
+    fs: FileSystem,
+    sys: System,
+}
+
+#[ionyx::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let mut app = AppState::default();
+    
+    // Initialize window
+    app.window.set_title("My Ionyx App")?;
+    app.window.set_size(1200, 800)?;
+    app.window.center()?;
+    
+    // Setup file system handlers
+    setup_file_handlers(&mut app.fs)?;
+    
+    // Start the event loop
+    app.run().await
+}
+
+fn setup_file_handlers(fs: &mut FileSystem) -> Result<(), Box<dyn std::error::Error>> {
+    fs.on_file_read(|path| {
+        println!("Reading file: {}", path);
+        // Handle file read
+        Ok(content)
+    })?;
+    
+    fs.on_file_write(|path, content| {
+        println!("Writing file: {}", path);
+        // Handle file write
+        Ok(())
+    })?;
+    
+    Ok(())
+}
+```
+
+### API Handlers
+
+```rust
+// src/backend/handlers/api.rs
+use serde::{Deserialize, Serialize};
+use ionyx::prelude::*;
+
+#[derive(Serialize, Deserialize)]
+struct AppConfig {
+    theme: String,
+    language: String,
+    auto_save: bool,
+}
+
+impl Default for AppConfig {
+    fn default() -> Self {
+        Self {
+            theme: "dark".to_string(),
+            language: "en".to_string(),
+            auto_save: true,
+        }
+    }
+}
+
+pub struct ApiHandler {
+    config: AppConfig,
+}
+
+impl ApiHandler {
+    pub fn new() -> Self {
+        Self {
+            config: AppConfig::default(),
+        }
+    }
+    
+    pub fn get_config(&self) -> &AppConfig {
+        &self.config
+    }
+    
+    pub fn update_config(&mut self, config: AppConfig) -> Result<(), String> {
+        // Validate config
+        if !["dark", "light"].contains(&config.theme.as_str()) {
+            return Err("Invalid theme".to_string());
+        }
+        
+        self.config = config;
+        Ok(())
+    }
+    
+    pub fn save_config(&self) -> Result<(), Box<dyn std::error::Error>> {
+        let json = serde_json::to_string(&self.config)?;
+        std::fs::write("config.json", json)?;
+        Ok(())
+    }
+}
+```
+
+## Configuration
+
+### ionyx.config.toml
+
+```toml
+[app]
+name = "My Application"
+version = "1.0.0"
+description = "A sample Ionyx application"
+author = "Your Name"
+
+[window]
+width = 1200
+height = 800
+min_width = 800
+min_height = 600
+resizable = true
+title = "My Application"
+center_on_start = true
+
+[build]
+target = "production"
+optimize = true
+compress = true
+strip = true
+
+[dev]
+port = 3000
+host = "localhost"
+auto_open = true
+hot_reload = true
+
+[security]
+allow_file_access = true
+allow_network_access = true
+allow_shell_access = false
+
+[features]
+auto_update = true
+crash_reporting = true
+analytics = false
+```
+
+## Building for Production
+
+### Development Build
+
+```bash
+ionyx build --target development
+```
+
+### Production Build
+
+```bash
+ionyx build --target production
+```
+
+### Platform-Specific Builds
+
+```bash
+# Windows
+ionyx build --platform windows
+
+# macOS
+ionyx build --platform macos
+
+# Linux
+ionyx build --platform linux
+
+# All platforms
+ionyx build --platform all
+```
+
+### Build Options
+
+```bash
+ionyx build \
+  --target production \
+  --optimize \
+  --compress \
+  --strip \
+  --platform all \
+  --output ./dist
+```
+
+## Testing
+
+### Unit Tests
+
+```rust
+// tests/backend_tests.rs
+#[cfg(test)]
+mod tests {
+    use super::*;
+    
+    #[test]
+    fn test_config_validation() {
+        let mut handler = ApiHandler::new();
+        
+        let valid_config = AppConfig {
+            theme: "dark".to_string(),
+            language: "en".to_string(),
+            auto_save: true,
+        };
+        
+        assert!(handler.update_config(valid_config).is_ok());
+    }
+    
+    #[test]
+    fn test_invalid_theme() {
+        let mut handler = ApiHandler::new();
+        
+        let invalid_config = AppConfig {
+            theme: "invalid".to_string(),
+            language: "en".to_string(),
+            auto_save: true,
+        };
+        
+        assert!(handler.update_config(invalid_config).is_err());
+    }
+}
+```
+
+### Integration Tests
+
+```javascript
+// tests/integration.test.js
+import { test, expect } from '@playwright/test';
+import { exec } from 'child_process';
+import { promisify } from 'util';
+
+const execAsync = promisify(exec);
+
+test.describe('Application Integration', () => {
+  test('should start and show main window', async () => {
+    // Start the application
+    const { stdout, stderr } = await execAsync('ionyx dev');
+    
+    // Test window functionality
+    expect(stdout).toContain('Development server started');
+  });
+  
+  test('should handle file operations', async () => {
+    // Test file read/write operations
+    const fs = require('@ionyx/runtime').fs;
+    
+    await fs.writeFile('./test.txt', 'Hello World');
+    const content = await fs.readFile('./test.txt');
+    
+    expect(content).toBe('Hello World');
+  });
+});
+```
+
+## Deployment
+
+### Creating Installer
+
+```bash
+# Windows installer
+ionyx build --platform windows --installer
+
+# macOS app bundle
+ionyx build --platform macos --bundle
+
+# Linux AppImage
+ionyx build --platform linux --appimage
+```
+
+### Code Signing
+
+```bash
+# Windows code signing
+ionyx build --platform windows --sign --certificate-path ./cert.pfx
+
+# macOS code signing
+ionyx build --platform macos --sign --identity "Developer ID Application"
+```
+
+## Best Practices
+
+1. **Error Handling**: Always handle errors gracefully and provide user feedback
+2. **Resource Management**: Clean up resources properly to prevent memory leaks
+3. **Security**: Validate all user inputs and file paths
+4. **Performance**: Use async operations for I/O-intensive tasks
+5. **Testing**: Write comprehensive tests for all functionality
+6. **Documentation**: Document all public APIs and configuration options
+
+## Troubleshooting
+
+### Common Issues
+
+**Build fails with linking errors:**
+- Ensure all Rust dependencies are compatible
+- Check that the target platform is supported
+
+**Application won't start:**
+- Verify all dependencies are installed
+- Check the configuration file for syntax errors
+
+**Performance issues:**
+- Profile the application to identify bottlenecks
+- Optimize hot paths and reduce unnecessary allocations
+
+**Memory leaks:**
+- Use proper resource cleanup
+- Monitor memory usage during development

@@ -16,6 +16,13 @@ export interface TranslationKeys {
     documentation: string;
     frameworkComparison: string;
   };
+  docs: {
+    introduction: string;
+    installation: string;
+    quickStart: string;
+    architecture: string;
+    apiReference: string;
+  };
   hero: {
     title: string;
     subtitle: string;
@@ -58,6 +65,13 @@ export const translations: Record<string, TranslationKeys> = {
       documentation: 'Documentation',
       frameworkComparison: 'Framework Comparison',
     },
+    docs: {
+      introduction: 'Introduction',
+      installation: 'Installation',
+      quickStart: 'Quick Start',
+      architecture: 'Architecture',
+      apiReference: 'API Reference',
+    },
     hero: {
       title: 'Desktop Application',
       subtitle: 'Without the Bloat',
@@ -97,6 +111,13 @@ export const translations: Record<string, TranslationKeys> = {
       discord: 'Discord',
       documentation: 'Dokümantasyon',
       frameworkComparison: 'Framework Karşılaştırması',
+    },
+    docs: {
+      introduction: 'Giriş',
+      installation: 'Kurulum',
+      quickStart: 'Hızlı Başlangıç',
+      architecture: 'Mimari',
+      apiReference: 'API Referansı',
     },
     hero: {
       title: 'Masaüstü Uygulama',

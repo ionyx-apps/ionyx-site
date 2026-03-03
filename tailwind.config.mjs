@@ -18,17 +18,6 @@ export default {
           700: '#0369a1',
           800: '#075985',
           900: '#0c4a6e',
-          neon: {
-            purple: '#a855f7',
-            blue: '#3b82f6',
-            cyan: '#06b6d4',
-          }
-        },
-        dark: {
-          primary: '#0a0a0a',
-          secondary: '#171717',
-          tertiary: '#262626',
-          border: '#404040',
         }
       },
       fontFamily: {
