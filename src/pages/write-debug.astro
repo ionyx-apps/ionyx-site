@@ -1,0 +1,11 @@
+import { getCollection } from 'astro:content';
+import fs from 'fs';
+
+const posts = await getCollection('blog');
+const debugInfo = posts.map(p => ({
+    id: p.id,
+    slug: (p as any).slug, // Might be undefined in V2
+    data: p.data
+}));
+
+fs.writeFileSync('d:/Projects/ionyx-project/ionyx-site/public/debug-data.json', JSON.stringify(debugInfo, null, 2));

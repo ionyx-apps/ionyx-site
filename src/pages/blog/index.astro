@@ -28,10 +28,12 @@ const posts = (await getCollection('blog')).sort(
 
 			<!-- Blog Grid -->
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-				{posts.map((post) => (
-					<article class="group relative bg-gray-900/50 border border-gray-800 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 transform hover:-translate-y-2">
-						<a href={`/blog/${post.slug}`} class="block h-full">
-							<div class="aspect-video relative overflow-hidden bg-gray-800">
+				{posts.map((post) => {
+					const slug = post.id.replace(/\.[^/.]+$/, "");
+					return (
+						<article class="group relative bg-gray-900/50 border border-gray-800 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 transform hover:-translate-y-2">
+							<a href={`/blog/${slug}`} class="block h-full">
+								<div class="aspect-video relative overflow-hidden bg-gray-800">
 								{post.data.heroImage ? (
 									<div class="w-full h-full bg-gradient-to-br from-purple-600/20 to-blue-600/20 flex items-center justify-center text-4xl">
 										🚀

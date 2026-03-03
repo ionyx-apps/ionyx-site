@@ -1,17 +1,29 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
 	return posts.map((post) => ({
-		params: { slug: post.slug },
-		props: post,
+		params: { slug: post.id.replace(/\.[^/.]+$/, "") },
+		props: { post },
 	}));
 }
 
-const post = Astro.props;
-const { Content } = await post.render();
+const { post } = Astro.props;
+if (!post || !post.data) {
+    return Astro.redirect('/404');
+}
+
+const { Content } = await render(post);
+
+const formattedDate = post.data.pubDate instanceof Date 
+    ? post.data.pubDate.toLocaleDateString('en-us', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+    })
+    : String(post.data.pubDate);
 ---
 
 <Layout title={`${post.data.title} | Ionyx Blog`} description={post.data.description}>
@@ -34,12 +46,8 @@ const { Content } = await post.render();
 			<!-- Post Header -->
 			<header class="mb-16">
 				<div class="flex items-center space-x-2 text-sm text-purple-400 mb-6">
-					<time datetime={post.data.pubDate.toISOString()}>
-						{post.data.pubDate.toLocaleDateString('en-us', {
-							year: 'numeric',
-							month: 'long',
-							day: 'numeric',
-						})}
+					<time datetime={post.data.pubDate instanceof Date ? post.data.pubDate.toISOString() : ''}>
+						{formattedDate}
 					</time>
 					<span>•</span>
 					<span>By The Ionyx Team</span>
