@@ -4,188 +4,295 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Ionyx Framework - Universal Desktop Framework">
 	<!-- Hero Section -->
-	<section class="bg-gradient-to-br from-orange-50 via-white to-blue-50">
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-			<div class="text-center">
-				<h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-					Ionyx Framework
-				</h1>
-				<p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-					Create small, fast, secure, cross-platform applications
-				</p>
-				<div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-					<a href="/docs" class="bg-orange-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-orange-700 transition-colors">
-						Get started
-					</a>
-					<a href="https://github.com/ionyx-apps/ionyx" class="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
-						View on GitHub
-					</a>
+	<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+		<div class="absolute inset-0 overflow-hidden">
+			<div class="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-purple-500/20 to-transparent rounded-full blur-3xl animate-pulse"></div>
+			<div class="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-br from-blue-500/20 to-transparent rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+			<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-pink-500/20 to-transparent rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+		</div>
+		
+		<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<div class="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-blue-500/20 border border-purple-400/30 backdrop-blur-sm mb-8">
+				<span class="text-purple-300 text-sm font-medium">🚀 Quantum leap in desktop development</span>
+			</div>
+			
+			<h1 class="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight">
+				<span class="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Ionyx Framework</span>
+			</h1>
+			
+			<p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+				Universal desktop framework with Rust backend and agnostic frontend. 
+				Build high-performance, cross-platform applications with <span class="text-purple-400 font-semibold">~3MB</span> single binary distribution.
+			</p>
+			
+			<div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+				<a href="/docs" class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg hover:from-purple-700 hover:to-blue-700 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
+					<span class="relative z-10">Get Started</span>
+					<div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition-opacity"></div>
+				</a>
+				<a href="https://github.com/ionyx-apps/ionyx" class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white border border-gray-600 rounded-lg hover:bg-gray-800/50 transform hover:-translate-y-1 transition-all duration-300 backdrop-blur-sm">
+					<span class="relative z-10">View on GitHub</span>
+				</a>
+			</div>
+			
+			<div class="flex flex-wrap justify-center gap-4 text-sm text-gray-400">
+				<div class="flex items-center gap-2">
+					<span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+					<span>Production Ready</span>
+				</div>
+				<div class="flex items-center gap-2">
+					<span class="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></span>
+					<span>Cross-Platform</span>
+				</div>
+				<div class="flex items-center gap-2">
+					<span class="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></span>
+					<span>3MB Bundle Size</span>
 				</div>
 			</div>
 		</div>
 	</section>
 
 	<!-- Create Project Section -->
-	<section class="bg-white py-20">
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-			<div class="text-center mb-12">
-				<h2 class="text-3xl font-bold text-gray-900 mb-4">Create a Project</h2>
-				<p class="text-lg text-gray-600 mb-8">
+	<section class="relative py-20 bg-gradient-to-br from-gray-900 to-black">
+		<div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
+		<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+					Create Your <span class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Dream App</span>
+				</h2>
+				<p class="text-xl text-gray-400 max-w-3xl mx-auto">
 					Choose your preferred package manager and get started in seconds
 				</p>
 			</div>
 			
 			<!-- Package Manager Tabs -->
-			<div class="bg-gray-50 rounded-lg p-6 max-w-2xl mx-auto">
-				<div class="flex flex-wrap gap-2 mb-6 justify-center">
-					<button class="px-4 py-2 bg-white border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
+			<div class="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 max-w-4xl mx-auto border border-gray-800/50">
+				<div class="flex flex-wrap gap-2 mb-8 justify-center">
+					<button class="px-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-lg text-sm font-medium text-gray-400 hover:bg-gray-700/50 hover:text-white transition-all duration-300">
 						Bash
 					</button>
-					<button class="px-4 py-2 bg-white border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
+					<button class="px-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-lg text-sm font-medium text-gray-400 hover:bg-gray-700/50 hover:text-white transition-all duration-300">
 						PowerShell
 					</button>
-					<button class="px-4 py-2 bg-white border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
+					<button class="px-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-lg text-sm font-medium text-gray-400 hover:bg-gray-700/50 hover:text-white transition-all duration-300">
 						Fish
 					</button>
-					<button class="px-4 py-2 bg-orange-600 text-white border border-orange-600 rounded-md text-sm font-medium">
+					<button class="px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white border border-purple-500/50 rounded-lg text-sm font-medium">
 						npm
 					</button>
-					<button class="px-4 py-2 bg-white border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
+					<button class="px-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-lg text-sm font-medium text-gray-400 hover:bg-gray-700/50 hover:text-white transition-all duration-300">
 						Yarn
 					</button>
-					<button class="px-4 py-2 bg-white border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
+					<button class="px-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-lg text-sm font-medium text-gray-400 hover:bg-gray-700/50 hover:text-white transition-all duration-300">
 						pnpm
 					</button>
-					<button class="px-4 py-2 bg-white border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
+					<button class="px-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-lg text-sm font-medium text-gray-400 hover:bg-gray-700/50 hover:text-white transition-all duration-300">
 						deno
 					</button>
-					<button class="px-4 py-2 bg-white border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
+					<button class="px-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-lg text-sm font-medium text-gray-400 hover:bg-gray-700/50 hover:text-white transition-all duration-300">
 						bun
 					</button>
-					<button class="px-4 py-2 bg-white border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
+					<button class="px-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-lg text-sm font-medium text-gray-400 hover:bg-gray-700/50 hover:text-white transition-all duration-300">
 						Cargo
 					</button>
 				</div>
 				
 				<!-- Command Display -->
-				<div class="bg-gray-900 rounded-lg p-4">
-					<pre class="text-green-400 font-mono text-sm"><code>npx create-ionyx-app@latest</code></pre>
+				<div class="bg-black/50 rounded-xl p-6 border border-gray-800/50">
+					<div class="flex items-center mb-4">
+						<div class="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
+						<div class="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div>
+						<div class="w-3 h-3 bg-green-500 rounded-full mr-4"></div>
+						<span class="text-gray-400 text-sm">Terminal</span>
+					</div>
+					<pre class="text-green-400 font-mono text-lg"><code>npx create-ionyx-app@latest</code></pre>
 				</div>
 			</div>
 		</div>
 	</section>
 
 	<!-- Features Section -->
-	<section class="bg-gray-50 py-20">
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-				<!-- Frontend Independent -->
-				<div class="flex items-start space-x-4">
-					<div class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
-						<span class="text-orange-600 font-bold text-lg">🎨</span>
-					</div>
-					<div>
-						<h3 class="text-xl font-semibold text-gray-900 mb-2">Frontend Independent</h3>
-						<p class="text-gray-600 mb-4">
-							Bring your existing web stack to Ionyx or start that new dream project. Ionyx supports any frontend framework so you don't need to change your stack.
+	<section class="relative py-20 bg-gradient-to-br from-gray-900 to-black">
+		<div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
+		<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+					Built for <span class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Modern Development</span>
+				</h2>
+				<p class="text-xl text-gray-400 max-w-3xl mx-auto">
+					Everything you need to build powerful desktop applications with the simplicity of web development
+				</p>
+			</div>
+			
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<!-- Feature 1 -->
+				<div class="group relative p-6 rounded-xl border border-gray-800/50 bg-gray-900/50 backdrop-blur-sm hover:bg-gray-800/50 transition-all duration-300 hover:-translate-y-2">
+					<div class="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-blue-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+					<div class="relative z-10">
+						<div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-lg flex items-center justify-center mb-4">
+							<span class="text-2xl">🚀</span>
+						</div>
+						<h3 class="text-xl font-semibold text-white mb-3">Universal Framework</h3>
+						<p class="text-gray-400 mb-4">
+							Works with any frontend framework - React, Vue, Svelte, Angular, or vanilla JavaScript. Complete flexibility for your stack.
 						</p>
-						<a href="/docs" class="text-orange-600 hover:text-orange-700 font-medium">
-							Learn more →
-						</a>
+						<div class="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors">
+							<span class="text-sm font-medium">Learn more</span>
+							<svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+							</svg>
+						</div>
 					</div>
 				</div>
 
-				<!-- Cross Platform -->
-				<div class="flex items-start space-x-4">
-					<div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-						<span class="text-blue-600 font-bold text-lg">🌐</span>
-					</div>
-					<div>
-						<h3 class="text-xl font-semibold text-gray-900 mb-2">Cross Platform</h3>
-						<p class="text-gray-600 mb-4">
-							Build your app for Linux, macOS, Windows - all from a single codebase. Write your frontend in JavaScript, application logic in Rust.
+				<!-- Feature 2 -->
+				<div class="group relative p-6 rounded-xl border border-gray-800/50 bg-gray-900/50 backdrop-blur-sm hover:bg-gray-800/50 transition-all duration-300 hover:-translate-y-2">
+					<div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+					<div class="relative z-10">
+						<div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-4">
+							<span class="text-2xl">⚡</span>
+						</div>
+						<h3 class="text-xl font-semibold text-white mb-3">Lightning Fast</h3>
+						<p class="text-gray-400 mb-4">
+							Native performance with Rust backend. No Electron overhead. Start your app in milliseconds, not seconds.
 						</p>
-						<a href="/docs" class="text-blue-600 hover:text-blue-700 font-medium">
-							Learn more →
-						</a>
+						<div class="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors">
+							<span class="text-sm font-medium">Learn more</span>
+							<svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+							</svg>
+						</div>
 					</div>
 				</div>
 
-				<!-- Maximum Security -->
-				<div class="flex items-start space-x-4">
-					<div class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-						<span class="text-green-600 font-bold text-lg">🔒</span>
-					</div>
-					<div>
-						<h3 class="text-xl font-semibold text-gray-900 mb-2">Maximum Security</h3>
-						<p class="text-gray-600 mb-4">
-							Front-of-mind for the Ionyx Team that drives our highest priorities and biggest innovations.
+				<!-- Feature 3 -->
+				<div class="group relative p-6 rounded-xl border border-gray-800/50 bg-gray-900/50 backdrop-blur-sm hover:bg-gray-800/50 transition-all duration-300 hover:-translate-y-2">
+					<div class="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+					<div class="relative z-10">
+						<div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mb-4">
+							<span class="text-2xl">🔒</span>
+						</div>
+						<h3 class="text-xl font-semibold text-white mb-3">Enterprise Security</h3>
+						<p class="text-gray-400 mb-4">
+							Built-in security with Rust's memory safety. Sandboxed execution environment. No security vulnerabilities.
 						</p>
-						<a href="/docs" class="text-green-600 hover:text-green-700 font-medium">
-							Learn more →
-						</a>
+						<div class="inline-flex items-center text-green-400 hover:text-green-300 transition-colors">
+							<span class="text-sm font-medium">Learn more</span>
+							<svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+							</svg>
+						</div>
 					</div>
 				</div>
 
-				<!-- Minimal Size -->
-				<div class="flex items-start space-x-4">
-					<div class="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-						<span class="text-purple-600 font-bold text-lg">📦</span>
-					</div>
-					<div>
-						<h3 class="text-xl font-semibold text-gray-900 mb-2">Minimal Size</h3>
-						<p class="text-gray-600 mb-4">
-							By using the OS's native web renderer, the size of an Ionyx app can be as little as 3MB.
+				<!-- Feature 4 -->
+				<div class="group relative p-6 rounded-xl border border-gray-800/50 bg-gray-900/50 backdrop-blur-sm hover:bg-gray-800/50 transition-all duration-300 hover:-translate-y-2">
+					<div class="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-red-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+					<div class="relative z-10">
+						<div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center mb-4">
+							<span class="text-2xl">📦</span>
+						</div>
+						<h3 class="text-xl font-semibold text-white mb-3">Tiny Bundle Size</h3>
+						<p class="text-gray-400 mb-4">
+							Complete applications in ~3MB. No bloated runtime. Just your app and the essential framework.
 						</p>
-						<a href="/docs" class="text-purple-600 hover:text-purple-700 font-medium">
-							Learn more →
-						</a>
+						<div class="inline-flex items-center text-orange-400 hover:text-orange-300 transition-colors">
+							<span class="text-sm font-medium">Learn more</span>
+							<svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+							</svg>
+						</div>
+					</div>
+				</div>
+
+				<!-- Feature 5 -->
+				<div class="group relative p-6 rounded-xl border border-gray-800/50 bg-gray-900/50 backdrop-blur-sm hover:bg-gray-800/50 transition-all duration-300 hover:-translate-y-2">
+					<div class="absolute inset-0 bg-gradient-to-br from-pink-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+					<div class="relative z-10">
+						<div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-500 rounded-lg flex items-center justify-center mb-4">
+							<span class="text-2xl">🌍</span>
+						</div>
+						<h3 class="text-xl font-semibold text-white mb-3">Cross-Platform</h3>
+						<p class="text-gray-400 mb-4">
+							Windows, macOS, Linux. One codebase, three platforms. Native look and feel on every OS.
+						</p>
+						<div class="inline-flex items-center text-pink-400 hover:text-pink-300 transition-colors">
+							<span class="text-sm font-medium">Learn more</span>
+							<svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+							</svg>
+						</div>
+					</div>
+				</div>
+
+				<!-- Feature 6 -->
+				<div class="group relative p-6 rounded-xl border border-gray-800/50 bg-gray-900/50 backdrop-blur-sm hover:bg-gray-800/50 transition-all duration-300 hover:-translate-y-2">
+					<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+					<div class="relative z-10">
+						<div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center mb-4">
+							<span class="text-2xl">🛠️</span>
+						</div>
+						<h3 class="text-xl font-semibold text-white mb-3">Developer Experience</h3>
+						<p class="text-gray-400 mb-4">
+							Hot reload, instant compilation, comprehensive CLI tools. Focus on building, not configuring.
+						</p>
+						<div class="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors">
+							<span class="text-sm font-medium">Learn more</span>
+							<svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+							</svg>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- Supported By Section -->
-	<section class="bg-white py-20">
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-			<div class="text-center mb-12">
-				<h2 class="text-2xl font-bold text-gray-900 mb-4">Support Ionyx</h2>
-				<p class="text-lg text-gray-600 mb-8">
-					Help us build the future of desktop development
-				</p>
-			</div>
+	<!-- Support Section -->
+	<section class="relative py-20 bg-gradient-to-br from-purple-900 via-blue-900 to-purple-900">
+		<div class="absolute inset-0 overflow-hidden">
+			<div class="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-purple-500/20 to-transparent rounded-full blur-3xl animate-pulse"></div>
+			<div class="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-br from-blue-500/20 to-transparent rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+		</div>
+		
+		<div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+				Support <span class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Ionyx</span>
+			</h2>
+			<p class="text-xl text-gray-300 mb-8">
+				Help us build the future of desktop development
+			</p>
 			
-			<div class="text-center">
-				<div class="mb-8">
-					<h3 class="text-lg font-semibold text-gray-700 mb-4">Become a Sponsor</h3>
-					<p class="text-gray-600 mb-4">
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+				<div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+					<h3 class="text-xl font-semibold text-white mb-4">Become a Sponsor</h3>
+					<p class="text-gray-300 mb-6">
 						Your support helps us maintain and improve Ionyx Framework
 					</p>
-					<div class="flex justify-center space-x-4">
-						<a href="https://opencollective.com/ionyx" class="bg-orange-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-orange-700 transition-colors">
+					<div class="flex flex-col space-y-3">
+						<a href="https://opencollective.com/ionyx" class="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:from-purple-700 hover:to-blue-700 transition-all duration-300">
 							Support on Open Collective
 						</a>
-						<a href="https://github.com/sponsors/ionyx-apps" class="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+						<a href="https://github.com/sponsors/ionyx-apps" class="border border-white/30 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-all duration-300">
 							Sponsor on GitHub
 						</a>
 					</div>
 				</div>
 				
-				<div>
-					<h3 class="text-lg font-semibold text-gray-700 mb-4">Community Contributors</h3>
-					<p class="text-gray-600 mb-4">
+				<div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+					<h3 class="text-xl font-semibold text-white mb-4">Community Contributors</h3>
+					<p class="text-gray-300 mb-6">
 						Built with ❤️ by the open source community
 					</p>
-					<div class="flex justify-center space-x-4">
-						<a href="https://github.com/ionyx-apps/ionyx/graphs/contributors" class="text-gray-600 hover:text-gray-900">
-							<span class="text-sm">View Contributors</span>
+					<div class="flex flex-col space-y-3">
+						<a href="https://github.com/ionyx-apps/ionyx/graphs/contributors" class="border border-white/30 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-all duration-300">
+							View Contributors
 						</a>
-						<a href="https://github.com/ionyx-apps/ionyx/discussions" class="text-gray-600 hover:text-gray-900">
-							<span class="text-sm">Join Discussion</span>
+						<a href="https://github.com/ionyx-apps/ionyx/discussions" class="border border-white/30 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-all duration-300">
+							Join Discussion
 						</a>
-						<a href="https://github.com/ionyx-apps/ionyx/issues" class="text-gray-600 hover:text-gray-900">
-							<span class="text-sm">Report Issues</span>
+						<a href="https://github.com/ionyx-apps/ionyx/issues" class="border border-white/30 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-all duration-300">
+							Report Issues
 						</a>
 					</div>
 				</div>
@@ -194,22 +301,22 @@ import Layout from '../layouts/Layout.astro';
 	</section>
 
 	<!-- Footer -->
-	<footer class="bg-gray-50 border-t border-gray-200 py-8">
+	<footer class="bg-black/50 backdrop-blur-sm border-t border-gray-800/50 py-8">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="text-center">
-				<p class="text-gray-600 mb-4">
+				<p class="text-gray-400 mb-4">
 					Website powered by
 				</p>
 				<div class="flex justify-center space-x-6">
-					<a href="https://opencollective.com/ionyx" class="text-gray-600 hover:text-gray-900">
+					<a href="https://opencollective.com/ionyx" class="text-gray-400 hover:text-gray-300">
 						Support on Open Collective
 					</a>
-					<a href="https://github.com/sponsors/ionyx-apps" class="text-gray-600 hover:text-gray-900">
+					<a href="https://github.com/sponsors/ionyx-apps" class="text-gray-400 hover:text-gray-300">
 						Sponsor on GitHub
 					</a>
 				</div>
 				<p class="text-gray-500 text-sm mt-4">
-					2026 Ionyx Contributors. CC-BY / MIT
+					© 2026 Ionyx Contributors. CC-BY / MIT
 				</p>
 			</div>
 		</div>
