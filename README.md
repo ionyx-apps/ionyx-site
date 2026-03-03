@@ -183,7 +183,7 @@ Apache License 2.0 - [LICENSE](./LICENSE) dosyasına bakın
 ## 🔗 Linkler
 
 - **Ionyx Framework**: https://github.com/ionyx-apps/ionyx
-- **Ionxy CLI**: https://github.com/ionyx-apps/ionyx-cli
+- **Ionyx CLI**: https://github.com/ionyx-apps/ionyx-cli
 - **NPM Paketi**: https://www.npmjs.com/package/ionyx
 - **CLI Komutu**: `npx ionyx create`
 - **Discord**: https://discord.gg/ionyx (Yakında)
