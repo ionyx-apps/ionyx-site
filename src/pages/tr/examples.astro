@@ -1,0 +1,153 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../utils/i18n';
+
+const locale = 'tr';
+const t = useTranslations(locale);
+---
+
+<BaseLayout title="Örnekler - Ionyx Framework" description="Ionyx ile yapılmış örnek projeler">
+	<section class="py-20 hero-gradient">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto text-center">
+				<h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+					Örnekler
+				</h1>
+				<p class="text-xl text-gray-300 leading-relaxed">
+					Ionyx ile ne yapabileceğinizi görün
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="py-20">
+		<div class="container mx-auto px-6">
+			<div class="max-w-6xl mx-auto">
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<!-- Coming Soon Examples -->
+					<div class="glass-dark rounded-xl p-6">
+						<div class="w-12 h-12 bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-lg flex items-center justify-center mb-4">
+							<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-white mb-2">Todo Uygulaması</h3>
+						<p class="text-gray-300 mb-4">React ile basit todo uygulaması</p>
+						<div class="flex items-center space-x-2 text-sm text-gray-400">
+							<span class="px-2 py-1 bg-dark-tertiary rounded">React</span>
+							<span class="px-2 py-1 bg-dark-tertiary rounded">TypeScript</span>
+						</div>
+						<div class="mt-4">
+							<span class="text-yellow-400 text-sm">Yakında</span>
+						</div>
+					</div>
+
+					<div class="glass-dark rounded-xl p-6">
+						<div class="w-12 h-12 bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-lg flex items-center justify-center mb-4">
+							<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-white mb-2">Notlar Uygulaması</h3>
+						<p class="text-gray-300 mb-4">Vue.js ile zengin metin editörü</p>
+						<div class="flex items-center space-x-2 text-sm text-gray-400">
+							<span class="px-2 py-1 bg-dark-tertiary rounded">Vue</span>
+							<span class="px-2 py-1 bg-dark-tertiary rounded">TypeScript</span>
+						</div>
+						<div class="mt-4">
+							<span class="text-yellow-400 text-sm">Yakında</span>
+						</div>
+					</div>
+
+					<div class="glass-dark rounded-xl p-6">
+						<div class="w-12 h-12 bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-lg flex items-center justify-center mb-4">
+							<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-white mb-2">Hesap Makinesi</h3>
+						<p class="text-gray-300 mb-4">Svelte ile basit hesap makinesi</p>
+						<div class="flex items-center space-x-2 text-sm text-gray-400">
+							<span class="px-2 py-1 bg-dark-tertiary rounded">Svelte</span>
+							<span class="px-2 py-1 bg-dark-tertiary rounded">TypeScript</span>
+						</div>
+						<div class="mt-4">
+							<span class="text-yellow-400 text-sm">Yakında</span>
+						</div>
+					</div>
+
+					<div class="glass-dark rounded-xl p-6">
+						<div class="w-12 h-12 bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-lg flex items-center justify-center mb-4">
+							<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-white mb-2">Dosya Yöneticisi</h3>
+						<p class="text-gray-300 mb-4">Vanilla JS ile native dosya gezgini</p>
+						<div class="flex items-center space-x-2 text-sm text-gray-400">
+							<span class="px-2 py-1 bg-dark-tertiary rounded">Vanilla</span>
+							<span class="px-2 py-1 bg-dark-tertiary rounded">JavaScript</span>
+						</div>
+						<div class="mt-4">
+							<span class="text-yellow-400 text-sm">Yakında</span>
+						</div>
+					</div>
+
+					<div class="glass-dark rounded-xl p-6">
+						<div class="w-12 h-12 bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-lg flex items-center justify-center mb-4">
+							<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-white mb-2">Hava Durumu Uygulaması</h3>
+						<p class="text-gray-300 mb-4">API entegrasyonlu hava durumu paneli</p>
+						<div class="flex items-center space-x-2 text-sm text-gray-400">
+							<span class="px-2 py-1 bg-dark-tertiary rounded">React</span>
+							<span class="px-2 py-1 bg-dark-tertiary rounded">API</span>
+						</div>
+						<div class="mt-4">
+							<span class="text-yellow-400 text-sm">Yakında</span>
+						</div>
+					</div>
+
+					<div class="glass-dark rounded-xl p-6">
+						<div class="w-12 h-12 bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-lg flex items-center justify-center mb-4">
+							<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-white mb-2">Sohbet Uygulaması</h3>
+						<p class="text-gray-300 mb-4">WebSocket ile gerçek zamanlı sohbet</p>
+						<div class="flex items-center space-x-2 text-sm text-gray-400">
+							<span class="px-2 py-1 bg-dark-tertiary rounded">WebSocket</span>
+							<span class="px-2 py-1 bg-dark-tertiary rounded">Gerçek zamanlı</span>
+						</div>
+						<div class="mt-4">
+							<span class="text-yellow-400 text-sm">Yakında</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- CTA Section -->
+				<div class="mt-16 text-center">
+					<div class="glass p-8 rounded-xl max-w-2xl mx-auto">
+						<h2 class="text-3xl font-bold text-white mb-4">
+							Kendi Örneğinizi Yapın
+						</h2>
+						<p class="text-gray-300 mb-6">
+							Ionyx projelerinizi toplulukla paylaşın
+						</p>
+						<div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+							<a href="/docs" class="btn-primary w-full sm:w-auto">
+								Hemen Başla
+							</a>
+							<a href="https://github.com/ionyx-apps/ionyx" class="btn-secondary w-full sm:w-auto">
+								GitHub'da Katkıda Bulun
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</BaseLayout>

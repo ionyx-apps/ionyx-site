@@ -1,20 +1,28 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../utils/i18n';
+
+const locale = 'en';
+const t = useTranslations(locale);
 ---
 
-<BaseLayout title="SSS - Ionyx Framework">
+<BaseLayout title="FAQ - Ionyx Framework" description="Frequently asked questions about Ionyx">
 	<section class="py-20 hero-gradient">
 		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<div class="text-center mb-16">
-					<h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
-						Sıkça Sorulan <span class="bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue bg-clip-text text-transparent">Sorular</span>
-					</h1>
-					<p class="text-xl text-gray-300 leading-relaxed">
-						Ionyx hakkında merak edilenler
-					</p>
-				</div>
+			<div class="max-w-4xl mx-auto text-center">
+				<h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+					Frequently Asked <span class="bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue bg-clip-text text-transparent">Questions</span>
+				</h1>
+				<p class="text-xl text-gray-300 leading-relaxed">
+					Everything you need to know about Ionyx
+				</p>
+			</div>
+		</div>
+	</section>
 
+	<section class="py-20">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto">
 				<div class="space-y-6">
 					<!-- Framework Comparison -->
 					<div class="glass-dark rounded-xl overflow-hidden">
@@ -23,7 +31,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 								<div class="w-8 h-8 bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-lg flex items-center justify-center flex-shrink-0">
 									<span class="text-white font-bold text-sm">F</span>
 								</div>
-								<h3 class="text-xl font-semibold text-white">Diğer framework'lerden farkı nedir?</h3>
+								<h3 class="text-xl font-semibold text-white">What's the difference from other frameworks?</h3>
 							</div>
 							<svg class="w-5 h-5 text-gray-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -31,17 +39,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 						</button>
 						<div class="px-6 pb-6 text-gray-300 leading-relaxed">
 							<p class="mb-4">
-								<strong class="text-white">Ionyx, minimalist desktop uygulama geliştirme için tasarlandı.</strong> 
-								Electron, Tauri™ ve diğer framework'ler harika seçeneklerdir, ancak Ionyx farklı bir yaklaşım sunar:
+								<strong class="text-white">Ionyx is designed for minimalist desktop application development.</strong> 
+								Electron, Tauri™, and other frameworks are great options, but Ionyx offers a different approach:
 							</p>
 							<div class="bg-dark-tertiary rounded-lg p-4 border border-dark-border mb-4">
-								<p class="text-sm text-gray-400 mb-2">🎯 <strong class="text-white">Electron:</strong> Full-featured, Node.js tabanlı</p>
-								<p class="text-sm text-gray-400 mb-2">🎯 <strong class="text-white">Tauri™:</strong> Rust tabanlı, geniş ekosistem</p>
-								<p class="text-sm text-gray-400">🎯 <strong class="text-white">Ionyx:</strong> Minimalist, ultra-küçük binary</p>
+								<p class="text-sm text-gray-400 mb-2">🎯 <strong class="text-white">Electron:</strong> Full-featured, Node.js based</p>
+								<p class="text-sm text-gray-400 mb-2">🎯 <strong class="text-white">Tauri™:</strong> Rust based, extensive ecosystem</p>
+								<p class="text-sm text-gray-400">🎯 <strong class="text-white">Ionyx:</strong> Minimalist, ultra-small binary</p>
 							</div>
 							<p class="mb-4">
-								Ionyx, sadece en temel özelliklere odaklanarak sub-3MB runtime hedefler. 
-								Bu, onu küçük ve hızlı uygulamalar için ideal kılar.
+								Ionyx focuses only on the most essential features, targeting sub-3MB runtime. 
+								This makes it ideal for small and fast applications.
 							</p>
 							<p class="text-xs text-gray-500">
 								TAURI is a trademark of The Tauri Programme within the Commons Conservancy.
@@ -56,7 +64,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 								<div class="w-8 h-8 bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-lg flex items-center justify-center flex-shrink-0">
 									<span class="text-white font-bold text-sm">B</span>
 								</div>
-								<h3 class="text-xl font-semibold text-white">1.66MB binary boyutu nasıl mümkün?</h3>
+								<h3 class="text-xl font-semibold text-white">How is the 1.66MB binary size possible?</h3>
 							</div>
 							<svg class="w-5 h-5 text-gray-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -64,24 +72,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 						</button>
 						<div class="px-6 pb-6 text-gray-300 leading-relaxed">
 							<p class="mb-4">
-								Minimalist mühendislik prensipleri sayesinde:
+								Thanks to minimalist engineering principles:
 							</p>
 							<ul class="space-y-2 mb-4">
 								<li class="flex items-start">
 									<span class="text-green-400 mr-2">•</span>
-									<span>Hiçbir gereksiz dependency yok</span>
+									<span>No unnecessary dependencies</span>
 								</li>
 								<li class="flex items-start">
 									<span class="text-green-400 mr-2">•</span>
-									<span>Sadece en temel WRY (0.54.2) ve TAO (0.34.5) kütüphaneleri</span>
+									<span>Only the most essential WRY (0.54.2) and TAO (0.34.5) libraries</span>
 								</li>
 								<li class="flex items-start">
 									<span class="text-green-400 mr-2">•</span>
-									<span>Ekstra runtime taşımıyoruz (sistem WebView kullanıyoruz)</span>
+									<span>No extra runtime (uses system WebView)</span>
 								</li>
 								<li class="flex items-start">
 									<span class="text-green-400 mr-2">•</span>
-									<span>Optimize edilmiş Rust kodu</span>
+									<span>Optimized Rust code</span>
 								</li>
 							</ul>
 							<div class="bg-dark-tertiary rounded-lg p-4 border border-dark-border">
@@ -99,7 +107,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 								<div class="w-8 h-8 bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-lg flex items-center justify-center flex-shrink-0">
 									<span class="text-white font-bold text-sm">F</span>
 								</div>
-								<h3 class="text-xl font-semibold text-white">Hangi frontend framework'lerini destekliyor?</h3>
+								<h3 class="text-xl font-semibold text-white">Which frontend frameworks does it support?</h3>
 							</div>
 							<svg class="w-5 h-5 text-gray-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -107,8 +115,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 						</button>
 						<div class="px-6 pb-6 text-gray-300 leading-relaxed">
 							<p class="mb-4">
-								<strong class="text-white">Ionyx frontend-agnostiktir.</strong> 
-								Herhangi bir frontend framework ile çalışabilir:
+								<strong class="text-white">Ionyx is frontend-agnostic.</strong> 
+								It works with any frontend framework:
 							</p>
 							<ul class="space-y-2 mb-4">
 								<li class="flex items-start">
@@ -130,7 +138,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 							</ul>
 							<div class="bg-dark-tertiary rounded-lg p-4 border border-dark-border">
 								<p class="text-sm text-gray-400">
-									<strong class="text-white">Not:</strong> Ionyx sadece backend'i sağlar, frontend tamamen size aittir.
+									<strong class="text-white">Note:</strong> Ionyx only provides the backend, frontend is entirely yours.
 								</p>
 							</div>
 						</div>
@@ -143,7 +151,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 								<div class="w-8 h-8 bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-lg flex items-center justify-center flex-shrink-0">
 									<span class="text-white font-bold text-sm">P</span>
 								</div>
-								<h3 class="text-xl font-semibold text-white">Performans avantajları neler?</h3>
+								<h3 class="text-xl font-semibold text-white">What are the performance advantages?</h3>
 							</div>
 							<svg class="w-5 h-5 text-gray-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -151,29 +159,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 						</button>
 						<div class="px-6 pb-6 text-gray-300 leading-relaxed">
 							<p class="mb-4">
-								<strong class="text-white">Ionyx'in performans avantajları:</strong>
+								<strong class="text-white">Ionyx's performance advantages:</strong>
 							</p>
 							<ul class="space-y-2 mb-4">
 								<li class="flex items-start">
 									<span class="text-green-400 mr-2">•</span>
-									<span>&lt;30ms uygulama başlangıç süresi</span>
+									<span>&lt;30ms application startup time</span>
 								</li>
 								<li class="flex items-start">
 									<span class="text-green-400 mr-2">•</span>
-									<span>10-20MB memory kullanımı</span>
+									<span>10-20MB memory usage</span>
 								</li>
 								<li class="flex items-start">
 									<span class="text-green-400 mr-2">•</span>
-									<span>Minimal CPU kullanımı</span>
+									<span>Minimal CPU usage</span>
 								</li>
 								<li class="flex items-start">
 									<span class="text-green-400 mr-2">•</span>
-									<span>Sistem WebView ile native performans</span>
+									<span>System WebView for native performance</span>
 								</li>
 							</ul>
 							<div class="bg-dark-tertiary rounded-lg p-4 border border-dark-border">
 								<p class="text-sm text-gray-400">
-									<strong class="text-white">Karşılaştırma:</strong> Electron (100-200MB) vs Ionyx (10-20MB)
+									<strong class="text-white">Comparison:</strong> Electron (100-200MB) vs Ionyx (10-20MB)
 								</p>
 							</div>
 						</div>
@@ -186,7 +194,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 								<div class="w-8 h-8 bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-lg flex items-center justify-center flex-shrink-0">
 									<span class="text-white font-bold text-sm">P</span>
 								</div>
-								<h3 class="text-xl font-semibold text-white">Production ready mı?</h3>
+								<h3 class="text-xl font-semibold text-white">Is it production ready?</h3>
 							</div>
 							<svg class="w-5 h-5 text-gray-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -194,29 +202,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 						</button>
 						<div class="px-6 pb-6 text-gray-300 leading-relaxed">
 							<p class="mb-4">
-								<strong class="text-white">Ionyx şu anda geliştirme aşamasındadır.</strong>
+								<strong class="text-white">Ionyx is currently in development.</strong>
 							</p>
 							<ul class="space-y-2 mb-4">
 								<li class="flex items-start">
 									<span class="text-yellow-400 mr-2">•</span>
-									<span>Core API'ler geliştiriliyor</span>
+									<span>Core APIs are being developed</span>
 								</li>
 								<li class="flex items-start">
 									<span class="text-yellow-400 mr-2">•</span>
-									<span>CLI araçları üzerinde çalışılıyor</span>
+									<span>CLI tools are being worked on</span>
 								</li>
 								<li class="flex items-start">
 									<span class="text-yellow-400 mr-2">•</span>
-									<span>Dokümantasyon genişletiliyor</span>
+									<span>Documentation is being expanded</span>
 								</li>
 								<li class="flex items-start">
 									<span class="text-green-400 mr-2">•</span>
-									<span>Topluluk katkılarına açıktır</span>
+									<span>Open to community contributions</span>
 								</li>
 							</ul>
 							<div class="bg-dark-tertiary rounded-lg p-4 border border-dark-border">
 								<p class="text-sm text-gray-400">
-									<strong class="text-white">Durum:</strong> Alpha sürümünde, production için hazır değil
+									<strong class="text-white">Status:</strong> Alpha version, not ready for production
 								</p>
 							</div>
 						</div>
@@ -229,7 +237,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 								<div class="w-8 h-8 bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-lg flex items-center justify-center flex-shrink-0">
 									<span class="text-white font-bold text-sm">L</span>
 								</div>
-								<h3 class="text-xl font-semibold text-white">Öğrenme eğrisi nasıl?</h3>
+								<h3 class="text-xl font-semibold text-white">How is the learning curve?</h3>
 							</div>
 							<svg class="w-5 h-5 text-gray-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -237,29 +245,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 						</button>
 						<div class="px-6 pb-6 text-gray-300 leading-relaxed">
 							<p class="mb-4">
-								<strong class="text-white">Ionyx öğrenmesi kolaydır:</strong>
+								<strong class="text-white">Ionyx is easy to learn:</strong>
 							</p>
 							<ul class="space-y-2 mb-4">
 								<li class="flex items-start">
 									<span class="text-green-400 mr-2">•</span>
-									<span>Basit CLI komutları</span>
+									<span>Simple CLI commands</span>
 								</li>
 								<li class="flex items-start">
 									<span class="text-green-400 mr-2">•</span>
-									<span>Standart web teknolojileri</span>
+									<span>Standard web technologies</span>
 								</li>
 								<li class="flex items-start">
 									<span class="text-green-400 mr-2">•</span>
-									<span>Az sayıda konsept</span>
+									<span>Few concepts to learn</span>
 								</li>
 								<li class="flex items-start">
 									<span class="text-green-400 mr-2">•</span>
-									<span>Kapsamlı dokümantasyon</span>
+									<span>Comprehensive documentation</span>
 								</li>
 							</ul>
 							<div class="bg-dark-tertiary rounded-lg p-4 border border-dark-border">
 								<p class="text-sm text-gray-400">
-									<strong class="text-white">Gereksinimler:</strong> HTML/CSS/JS ve temel Rust bilgisi yeterli
+									<strong class="text-white">Requirements:</strong> HTML/CSS/JS and basic Rust knowledge is sufficient
 								</p>
 							</div>
 						</div>
@@ -270,10 +278,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 				<div class="mt-16 text-center">
 					<div class="glass p-8 rounded-xl max-w-2xl mx-auto">
 						<h2 class="text-3xl font-bold text-white mb-4">
-							Daha fazla soru mu?
+							Have more questions?
 						</h2>
 						<p class="text-gray-300 mb-6">
-							Topluluğumuza katılın veya GitHub'da tartışın.
+							Join our community or discuss on GitHub.
 						</p>
 						<div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
 							<a href="https://github.com/ionyx-apps/ionyx/discussions" class="btn-primary w-full sm:w-auto">
