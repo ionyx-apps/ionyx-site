@@ -1,0 +1,279 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../utils/i18n';
+
+const locale = 'tr';
+const t = useTranslations(locale);
+---
+
+<BaseLayout title="Dokümantasyon - Ionyx Framework">
+	<!-- Hero Section -->
+	<section class="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient">
+		<div class="absolute inset-0 overflow-hidden">
+			<div class="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-purple-500/20 to-transparent rounded-full blur-3xl animate-pulse"></div>
+			<div class="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-br from-blue-500/20 to-transparent rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+			<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-pink-500/20 to-transparent rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+		</div>
+		
+		<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<div class="inline-flex items-center px-4 py-2 glass px-4 py-2 rounded-full mb-8">
+				<span class="text-sm text-gray-300">📚 Kapsamlı Dokümantasyon</span>
+			</div>
+			
+			<h1 class="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight">
+				<span class="bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue bg-clip-text text-transparent">Dokümantasyon</span>
+			</h1>
+			<p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+				Ionyx ile masaüstü uygulamaları geliştirme hakkında bilmeniz gereken her şey
+			</p>
+			<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+				<a href="#quick-start" class="btn-primary">
+					{t.common.getStarted}
+				</a>
+				<a href="#api-reference" class="btn-secondary">
+					{t.common.learnMore}
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Quick Links -->
+	<section class="py-20 bg-dark-secondary">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto">
+				<h2 class="text-3xl font-bold text-white mb-8 text-center">
+					Hızlı Link'ler
+				</h2>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+					<a href="#installation" class="glass-dark p-6 rounded-xl hover:scale-105 transition-transform">
+						<div class="w-12 h-12 bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-lg flex items-center justify-center mb-4">
+							<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2H9a2 2 0 00-2 2z"></path>
+							</svg>
+						</div>
+						<h3 class="text-lg font-semibold text-white mb-2">Kurulum</h3>
+						<p class="text-gray-300 text-sm">Ionyx'i kurun ve çalıştırın</p>
+					</a>
+					<a href="#quick-start" class="glass-dark p-6 rounded-xl hover:scale-105 transition-transform">
+						<div class="w-12 h-12 bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-lg flex items-center justify-center mb-4">
+							<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+							</svg>
+						</div>
+						<h3 class="text-lg font-semibold text-white mb-2">Hızlı Başlangıç</h3>
+						<p class="text-gray-300 text-sm">İlk Ionyx uygulamanızı oluşturun</p>
+					</a>
+					<a href="#api-reference" class="glass-dark p-6 rounded-xl hover:scale-105 transition-transform">
+						<div class="w-12 h-12 bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-lg flex items-center justify-center mb-4">
+							<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+							</svg>
+						</div>
+						<h3 class="text-lg font-semibold text-white mb-2">API Referansı</h3>
+						<p class="text-gray-300 text-sm">Tam API dokümantasyonu</p>
+					</a>
+					<a href="#guides" class="glass-dark p-6 rounded-xl hover:scale-105 transition-transform">
+						<div class="w-12 h-12 bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-lg flex items-center justify-center mb-4">
+							<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5.071 6.253 6.253H13C13.779 6.253 14.012 5.477 15.213 6.19zM15.213 16.19C13.956 17.125 12.431 17.125 11.068c0-6.627-5.373-12-12-12H5.373c0-6.627 5.373-12 12-12h6.841c-4.762 0-8.636 3.864-8.636 8.636h0m-13.281 0c-5.626 0-10.225 4.468-10.225 10.225v0c0-6.627 5.373-12 12-12h6.841c-4.762 0-8.636 3.864-8.636 8.636h0"></path>
+							</svg>
+						</div>
+						<h3 class="text-lg font-semibold text-white mb-2">Rehberler</h3>
+						<p class="text-gray-300 text-sm">Adım adım adım öğreticiler</p>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Installation -->
+		<section id="installation" class="py-20">
+			<div class="container mx-auto px-6">
+				<div class="max-w-4xl mx-auto">
+					<h2 class="text-3xl font-bold text-white mb-8 text-center">
+						Kurulum
+					</h2>
+					<div class="glass-dark p-8 rounded-xl">
+						<div class="mb-6">
+							<h3 class="text-xl font-semibold text-white mb-4">Ön Gereksinimler</h3>
+							<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+								<div class="bg-dark-tertiary rounded-lg p-4">
+									<p class="text-sm text-gray-400 mb-1">Node.js 18+</p>
+									<p class="text-xs text-gray-500">Paket yönetimi için</p>
+								</div>
+								<div class="bg-dark-tertiary rounded-lg p-4">
+									<p class="text-sm text-gray-400 mb-1">Rust 1.70+</p>
+									<p class="text-xs text-gray-500">Uygulamalar derlemek için</p>
+								</div>
+							</div>
+						</div>
+					<div class="mb-6">
+						<h3 class="text-xl font-semibold text-white mb-4">Ionyx CLI Kurulumu</h3>
+						<div class="bg-dark-primary rounded-lg p-4 font-mono text-sm">
+							<code class="text-green-400">npm install -g ionyx</code>
+						</div>
+					</div>
+					<div class="text-center">
+						<p class="text-gray-400 mb-4">Veya yarn veya pnpm kullanın:</p>
+						<div class="flex flex-wrap justify-center gap-2">
+							<code class="bg-dark-primary rounded-lg px-3 py-2 text-sm">yarn global add ionyx</code>
+							<code class="bg-dark-primary rounded-lg px-3 py-2 text-sm">pnpm add -g ionyx</code>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Quick Start -->
+		<section id="quick-start" class="py-20 bg-dark-secondary">
+			<div class="container mx-auto px-6">
+				<div class="max-w-4xl mx-auto">
+					<h2 class="text-3xl font-bold text-white mb-8 text-center">
+						Hızlı Başlangıç
+					</h2>
+					<div class="glass-dark p-8 rounded-xl">
+						<div class="mb-6">
+							<h3 class="text-xl font-semibold text-white mb-4">Proje Oluşturun</h3>
+							<div class="bg-dark-primary rounded-lg p-4 font-mono text-sm">
+								<code class="text-green-400">ionyx create my-app</code>
+							</div>
+						</div>
+						<div class="mb-6">
+							<h3 class="text-xl font-semibold text-white mb-4">Template Seçin</h3>
+							<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+								<button class="px-4 py-2 bg-ionyx-neon-purple text-white rounded-lg transition-colors">
+									React
+								</button>
+								<button class="px-4 py-2 bg-dark-tertiary text-gray-300 rounded-lg transition-colors hover:bg-dark-primary">
+									Vue
+								</button>
+								<button class="px-4 py-2 bg-dark-tertiary text-gray-300 rounded-lg transition-colors hover:bg-dark-primary">
+									Svelte
+								</button>
+								<button class="px-4 py-2 bg-dark-tertiary text-gray-300 rounded-lg transition-colors hover:bg-dark-primary">
+									Vanilla
+								</button>
+							</div>
+						</div>
+						<div class="text-center">
+							<p class="text-gray-400 mb-4">Proje dizinine gidin:</p>
+							<div class="bg-dark-primary rounded-lg p-4 font-mono text-sm">
+								<code class="text-green-400">cd my-app</code>
+							</div>
+						</div>
+						<div class="text-center">
+							<p class="text-gray-400 mb-4">Geliştirme sunucusunu başlatın:</p>
+							<div class="bg-dark-primary rounded-lg p-4 font-mono text-sm">
+								<code class="text-green-400">ionyx dev</code>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- API Reference -->
+		<section id="api-reference" class="py-20">
+			<div class="container mx-auto px-6">
+				<div class="max-w-6xl mx-auto">
+					<h2 class="text-3xl font-bold text-white mb-8 text-center">
+						API Referansı
+					</h2>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+						<div class="glass-dark rounded-xl p-6">
+							<h3 class="text-xl font-semibold text-white mb-4">Core API</h3>
+							<div class="space-y-4">
+								<div class="bg-dark-tertiary rounded-lg p-4">
+									<h4 class="text-lg font-semibold text-white mb-2">ionyx.create(options)</h4>
+									<p class="text-gray-300 text-sm mb-2">Yeni Ionyx projesi oluşturun</p>
+									<div class="bg-dark-primary rounded p-2 font-mono text-xs">
+										<code class="text-green-400">const app = ionyx.create({ template: 'react' })</code>
+									</div>
+								</div>
+								<div class="bg-dark-tertiary rounded-lg p-4">
+									<h4 class="text-lg font-semibold text-white mb-2">ionyx.build(options)</h4>
+									<p class="text-gray-300 text-sm mb-2">Uygulamanızı production için derlen</p>
+									<div class="bg-dark-primary rounded p-2 font-mono text-xs">
+										<code class="text-green-400">ionyx.build({ target: 'production' })</code>
+									</div>
+								</div>
+								<div class="bg-dark-tertiary rounded-lg p-4">
+									<h4 class="text-lg font-semibold text-white mb-2">ionyx.dev(options)</h4>
+									<p class="text-gray-300 text-sm mb-2">Geliştirme sunucusunu başlatın</p>
+									<div class="bg-dark-primary rounded p-2 font-mono text-xs">
+										<code class="text-green-400">ionyx.dev({ port: 3000 })</code>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="glass-dark rounded-xl p-6">
+							<h3 class="text-xl font-semibold text-white mb-4">Window API</h3>
+							<div class="space-y-4">
+								<div class="bg-dark-tertiary rounded-lg p-4">
+									<h4 class="text-lg font-semibold text-white mb-2">window.setTitle(title)</h4>
+									<p class="text-gray-300 text-sm mb-2">Pencere başlığı ayarla</p>
+									<div class="bg-dark-primary rounded p-2 font-mono text-xs">
+										<code class="text-green-400">window.setTitle('Benim Uygulamam')</code>
+									</div>
+								</div>
+								<div class="bg-dark-tertiary rounded-lg p-4">
+									<h4 class="text-lg font-semibold text-white mb-2">window.setSize(width, height)</h4>
+									<p class="text-gray-300 text-sm mb-2">Pencere boyutunu ayarla</p>
+									<div class="bg-dark-primary rounded p-2 font-mono text-xs">
+										<code class="text-green-400">window.setSize(800, 600)</code>
+									</div>
+								</div>
+								<div class="bg-dark-tertiary rounded-lg p-4">
+									<h4 class="text-lg font-semibold text-white mb-2">window.center()</h4>
+									<p class="text-gray-300 text-sm mb-2">Pencere ekrana ortala</p>
+									<div class="bg-dark-primary rounded p-2 font-mono text-xs">
+										<code class="text-green-400">window.center()</code>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Guides -->
+		<section id="guides" class="py-20 bg-dark-secondary">
+			<div class="container mx-auto px-6">
+				<div class="max-w-4xl mx-auto">
+					<h2 class="text-3xl font-bold text-white mb-8 text-center">
+						Rehberler
+					</h2>
+					<div class="space-y-8">
+						<div class="glass-dark rounded-xl p-6">
+							<h3 class="text-xl font-semibold text-white mb-4">Uygulama Geliştirme</h3>
+							<p class="text-gray-300 mb-4">
+								Production-ready Ionyx uygulamaları geliştirme için adım adım kılavuz.
+							</p>
+							<a href="/docs/guides/building-applications" class="text-ionyx-neon-blue hover:text-ionyx-neon-purple transition-colors">
+								Rehberi Oku →
+							</a>
+						</div>
+						<div class="glass-dark rounded-xl p-6">
+							<h3 class="text-xl font-semibold text-white mb-4">Dağıtım</h3>
+							<p class="text-gray-300 mb-4">
+								Ionyx uygulamalarınızı çeşitli platformlara dağıtın.
+							</p>
+							<a href="/docs/guides/deployment" class="text-ionyx-neon-blue hover:text-ionyx-neon-purple transition-colors">
+								Rehberi Oku →
+							</a>
+						</div>
+						<div class="glass-dark rounded-xl p-6">
+							<h3 class="text-xl font-semibold text-white mb-4">Performans</h3>
+							<p class="text-gray-300 mb-4">
+								Ionyx uygulamalarınızı maksimum performans için optimize edin.
+							</p>
+							<a href="/docs/guides/performance" class="text-ionyx-neon-blue hover:text-ionyx-neon-purple transition-colors">
+								Rehberi Oku →
+							</a>
+						</div>
+					</div>
+				</div>
+		</div>
+	</section>
+	</BaseLayout>

@@ -1,3 +1,4 @@
+---
 import { getCollection } from 'astro:content';
 import fs from 'fs';
 
@@ -8,4 +9,5 @@ const debugInfo = posts.map(p => ({
     data: p.data
 }));
 
-fs.writeFileSync('d:/Projects/ionyx-project/ionyx-site/public/debug-data.json', JSON.stringify(debugInfo, null, 2));
+fs.writeFileSync('d:/Projects\ionyx-project\ionyx-site\public/debug-data.json', JSON.stringify(debugInfo, null, 2));
+---
