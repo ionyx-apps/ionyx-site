@@ -3,41 +3,59 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Ionyx Framework - Universal Desktop Framework">
-	<div class="hero-gradient min-h-screen flex items-center relative overflow-hidden">
-		<!-- Background decoration -->
+	<!-- Hero Section -->
+	<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+		<!-- Animated background elements -->
 		<div class="absolute inset-0 overflow-hidden">
-			<div class="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-ionyx-500/20 to-transparent rounded-full blur-3xl floating"></div>
-			<div class="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-ionyx-600/20 to-transparent rounded-full blur-3xl floating" style="animation-delay: 2s;"></div>
+			<div class="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-purple-500/20 to-transparent rounded-full blur-3xl animate-pulse"></div>
+			<div class="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-blue-500/20 to-transparent rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+			<div class="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-r from-cyan-500/10 to-transparent rounded-full blur-2xl animate-pulse" style="animation-delay: 1s;"></div>
 		</div>
 		
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-			<div class="text-center slide-in">
-				<div class="inline-flex items-center px-3 py-1 rounded-full bg-ionyx-100 dark:bg-ionyx-900/50 text-ionyx-700 dark:text-ionyx-300 text-sm font-medium mb-6">
-					🚀 Quantum leap in desktop development
-				</div>
-				
-				<h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-gray-100 mb-6 leading-tight">
-					<span class="text-gradient">Ionyx Framework</span>
-				</h1>
-				
-				<p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-8 max-w-3xl mx-auto leading-relaxed">
-					Universal desktop framework with Rust backend and agnostic frontend. Build high-performance, cross-platform desktop applications with ~3MB single binary distribution.
-				</p>
-				
-				<div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-					<a href="/docs" class="gradient-bg text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200 glow">
-						Get Started
-					</a>
-					<a href="https://github.com/ionyx-apps/ionyx" class="border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-400 dark:hover:border-gray-500 transform hover:-translate-y-1 transition-all duration-200">
+		<!-- Grid pattern overlay -->
+		<div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"%3E%3Cpath d="M30 30m-30 0a30 30 0 1 0 60 0 30 30 0 0 1-60 0zm0 0v60m0-60a30 30 0 1 0 60 0 30 30 0 0 1-60 0zm-30 30h60m-60 0a30 30 0 1 0 60 0 30 30 0 0 1-60 0z"/%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+		
+		<!-- Content -->
+		<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<!-- Badge -->
+			<div class="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-blue-500/20 border border-purple-400/30 backdrop-blur-sm mb-8">
+				<span class="text-purple-300 text-sm font-medium">🚀 Quantum leap in desktop development</span>
+			</div>
+			
+			<!-- Main heading -->
+			<h1 class="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight">
+				<span class="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+					Ionyx Framework
+				</span>
+			</h1>
+			
+			<!-- Description -->
+			<p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+				Universal desktop framework with Rust backend and agnostic frontend. Build high-performance, cross-platform desktop applications with ~3MB single binary distribution.
+			</p>
+			
+			<!-- CTA Buttons -->
+			<div class="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+				<a href="/docs" class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg hover:from-purple-700 hover:to-blue-700 transform hover:-translate-y-1 transition-all duration-300 shadow-2xl hover:shadow-purple-500/25">
+					<span class="relative z-10">Get Started</span>
+					<div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition-opacity"></div>
+				</a>
+				<a href="https://github.com/ionyx-apps/ionyx" class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white border border-gray-600/50 rounded-lg hover:bg-gray-800/50 transform hover:-translate-y-1 transition-all duration-300">
+					<span class="flex items-center">
+						<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+							<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+						</svg>
 						View on GitHub
-					</a>
-				</div>
-				
-				<!-- Quick install command -->
-				<div class="bg-gray-900 dark:bg-black rounded-lg p-6 max-w-2xl mx-auto shadow-2xl">
+					</span>
+				</a>
+			</div>
+			
+			<!-- Quick Install Command -->
+			<div class="relative max-w-2xl mx-auto">
+				<div class="bg-gray-900/80 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 shadow-2xl">
 					<div class="flex items-center justify-between mb-4">
 						<span class="text-sm text-gray-400 font-medium">Quick Install</span>
-						<button class="text-gray-400 hover:text-white transition-colors" onclick="navigator.clipboard.writeText('npx create-ionyx-app')">
+						<button class="text-gray-400 hover:text-white transition-colors p-2 rounded-lg hover:bg-gray-700" onclick="navigator.clipboard.writeText('npx create-ionyx-app')">
 							<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
 							</svg>
@@ -47,208 +65,227 @@ import Layout from '../layouts/Layout.astro';
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 
 	<!-- Features Section -->
-	<div class="py-24 bg-white">
+	<section class="py-24 bg-gradient-to-b from-gray-900 to-black">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-			<div class="text-center mb-16 slide-in">
-				<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose Ionyx?</h2>
-				<p class="text-lg text-gray-600 max-w-2xl mx-auto">
+			<div class="text-center mb-16">
+				<h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Why Choose Ionyx?</h2>
+				<p class="text-xl text-gray-300 max-w-2xl mx-auto">
 					Experience the perfect blend of Rust performance and modern web technologies
 				</p>
 			</div>
 			
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-				<div class="card-hover bg-white p-8 rounded-xl border border-gray-200 text-center slide-in">
-					<div class="text-5xl mb-6 floating">🦀</div>
-					<h3 class="text-xl font-semibold text-gray-900 mb-3">Rust Backend</h3>
-					<p class="text-gray-600 leading-relaxed">
+				<div class="group relative bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700/50 text-center hover:border-purple-500/50 transition-all duration-300 hover:transform hover:-translate-y-2">
+					<div class="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-orange-500/20 to-transparent rounded-full blur-xl"></div>
+					<div class="text-6xl mb-6">🦀</div>
+					<h3 class="text-2xl font-semibold text-white mb-4">Rust Backend</h3>
+					<p class="text-gray-300 leading-relaxed">
 						Memory-safe, high-performance backend with TAO/WRY for native window management and system integration
 					</p>
+					<div class="mt-6 flex justify-center">
+						<span class="inline-flex items-center px-3 py-1 rounded-full bg-orange-500/20 text-orange-400 text-xs font-medium">
+							High Performance
+						</span>
+					</div>
 				</div>
 				
-				<div class="card-hover bg-white p-8 rounded-xl border border-gray-200 text-center slide-in" style="animation-delay: 0.1s;">
-					<div class="text-5xl mb-6 floating" style="animation-delay: 1s;">🎨</div>
-					<h3 class="text-xl font-semibold text-gray-900 mb-3">Frontend Agnostic</h3>
-					<p class="text-gray-600 leading-relaxed">
+				<div class="group relative bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700/50 text-center hover:border-blue-500/50 transition-all duration-300 hover:transform hover:-translate-y-2" style="animation-delay: 0.1s;">
+					<div class="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-blue-500/20 to-transparent rounded-full blur-xl"></div>
+					<div class="text-6xl mb-6">🎨</div>
+					<h3 class="text-2xl font-semibold text-white mb-4">Frontend Agnostic</h3>
+					<p class="text-gray-300 leading-relaxed">
 						Support for React, Svelte, Leptos, or vanilla HTML/JS - use what you love with zero configuration
 					</p>
+					<div class="mt-6 flex justify-center">
+						<span class="inline-flex items-center px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-xs font-medium">
+							Flexible
+						</span>
+					</div>
 				</div>
 				
-				<div class="card-hover bg-white p-8 rounded-xl border border-gray-200 text-center slide-in" style="animation-delay: 0.2s;">
-					<div class="text-5xl mb-6 floating" style="animation-delay: 2s;">📦</div>
-					<h3 class="text-xl font-semibold text-gray-900 mb-3">Single Binary</h3>
-					<p class="text-gray-600 leading-relaxed">
+				<div class="group relative bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700/50 text-center hover:border-green-500/50 transition-all duration-300 hover:transform hover:-translate-y-2" style="animation-delay: 0.2s;">
+					<div class="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-green-500/20 to-transparent rounded-full blur-xl"></div>
+					<div class="text-6xl mb-6">📦</div>
+					<h3 class="text-2xl font-semibold text-white mb-4">Single Binary</h3>
+					<p class="text-gray-300 leading-relaxed">
 						~3MB distribution with embedded frontend assets - no external dependencies required
 					</p>
+					<div class="mt-6 flex justify-center">
+						<span class="inline-flex items-center px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-xs font-medium">
+							Portable
+						</span>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 
 	<!-- Architecture Section -->
-	<div class="py-24 bg-gray-50">
+	<section class="py-24 bg-black">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-				<div class="slide-in">
-					<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+				<div class="space-y-8">
+					<h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
 						Modern Architecture
 					</h2>
-					<p class="text-lg text-gray-600 mb-8">
+					<p class="text-xl text-gray-300 mb-8">
 						Built with modern technologies and best practices in mind. Ionyx Framework combines the power of Rust with the flexibility of web technologies.
 					</p>
 					
 					<div class="space-y-6">
-						<div class="flex items-start space-x-4">
-							<div class="flex-shrink-0 w-8 h-8 bg-ionyx-100 rounded-lg flex items-center justify-center">
-								<span class="text-ionyx-600 font-semibold">1</span>
+						<div class="flex items-start space-x-4 group">
+							<div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl flex items-center justify-center text-white font-bold">
+								1
 							</div>
 							<div>
-								<h3 class="font-semibold text-gray-900 mb-1">Rust Backend</h3>
-								<p class="text-gray-600">High-performance, memory-safe backend with native system access</p>
+								<h3 class="text-xl font-semibold text-white mb-2 group-hover:text-purple-400 transition-colors">Rust Backend</h3>
+								<p class="text-gray-400">High-performance, memory-safe backend with native system access</p>
 							</div>
 						</div>
 						
-						<div class="flex items-start space-x-4">
-							<div class="flex-shrink-0 w-8 h-8 bg-ionyx-100 rounded-lg flex items-center justify-center">
-								<span class="text-ionyx-600 font-semibold">2</span>
+						<div class="flex items-start space-x-4 group">
+							<div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-xl flex items-center justify-center text-white font-bold">
+								2
 							</div>
 							<div>
-								<h3 class="font-semibold text-gray-900 mb-1">IPC Bridge</h3>
-								<p class="text-gray-600">Secure communication between frontend and backend</p>
+								<h3 class="text-xl font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors">IPC Bridge</h3>
+								<p class="text-gray-400">Secure communication between frontend and backend</p>
 							</div>
 						</div>
 						
-						<div class="flex items-start space-x-4">
-							<div class="flex-shrink-0 w-8 h-8 bg-ionyx-100 rounded-lg flex items-center justify-center">
-								<span class="text-ionyx-600 font-semibold">3</span>
+						<div class="flex items-start space-x-4 group">
+							<div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-600 to-green-600 rounded-xl flex items-center justify-center text-white font-bold">
+								3
 							</div>
 							<div>
-								<h3 class="font-semibold text-gray-900 mb-1">Frontend</h3>
-								<p class="text-gray-600">Your choice of framework with embedded assets</p>
+								<h3 class="text-xl font-semibold text-white mb-2 group-hover:text-cyan-400 transition-colors">Frontend</h3>
+								<p class="text-gray-400">Your choice of framework with embedded assets</p>
 							</div>
 						</div>
 					</div>
 				</div>
 				
-				<div class="slide-in" style="animation-delay: 0.3s;">
-					<div class="bg-white p-8 rounded-xl border border-gray-200 shadow-lg">
+				<div class="relative">
+					<div class="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-blue-600/20 rounded-2xl blur-xl"></div>
+					<div class="relative bg-gray-900/80 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50">
 						<div class="text-center mb-6">
-							<div class="inline-flex items-center px-3 py-1 rounded-full bg-ionyx-100 text-ionyx-700 text-sm font-medium mb-4">
+							<div class="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-600/20 to-blue-600/20 text-purple-300 text-sm font-medium mb-4">
 								Architecture Overview
 							</div>
 						</div>
 						
 						<div class="space-y-4">
-							<div class="bg-gray-50 p-4 rounded-lg border-l-4 border-ionyx-600">
-								<div class="font-semibold text-gray-900">Frontend Layer</div>
-								<div class="text-sm text-gray-600">React, Svelte, Leptos, or Vanilla</div>
+							<div class="bg-gray-800/50 p-4 rounded-xl border-l-4 border-purple-500 hover:bg-gray-800/70 transition-colors">
+								<div class="font-semibold text-white">Frontend Layer</div>
+								<div class="text-sm text-gray-400">React, Svelte, Leptos, or Vanilla</div>
 							</div>
 							
-							<div class="bg-gray-50 p-4 rounded-lg border-l-4 border-ionyx-500">
-								<div class="font-semibold text-gray-900">IPC Bridge</div>
-								<div class="text-sm text-gray-600">Secure JavaScript-Rust communication</div>
+							<div class="bg-gray-800/50 p-4 rounded-xl border-l-4 border-blue-500 hover:bg-gray-800/70 transition-colors">
+								<div class="font-semibold text-white">IPC Bridge</div>
+								<div class="text-sm text-gray-400">Secure JavaScript-Rust communication</div>
 							</div>
 							
-							<div class="bg-gray-50 p-4 rounded-lg border-l-4 border-ionyx-400">
-								<div class="font-semibold text-gray-900">Rust Backend</div>
-								<div class="text-sm text-gray-600">TAO/WRY window management</div>
+							<div class="bg-gray-800/50 p-4 rounded-xl border-l-4 border-cyan-500 hover:bg-gray-800/70 transition-colors">
+								<div class="font-semibold text-white">Rust Backend</div>
+								<div class="text-sm text-gray-400">TAO/WRY window management</div>
 							</div>
 							
-							<div class="bg-gray-50 p-4 rounded-lg border-l-4 border-ionyx-300">
-								<div class="font-semibold text-gray-900">System Integration</div>
-								<div class="text-sm text-gray-600">Native OS APIs and file system</div>
+							<div class="bg-gray-800/50 p-4 rounded-xl border-l-4 border-green-500 hover:bg-gray-800/70 transition-colors">
+								<div class="font-semibold text-white">System Integration</div>
+								<div class="text-sm text-gray-400">Native OS APIs and file system</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 
 	<!-- Comparison Section -->
-	<div class="py-24 bg-white">
+	<section class="py-24 bg-gradient-to-b from-black to-gray-900">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-			<div class="text-center mb-16 slide-in">
-				<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Compare with Others</h2>
-				<p class="text-lg text-gray-600 max-w-2xl mx-auto">
+			<div class="text-center mb-16">
+				<h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Compare with Others</h2>
+				<p class="text-xl text-gray-300 max-w-2xl mx-auto">
 					See how Ionyx stacks up against popular desktop frameworks
 				</p>
 			</div>
 			
 			<div class="overflow-x-auto">
-				<div class="bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden">
-					<table class="min-w-full divide-y divide-gray-200">
-						<thead class="bg-gray-50">
+				<div class="bg-gray-900/80 backdrop-blur-sm rounded-2xl border border-gray-700/50 overflow-hidden">
+					<table class="min-w-full divide-y divide-gray-700">
+						<thead class="bg-gray-800/50">
 							<tr>
-								<th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Feature</th>
-								<th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center">
-									<div class="inline-flex items-center px-3 py-1 rounded-full bg-ionyx-100 text-ionyx-700 text-sm font-medium">
+								<th class="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Feature</th>
+								<th class="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase tracking-wider text-center">
+									<div class="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-600/20 to-blue-600/20 text-purple-300 text-sm font-medium">
 										Ionyx
 									</div>
 								</th>
-								<th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center">Tauri</th>
-								<th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center">Electron</th>
+								<th class="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase tracking-wider text-center">Tauri</th>
+								<th class="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase tracking-wider text-center">Electron</th>
 							</tr>
 						</thead>
-						<tbody class="bg-white divide-y divide-gray-200">
-							<tr class="hover:bg-gray-50 transition-colors">
-								<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Bundle Size</td>
+						<tbody class="divide-y divide-gray-700">
+							<tr class="hover:bg-gray-800/50 transition-colors">
+								<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-white">Bundle Size</td>
 								<td class="px-6 py-4 whitespace-nowrap text-sm text-center">
-									<span class="inline-flex items-center px-2 py-1 rounded-full bg-green-100 text-green-800 text-xs font-medium">~3MB</span>
+									<span class="inline-flex items-center px-3 py-1 rounded-full bg-green-600/20 text-green-400 text-xs font-medium">~3MB</span>
 								</td>
-								<td class="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-500">~5-10MB</td>
-								<td class="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-500">~50-100MB</td>
+								<td class="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-400">~5-10MB</td>
+								<td class="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-400">~50-100MB</td>
 							</tr>
-							<tr class="hover:bg-gray-50 transition-colors">
-								<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Performance</td>
+							<tr class="hover:bg-gray-800/50 transition-colors">
+								<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-white">Performance</td>
 								<td class="px-6 py-4 whitespace-nowrap text-sm text-center">
-									<span class="inline-flex items-center px-2 py-1 rounded-full bg-green-100 text-green-800 text-xs font-medium">Rust Native</span>
+									<span class="inline-flex items-center px-3 py-1 rounded-full bg-green-600/20 text-green-400 text-xs font-medium">Rust Native</span>
 								</td>
-								<td class="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-500">Rust Native</td>
-								<td class="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-500">Node.js</td>
+								<td class="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-400">Rust Native</td>
+								<td class="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-400">Node.js</td>
 							</tr>
-							<tr class="hover:bg-gray-50 transition-colors">
-								<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">CLI</td>
+							<tr class="hover:bg-gray-800/50 transition-colors">
+								<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-white">CLI</td>
 								<td class="px-6 py-4 whitespace-nowrap text-sm text-center">
-									<span class="inline-flex items-center px-2 py-1 rounded-full bg-green-100 text-green-800 text-xs font-medium">✅ npmjs</span>
+									<span class="inline-flex items-center px-3 py-1 rounded-full bg-green-600/20 text-green-400 text-xs font-medium">✅ npmjs</span>
 								</td>
-								<td class="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-500">✅ npmjs</td>
-								<td class="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-500">❌ Manual</td>
+								<td class="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-400">✅ npmjs</td>
+								<td class="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-400">❌ Manual</td>
 							</tr>
-							<tr class="hover:bg-gray-50 transition-colors">
-								<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Security</td>
+							<tr class="hover:bg-gray-800/50 transition-colors">
+								<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-white">Security</td>
 								<td class="px-6 py-4 whitespace-nowrap text-sm text-center">
-									<span class="inline-flex items-center px-2 py-1 rounded-full bg-green-100 text-green-800 text-xs font-medium">✅ Sandbox</span>
+									<span class="inline-flex items-center px-3 py-1 rounded-full bg-green-600/20 text-green-400 text-xs font-medium">✅ Sandbox</span>
 								</td>
-								<td class="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-500">✅ Sandbox</td>
-								<td class="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-500">❌ Limited</td>
+								<td class="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-400">✅ Sandbox</td>
+								<td class="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-400">❌ Limited</td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 
 	<!-- CTA Section -->
-	<div class="gradient-bg py-24">
+	<section class="py-24 bg-gradient-to-r from-purple-900 via-blue-900 to-purple-900">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-			<div class="slide-in">
-				<h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Build?</h2>
-				<p class="text-xl text-ionyx-100 mb-8 max-w-2xl mx-auto">
+			<div class="space-y-8">
+				<h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Ready to Build?</h2>
+				<p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
 					Join thousands of developers building amazing desktop applications with Ionyx Framework
 				</p>
-				<div class="flex flex-col sm:flex-row gap-4 justify-center">
-					<a href="/docs" class="bg-white text-ionyx-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 transform hover:-translate-y-1 transition-all duration-200">
+				<div class="flex flex-col sm:flex-row gap-6 justify-center">
+					<a href="/docs" class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg hover:bg-white/20 transform hover:-translate-y-1 transition-all duration-300">
 						Read Documentation
 					</a>
-					<a href="https://github.com/ionyx-apps/ionyx" class="border border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transform hover:-translate-y-1 transition-all duration-200">
+					<a href="https://github.com/ionyx-apps/ionyx" class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white border border-white/20 rounded-lg hover:bg-white/10 transform hover:-translate-y-1 transition-all duration-300">
 						Star on GitHub
 					</a>
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 </Layout>
