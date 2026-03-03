@@ -1,0 +1,68 @@
+---
+export interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Ultra-minimalist desktop application framework" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="description" content={description} />
+	<meta name="viewport" content="width=device-width" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<meta name="generator" content={Astro.generator} />
+	<title>{title}</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body class="hero-gradient min-h-screen">
+	<div class="min-h-screen flex flex-col">
+		<header class="glass sticky top-0 z-50 border-b border-white/5">
+			<nav class="container mx-auto px-6 py-4">
+				<div class="flex items-center justify-between">
+					<div class="flex items-center space-x-2">
+						<div class="w-8 h-8 bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-lg"></div>
+						<span class="text-xl font-bold text-white">ionyx</span>
+					</div>
+					<div class="hidden md:flex items-center space-x-8">
+						<a href="/" class="text-gray-300 hover:text-white transition-colors">Ana Sayfa</a>
+						<a href="/why-ionyx" class="text-gray-300 hover:text-white transition-colors">Why Ionyx?</a>
+						<a href="/docs" class="text-gray-300 hover:text-white transition-colors">Dokümantasyon</a>
+						<a href="/faq" class="text-gray-300 hover:text-white transition-colors">SSS</a>
+					</div>
+					<a href="https://github.com/ionyx-apps/ionyx" class="btn-primary text-sm">
+						GitHub
+					</a>
+				</div>
+			</nav>
+		</header>
+
+		<main class="flex-1">
+			<slot />
+		</main>
+
+		<footer class="glass border-t border-white/5">
+			<div class="container mx-auto px-6 py-8">
+				<div class="flex flex-col md:flex-row items-center justify-between">
+					<div class="text-gray-400 text-sm">
+						© 2026 Ionyx Framework. Mühendislik harikası.
+					</div>
+					<div class="flex items-center space-x-6 mt-4 md:mt-0">
+						<a href="https://github.com/ionyx-apps/ionyx" class="text-gray-400 hover:text-white transition-colors">
+							GitHub
+						</a>
+						<a href="/docs" class="text-gray-400 hover:text-white transition-colors">
+							Dokümantasyon
+						</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>
