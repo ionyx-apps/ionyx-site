@@ -1,0 +1,179 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { useTranslations } from '../utils/i18n';
+
+// Get locale from middleware
+const locale = Astro.locals.locale || 'en';
+const t = useTranslations(locale);
+
+// Redirect to localized version
+if (locale === 'en') {
+  // Show English content directly
+} else {
+  // Redirect to Turkish version
+  return Astro.redirect('/tr/');
+}
+---
+
+<BaseLayout title={t.hero.title} description={t.hero.description}>
+	<section class="py-20 hero-gradient">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto text-center">
+				<h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+					{t.hero.title}
+				</h1>
+				<p class="text-xl text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto">
+					{t.hero.description}
+				</p>
+				<div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+					<a href="/docs" class="btn-primary">
+						{t.common.getStarted}
+					</a>
+					<a href="/why-ionyx" class="btn-secondary">
+						{t.common.learnMore}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Create Project Section -->
+	<section class="py-20 bg-dark-secondary">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto">
+				<h2 class="text-3xl font-bold text-white mb-8 text-center">
+					{locale === 'en' ? 'Get Started' : 'Hemen Başlayın'}
+				</h2>
+				<div class="glass-dark p-8 rounded-xl">
+					<div class="mb-6">
+						<div class="flex flex-wrap justify-center gap-2 mb-4">
+							<button class="px-4 py-2 bg-ionyx-neon-purple text-white rounded-lg transition-colors" onclick="showTab('npm')">
+								npm
+							</button>
+							<button class="px-4 py-2 bg-dark-tertiary text-gray-300 rounded-lg transition-colors hover:bg-dark-primary" onclick="showTab('yarn')">
+								yarn
+							</button>
+							<button class="px-4 py-2 bg-dark-tertiary text-gray-300 rounded-lg transition-colors hover:bg-dark-primary" onclick="showTab('pnpm')">
+								pnpm
+							</button>
+							<button class="px-4 py-2 bg-dark-tertiary text-gray-300 rounded-lg transition-colors hover:bg-dark-primary" onclick="showTab('bun')">
+								bun
+							</button>
+						</div>
+						<div id="command-display" class="bg-dark-primary rounded-lg p-4 font-mono text-sm">
+							<code id="npm-command" class="text-green-400">npm create ionyx@latest my-app</code>
+							<code id="yarn-command" class="text-green-400 hidden">yarn create ionyx my-app</code>
+							<code id="pnpm-command" class="text-green-400 hidden">pnpm create ionyx my-app</code>
+							<code id="bun-command" class="text-green-400 hidden">bun create ionyx my-app</code>
+						</div>
+					</div>
+					<div class="text-center">
+						<p class="text-gray-400 mb-4">{locale === 'en' ? 'After creating your project:' : 'Proje oluşturduktan sonra:'}</p>
+						<code class="bg-dark-primary rounded-lg px-4 py-2 text-sm">
+							cd my-app && ionyx dev
+						</code>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Features Section -->
+	<section class="py-20">
+		<div class="container mx-auto px-6">
+			<div class="max-w-6xl mx-auto">
+				<h2 class="text-3xl font-bold text-white mb-4 text-center">
+					{t.features.title}
+				</h2>
+				<p class="text-gray-300 text-center mb-12 max-w-2xl mx-auto">
+					{t.features.subtitle}
+				</p>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+					<div class="glass-dark p-8 rounded-xl">
+						<div class="w-12 h-12 bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-lg flex items-center justify-center mb-6">
+							<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-white mb-4">
+							{t.features.minimalist.title}
+						</h3>
+						<p class="text-gray-300 leading-relaxed">
+							{t.features.minimalist.description}
+						</p>
+					</div>
+					<div class="glass-dark p-8 rounded-xl">
+						<div class="w-12 h-12 bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-lg flex items-center justify-center mb-6">
+							<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-white mb-4">
+							{t.features.fast.title}
+						</h3>
+						<p class="text-gray-300 leading-relaxed">
+							{t.features.fast.description}
+						</p>
+					</div>
+					<div class="glass-dark p-8 rounded-xl">
+						<div class="w-12 h-12 bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-lg flex items-center justify-center mb-6">
+							<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-white mb-4">
+							{t.features.secure.title}
+						</h3>
+						<p class="text-gray-300 leading-relaxed">
+							{t.features.secure.description}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Support Section -->
+	<section class="py-20 bg-dark-secondary">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-white mb-8">
+					{locale === 'en' ? 'Join the Community' : 'Topluluğa Katılın'}
+				</h2>
+				<p class="text-gray-300 mb-8">
+					{locale === 'en' ? 'Contribute to Ionyx development and connect with other developers.' : 'Ionyx gelişimine katkıda bulunun ve diğer geliştiricilerle bağlantı kurun.'}
+				</p>
+				<div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+					<a href="https://github.com/ionyx-apps/ionyx" class="btn-primary">
+						{locale === 'en' ? 'Support Us on GitHub' : 'GitHub\'da Bizi Destekleyin'}
+					</a>
+					<a href="https://discord.gg/ionyx" class="btn-secondary">
+						{locale === 'en' ? 'Join Discord' : 'Discord\'a Katılın'}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</BaseLayout>
+
+<script>
+	function showTab(tabName) {
+		// Hide all commands
+		document.querySelectorAll('#command-display code').forEach(code => {
+			code.classList.add('hidden');
+		});
+		
+		// Show selected command
+		document.getElementById(`${tabName}-command`).classList.remove('hidden');
+		
+		// Update button styles
+		document.querySelectorAll('button').forEach(btn => {
+			btn.classList.remove('bg-ionyx-neon-purple', 'text-white');
+			btn.classList.add('bg-dark-tertiary', 'text-gray-300');
+		});
+		
+		// Highlight selected button
+		event.target.classList.remove('bg-dark-tertiary', 'text-gray-300');
+		event.target.classList.add('bg-ionyx-neon-purple', 'text-white');
+	}
+</script>
