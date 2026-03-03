@@ -131,11 +131,11 @@ const t = useTranslations(locale);
 			<div class="container mx-auto px-6 py-8">
 				<div class="flex flex-col md:flex-row items-center justify-between">
 					<div class="text-gray-400 text-sm">
-						© 2026 Ionyx Framework. Mühendislik harikası.
+						{locale === 'tr' ? '© 2026 Ionyx Framework. Mühendislik harikası.' : '© 2026 Ionyx Framework. Engineering marvel.'}
 					</div>
 					<div class="flex items-center space-x-6 mt-4 md:mt-0">
 						<a href="https://github.com/ionyx-apps/ionyx" class="text-gray-400 hover:text-white transition-colors">
-							GitHub
+							{t.common.github}
 						</a>
 						<a href="/docs" class="text-gray-400 hover:text-white transition-colors">
 							{t.common.documentation}
