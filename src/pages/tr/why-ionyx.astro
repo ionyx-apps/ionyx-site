@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../utils/i18n';
+
+const locale = 'tr';
+const t = useTranslations(locale);
+---
+
+<BaseLayout title="Neden Ionyx?" description="Ultra-minimalist masaüstü uygulama framework'ü">
+	<section class="py-20 hero-gradient">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto text-center">
+				<h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+					Neden Ionyx?
+				</h1>
+				<p class="text-xl text-gray-300 mb-8 leading-relaxed">
+					Modern masaüstü uygulamaları için minimalist yaklaşım. Rust backend ve frontend-agnostik yapı.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="py-20">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto space-y-12">
+				<!-- Agnostic Frontend -->
+				<div class="glass-dark p-8 rounded-xl">
+					<div class="flex items-start space-x-4">
+						<div class="w-12 h-12 bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-lg flex items-center justify-center flex-shrink-0">
+							<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+							</svg>
+						</div>
+						<div>
+							<h2 class="text-2xl font-bold text-white mb-4">Frontend-Agnostik</h2>
+							<p class="text-gray-300 mb-4 leading-relaxed">
+								İstediğiniz frontend framework'ünü kullanın. React, Vue, Svelte, veya vanilla JavaScript - Ionyx hepsiyle çalışır.
+							</p>
+							<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+								<div class="bg-dark-tertiary rounded-lg p-3 text-center">
+									<span class="text-blue-400 font-semibold">React</span>
+								</div>
+								<div class="bg-dark-tertiary rounded-lg p-3 text-center">
+									<span class="text-green-400 font-semibold">Vue</span>
+								</div>
+								<div class="bg-dark-tertiary rounded-lg p-3 text-center">
+									<span class="text-orange-400 font-semibold">Svelte</span>
+								</div>
+								<div class="bg-dark-tertiary rounded-lg p-3 text-center">
+									<span class="text-yellow-400 font-semibold">Vanilla</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- The 1.66MB CLI -->
+				<div class="glass-dark p-8 rounded-xl">
+					<div class="flex items-start space-x-4">
+						<div class="w-12 h-12 bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-lg flex items-center justify-center flex-shrink-0">
+							<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+							</svg>
+						</div>
+						<div>
+							<h2 class="text-2xl font-bold text-white mb-4">The 1.66MB CLI</h2>
+							<p class="text-gray-300 mb-4 leading-relaxed">
+								1.66MB'lık CLI'miz inanılmaz bir mühendislik başarısı. WRY 0.54.2 ve TAO 0.34.5 üzerine kurulu 
+								bu minimalist yapı, hiçbir gereksiz kod taşımaz. Sadece saf performans ve hız.
+							</p>
+							<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+								<div class="bg-dark-tertiary rounded-lg p-4 border border-dark-border">
+									<p class="text-sm text-gray-400 mb-2">WRY</p>
+									<p class="text-xs text-gray-500">0.54.2 - WebView wrapper</p>
+								</div>
+								<div class="bg-dark-tertiary rounded-lg p-4 border border-dark-border">
+									<p class="text-sm text-gray-400 mb-2">TAO</p>
+									<p class="text-xs text-gray-500">0.34.5 - Window management</p>
+								</div>
+								<div class="bg-dark-tertiary rounded-lg p-4 border border-dark-border">
+									<p class="text-sm text-gray-400 mb-2">Ionyx Core</p>
+									<p class="text-xs text-gray-500">~0.8MB - Framework logic</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- No Extra Runtime -->
+				<div class="glass-dark p-8 rounded-xl">
+					<div class="flex items-start space-x-4">
+						<div class="w-12 h-12 bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-lg flex items-center justify-center flex-shrink-0">
+							<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+							</svg>
+						</div>
+						<div>
+							<h2 class="text-2xl font-bold text-white mb-4">Ekstra Runtime Yok</h2>
+							<p class="text-gray-300 mb-4 leading-relaxed">
+								Node.js veya Electron gibi ekstra runtime'lar yok. Sistem WebView kullanarak doğal performans ve minimum kaynak kullanımı.
+							</p>
+							<div class="bg-dark-tertiary rounded-lg p-4 border border-dark-border">
+								<p class="text-sm text-gray-400 mb-2">Tek Binary Dağıtım:</p>
+								<ul class="text-xs text-gray-500 space-y-1">
+									<li>• Windows: .exe</li>
+									<li>• macOS: .app</li>
+									<li>• Linux: AppImage</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Rust Backend -->
+				<div class="glass-dark p-8 rounded-xl">
+					<div class="flex items-start space-x-4">
+						<div class="w-12 h-12 bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-lg flex items-center justify-center flex-shrink-0">
+							<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+							</svg>
+						</div>
+						<div>
+							<h2 class="text-2xl font-bold text-white mb-4">Rust Backend</h2>
+							<p class="text-gray-300 mb-4 leading-relaxed">
+								Güvenli ve performanslı Rust backend. Memory safety, thread safety ve zero-cost abstractions.
+							</p>
+							<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+								<div class="bg-dark-tertiary rounded-lg p-4 border border-dark-border">
+									<p class="text-sm text-gray-400 mb-2">Güvenlik:</p>
+									<p class="text-xs text-gray-500">Memory safe, type safe</p>
+								</div>
+								<div class="bg-dark-tertiary rounded-lg p-4 border border-dark-border">
+									<p class="text-sm text-gray-400 mb-2">Performans:</p>
+									<p class="text-xs text-gray-500">C++ seviyesi hız</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Cross Platform -->
+				<div class="glass-dark p-8 rounded-xl">
+					<div class="flex items-start space-x-4">
+						<div class="w-12 h-12 bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-lg flex items-center justify-center flex-shrink-0">
+							<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+							</svg>
+						</div>
+						<div>
+							<h2 class="text-2xl font-bold text-white mb-4">Cross Platform</h2>
+							<p class="text-gray-300 mb-4 leading-relaxed">
+								Tek kod tabanından tüm platformlar için native uygulamalar. Windows, macOS ve Linux desteği.
+							</p>
+							<div class="flex flex-wrap gap-2">
+								<span class="px-3 py-1 bg-dark-tertiary rounded-full text-xs text-gray-400">Windows</span>
+								<span class="px-3 py-1 bg-dark-tertiary rounded-full text-xs text-gray-400">macOS</span>
+								<span class="px-3 py-1 bg-dark-tertiary rounded-full text-xs text-gray-400">Linux</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</BaseLayout>
