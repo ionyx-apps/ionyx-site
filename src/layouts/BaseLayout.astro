@@ -56,17 +56,14 @@ const t = useTranslations(locale);
 						
 						<!-- Docs Dropdown -->
 						<div class="relative">
-							<button class="text-gray-300 hover:text-white transition-colors font-medium flex items-center space-x-1" 
-									onmouseenter="this.nextElementSibling.classList.remove('hidden')" 
-									onmouseleave="this.nextElementSibling.classList.add('hidden')">
+							<input type="checkbox" id="docs-dropdown" class="hidden peer">
+							<label for="docs-dropdown" class="text-gray-300 hover:text-white transition-colors font-medium flex items-center space-x-1 cursor-pointer">
 								<span>{t.nav.docs}</span>
 								<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
 								</svg>
-							</button>
-							<div class="absolute top-full left-0 mt-2 w-48 glass-dark rounded-lg shadow-xl hidden"
-								 onmouseenter="this.classList.remove('hidden')" 
-									onmouseleave="this.classList.add('hidden')">
+							</label>
+							<div class="absolute top-full left-0 mt-2 w-48 glass-dark rounded-lg shadow-xl opacity-0 invisible transition-all duration-300 peer-checked:opacity-100 peer-checked:visible">
 								<div class="py-2">
 									<a href="/docs/introduction" class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-colors">Introduction</a>
 									<a href="/docs/installation" class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-colors">Installation</a>
