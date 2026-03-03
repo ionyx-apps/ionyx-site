@@ -46,62 +46,47 @@ const t = useTranslations(locale);
 					</div>
 
 					<!-- Desktop Navigation -->
-					<div class="hidden md:flex items-center space-x-1">
-						<a href="/" class="nav-link">
-							<span class="relative z-10">{t.nav.home}</span>
-							<span class="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+					<div class="hidden md:flex items-center space-x-6">
+						<a href="/" class="text-gray-300 hover:text-white transition-colors font-medium">
+							{t.nav.home}
 						</a>
-						<a href="/why-ionyx" class="nav-link">
-							<span class="relative z-10">{t.nav.whyIonyx}</span>
-							<span class="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+						<a href="/why-ionyx" class="text-gray-300 hover:text-white transition-colors font-medium">
+							{t.nav.whyIonyx}
 						</a>
 						
 						<!-- Docs Dropdown -->
-						<div class="relative group">
-							<button class="nav-link flex items-center space-x-1">
-								<span class="relative z-10">{t.nav.docs}</span>
-								<svg class="w-4 h-4 transform transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<div class="relative">
+							<button class="text-gray-300 hover:text-white transition-colors font-medium flex items-center space-x-1" 
+									onmouseenter="this.nextElementSibling.classList.remove('hidden')" 
+									onmouseleave="this.nextElementSibling.classList.add('hidden')">
+								<span>{t.nav.docs}</span>
+								<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
 								</svg>
-								<span class="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
 							</button>
-							<div class="absolute top-full left-0 mt-2 w-48 glass-dark rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-2">
+							<div class="absolute top-full left-0 mt-2 w-48 glass-dark rounded-lg shadow-xl hidden"
+								 onmouseenter="this.classList.remove('hidden')" 
+									onmouseleave="this.classList.add('hidden')">
 								<div class="py-2">
-									<a href="/docs/introduction" class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors">Introduction</a>
-									<a href="/docs/installation" class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors">Installation</a>
-									<a href="/docs/quick-start" class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors">Quick Start</a>
+									<a href="/docs/introduction" class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-colors">Introduction</a>
+									<a href="/docs/installation" class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-colors">Installation</a>
+									<a href="/docs/quick-start" class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-colors">Quick Start</a>
 									<div class="border-t border-white/10 mt-2 pt-2">
-										<a href="/docs/architecture" class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors">Architecture</a>
-										<a href="/docs/api" class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors">API Reference</a>
+										<a href="/docs/architecture" class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-colors">Architecture</a>
+										<a href="/docs/api" class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-colors">API Reference</a>
 									</div>
 								</div>
 							</div>
 						</div>
 						
-						<!-- Resources Dropdown -->
-						<div class="relative group">
-							<button class="nav-link flex items-center space-x-1">
-								<span class="relative z-10">{t.nav.resources}</span>
-								<svg class="w-4 h-4 transform transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-								</svg>
-								<span class="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
-							</button>
-							<div class="absolute top-full left-0 mt-2 w-48 glass-dark rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-2">
-								<div class="py-2">
-									<a href="/examples" class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors">{t.nav.examples}</a>
-									<a href="/comparison" class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors">{t.common.frameworkComparison}</a>
-									<div class="border-t border-white/10 mt-2 pt-2">
-										<a href="https://github.com/ionyx-apps/ionyx" class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors">{t.common.github}</a>
-										<a href="https://discord.gg/ionyx" class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors">{t.common.discord}</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						
-						<a href="/faq" class="nav-link">
-							<span class="relative z-10">{t.nav.faq}</span>
-							<span class="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+						<a href="/examples" class="text-gray-300 hover:text-white transition-colors font-medium">
+							{t.nav.examples}
+						</a>
+						<a href="/comparison" class="text-gray-300 hover:text-white transition-colors font-medium">
+							{t.common.frameworkComparison}
+						</a>
+						<a href="/faq" class="text-gray-300 hover:text-white transition-colors font-medium">
+							{t.nav.faq}
 						</a>
 					</div>
 
@@ -131,13 +116,13 @@ const t = useTranslations(locale);
 
 			<!-- Mobile Menu -->
 			<div id="mobile-menu" class="md:hidden glass-dark border-t border-white/5 hidden">
-				<div class="container mx-auto px-6 py-4 space-y-2">
-					<a href="/" class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">{t.nav.home}</a>
-					<a href="/why-ionyx" class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">{t.nav.whyIonyx}</a>
-					<a href="/docs" class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">{t.nav.docs}</a>
-					<a href="/examples" class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">{t.nav.examples}</a>
-					<a href="/comparison" class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">{t.common.frameworkComparison}</a>
-					<a href="/faq" class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">{t.nav.faq}</a>
+				<div class="container mx-auto px-6 py-4 space-y-1">
+					<a href="/" class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors font-medium">{t.nav.home}</a>
+					<a href="/why-ionyx" class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors font-medium">{t.nav.whyIonyx}</a>
+					<a href="/docs" class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors font-medium">{t.nav.docs}</a>
+					<a href="/examples" class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors font-medium">{t.nav.examples}</a>
+					<a href="/comparison" class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors font-medium">{t.common.frameworkComparison}</a>
+					<a href="/faq" class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors font-medium">{t.nav.faq}</a>
 				</div>
 			</div>
 		</header>
