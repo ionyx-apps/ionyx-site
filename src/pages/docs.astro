@@ -1,10 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<Layout title="Documentation - Ionyx Framework">
+<BaseLayout title="Documentation - Ionyx Framework">
 	<!-- Hero Section -->
-	<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+	<section class="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient">
 		<div class="absolute inset-0 overflow-hidden">
 			<div class="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-purple-500/20 to-transparent rounded-full blur-3xl animate-pulse"></div>
 			<div class="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-br from-blue-500/20 to-transparent rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
@@ -12,12 +12,12 @@ import Layout from '../layouts/Layout.astro';
 		</div>
 		
 		<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-			<div class="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-blue-500/20 border border-purple-400/30 backdrop-blur-sm mb-8">
-				<span class="text-purple-300 text-sm font-medium">📚 Comprehensive Documentation</span>
+			<div class="inline-flex items-center px-4 py-2 glass px-4 py-2 rounded-full mb-8">
+				<span class="text-sm text-gray-300">📚 Comprehensive Documentation</span>
 			</div>
 			
 			<h1 class="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight">
-				<span class="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Documentation</span>
+				<span class="bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue bg-clip-text text-transparent">Documentation</span>
 			</h1>
 			
 			<p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
@@ -25,7 +25,7 @@ import Layout from '../layouts/Layout.astro';
 			</p>
 			
 			<div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-				<a href="#getting-started" class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg hover:from-purple-700 hover:to-blue-700 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
+				<a href="/docs/introduction" class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-lg hover:from-ionyx-neon-purple/80 hover:to-ionyx-neon-blue/80 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-ionyx-neon-purple/25">
 					<span class="relative z-10">Get Started</span>
 					<div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition-opacity"></div>
 				</a>
