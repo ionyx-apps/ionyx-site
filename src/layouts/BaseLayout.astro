@@ -22,24 +22,109 @@ const { title, description = "Ultra-minimalist desktop application framework" } 
 </head>
 <body class="bg-dark-primary text-gray-100 min-h-screen">
 	<div class="min-h-screen flex flex-col">
-		<header class="glass sticky top-0 z-50 border-b border-white/5">
+		<header class="glass sticky top-0 z-50 border-b border-white/5 backdrop-blur-xl">
 			<nav class="container mx-auto px-6 py-4">
 				<div class="flex items-center justify-between">
-					<div class="flex items-center space-x-2">
-						<div class="w-8 h-8 bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-lg"></div>
-						<span class="text-xl font-bold text-white">ionyx</span>
+					<!-- Logo -->
+					<div class="flex items-center space-x-3">
+						<div class="relative group">
+							<div class="w-10 h-10 bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-xl flex items-center justify-center transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+								<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+								</svg>
+							</div>
+							<div class="absolute -bottom-1 -right-1 w-2 h-2 bg-ionyx-neon-purple rounded-full opacity-0 group-hover:opacity-100 animate-pulse"></div>
+						</div>
+						<span class="text-2xl font-bold text-white tracking-tight">ionyx</span>
 					</div>
-					<div class="hidden md:flex items-center space-x-8">
-						<a href="/" class="text-gray-300 hover:text-white transition-colors">Ana Sayfa</a>
-						<a href="/why-ionyx" class="text-gray-300 hover:text-white transition-colors">Why Ionyx?</a>
-						<a href="/docs" class="text-gray-300 hover:text-white transition-colors">Dokümantasyon</a>
-						<a href="/faq" class="text-gray-300 hover:text-white transition-colors">SSS</a>
+
+					<!-- Desktop Navigation -->
+					<div class="hidden md:flex items-center space-x-1">
+						<a href="/" class="nav-link">
+							<span class="relative z-10">Ana Sayfa</span>
+							<span class="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+						</a>
+						<a href="/why-ionyx" class="nav-link">
+							<span class="relative z-10">Why Ionyx?</span>
+							<span class="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+						</a>
+						<div class="relative group">
+							<button class="nav-link flex items-center space-x-1" onclick="toggleDropdown('docs-dropdown')">
+								<span class="relative z-10">Dokümantasyon</span>
+								<svg class="w-4 h-4 transform transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+								</svg>
+								<span class="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+							</button>
+							<div id="docs-dropdown" class="absolute top-full left-0 mt-2 w-48 glass-dark rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-2">
+								<div class="py-2">
+									<a href="/docs/introduction" class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors">Introduction</a>
+									<a href="/docs/installation" class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors">Installation</a>
+									<a href="/docs/quick-start" class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors">Quick Start</a>
+									<div class="border-t border-white/10 mt-2 pt-2">
+										<a href="/docs/architecture" class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors">Architecture</a>
+										<a href="/docs/api" class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors">API Reference</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="relative group">
+							<button class="nav-link flex items-center space-x-1" onclick="toggleDropdown('resources-dropdown')">
+								<span class="relative z-10">Kaynaklar</span>
+								<svg class="w-4 h-4 transform transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+								</svg>
+								<span class="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+							</button>
+							<div id="resources-dropdown" class="absolute top-full left-0 mt-2 w-48 glass-dark rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-2">
+								<div class="py-2">
+									<a href="/examples" class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors">Examples</a>
+									<a href="/index-tauri" class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors">vs Tauri</a>
+									<div class="border-t border-white/10 mt-2 pt-2">
+										<a href="https://github.com/ionyx-apps/ionyx" class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors">GitHub</a>
+										<a href="https://discord.gg/ionyx" class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors">Discord</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<a href="/faq" class="nav-link">
+							<span class="relative z-10">SSS</span>
+							<span class="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+						</a>
 					</div>
-					<a href="https://github.com/ionyx-apps/ionyx" class="btn-primary text-sm">
-						GitHub
-					</a>
+
+					<!-- Right Side Actions -->
+					<div class="flex items-center space-x-4">
+						<!-- Mobile Menu Button -->
+						<button class="md:hidden text-gray-300 hover:text-white p-2" onclick="toggleMobileMenu()">
+							<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+							</svg>
+						</button>
+						
+						<!-- GitHub Button -->
+						<a href="https://github.com/ionyx-apps/ionyx" class="btn-primary text-sm flex items-center space-x-2 group">
+							<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+							</svg>
+							<span class="relative z-10">GitHub</span>
+							<div class="absolute inset-0 bg-gradient-to-r from-ionyx-neon-purple to-ionyx-neon-blue rounded-lg blur opacity-75 group-hover:opacity-100 transition-opacity"></div>
+						</a>
+					</div>
 				</div>
 			</nav>
+
+			<!-- Mobile Menu -->
+			<div id="mobile-menu" class="md:hidden glass-dark border-t border-white/5 hidden">
+				<div class="container mx-auto px-6 py-4 space-y-2">
+					<a href="/" class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">Ana Sayfa</a>
+					<a href="/why-ionyx" class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">Why Ionyx?</a>
+					<a href="/docs" class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">Dokümantasyon</a>
+					<a href="/examples" class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">Examples</a>
+					<a href="/index-tauri" class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">vs Tauri</a>
+					<a href="/faq" class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">SSS</a>
+				</div>
+			</div>
 		</header>
 
 		<main class="flex-1">
@@ -64,5 +149,27 @@ const { title, description = "Ultra-minimalist desktop application framework" } 
 			</div>
 		</footer>
 	</div>
+
+	<script>
+		function toggleDropdown(id) {
+			const dropdown = document.getElementById(id);
+			dropdown.classList.toggle('hidden');
+		}
+
+		function toggleMobileMenu() {
+			const menu = document.getElementById('mobile-menu');
+			menu.classList.toggle('hidden');
+		}
+
+		// Close dropdowns when clicking outside
+		document.addEventListener('click', function(event) {
+			const dropdowns = document.querySelectorAll('[id$="-dropdown"]');
+			dropdowns.forEach(dropdown => {
+				if (!dropdown.parentElement.contains(event.target)) {
+					dropdown.classList.add('hidden');
+				}
+			});
+		});
+	</script>
 </body>
 </html>

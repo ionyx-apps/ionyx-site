@@ -40,4 +40,8 @@
   .hero-gradient {
     @apply bg-gradient-to-br from-dark-primary via-dark-secondary to-dark-tertiary;
   }
+
+  .nav-link {
+    @apply relative px-4 py-2 text-gray-300 hover:text-white transition-all duration-300 group;
+  }
 }
