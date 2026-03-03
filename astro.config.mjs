@@ -49,10 +49,10 @@ export default defineConfig({
           ],
         },
       ],
-      social: {
-        github: 'https://github.com/ionyx-apps/ionyx',
-        discord: 'https://discord.gg/ionyx',
-      },
+      social: [
+        { label: 'GitHub', href: 'https://github.com/ionyx-apps/ionyx', icon: 'github' },
+        { label: 'Discord', href: 'https://discord.gg/ionyx', icon: 'discord' },
+      ],
     }),
   ],
   site: 'https://ionyx-framework.dev',
