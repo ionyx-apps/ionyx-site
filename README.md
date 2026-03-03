@@ -5,7 +5,7 @@
 [![Ionyx Framework](https://img.shields.io/badge/Ionyx-Framework-blue?style=flat-square&logo=)](https://img.shields.io/badge/Ionyx-Framework-blue?style=flat-square&logo=)
 [![Astro](https://img.shields.io/badge/Astro-FF5E1F?style=flat-square&logo=astro)](https://astro.build/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://img.shields.io/badge/License-MIT-green.svg))
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0))
 
 ## 🚀 Hızlı Başlangıç
 
@@ -178,7 +178,7 @@ npm run build
 
 ## 📄 Lisans
 
-MIT License - [LICENSE](./LICENSE) dosyasına bakın
+Apache License 2.0 - [LICENSE](./LICENSE) dosyasına bakın
 
 ## 🔗 Linkler
 
