@@ -1,0 +1,104 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+	const posts = await getCollection('blog');
+	return posts.map((post) => ({
+		params: { slug: post.slug },
+		props: post,
+	}));
+}
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout title={`${post.data.title} | Ionyx Blog`} description={post.data.description}>
+	<main class="relative pt-32 pb-24 overflow-hidden">
+		<!-- Background Elements -->
+		<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 pointer-events-none">
+			<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-purple-900/10 blur-[120px] rounded-full"></div>
+			<div class="absolute bottom-[10%] right-[-10%] w-[40%] h-[40%] bg-blue-900/10 blur-[120px] rounded-full"></div>
+		</div>
+
+		<article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<!-- Back Link -->
+			<a href="/blog" class="inline-flex items-center text-gray-400 hover:text-purple-400 transition-colors mb-12 group">
+				<svg class="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+				</svg>
+				Back to Blog
+			</a>
+
+			<!-- Post Header -->
+			<header class="mb-16">
+				<div class="flex items-center space-x-2 text-sm text-purple-400 mb-6">
+					<time datetime={post.data.pubDate.toISOString()}>
+						{post.data.pubDate.toLocaleDateString('en-us', {
+							year: 'numeric',
+							month: 'long',
+							day: 'numeric',
+						})}
+					</time>
+					<span>•</span>
+					<span>By The Ionyx Team</span>
+				</div>
+				
+				<h1 class="text-4xl md:text-6xl font-extrabold text-white mb-8 leading-tight">
+					{post.data.title}
+				</h1>
+				
+				<p class="text-xl text-gray-400 leading-relaxed max-w-3xl">
+					{post.data.description}
+				</p>
+			</header>
+
+			<!-- Hero Image -->
+			<div class="aspect-video relative rounded-3xl overflow-hidden mb-16 bg-gradient-to-br from-purple-900/20 to-blue-900/20 border border-white/5 flex items-center justify-center text-7xl">
+				{post.data.heroImage ? '🚀' : '📄'}
+			</div>
+
+			<!-- Post Content -->
+			<div class="prose prose-invert prose-purple max-w-none 
+				prose-h2:text-3xl prose-h2:font-bold prose-h2:mt-16 prose-h2:mb-8 prose-h2:text-white
+				prose-h3:text-2xl prose-h3:font-bold prose-h3:mt-12 prose-h3:mb-6 prose-h3:text-white
+				prose-p:text-gray-300 prose-p:text-lg prose-p:leading-relaxed prose-p:mb-8
+				prose-ul:text-gray-300 prose-ul:text-lg prose-ul:mb-8 prose-li:mb-2
+				prose-code:text-purple-300 prose-code:bg-purple-900/20 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
+				prose-pre:bg-gray-950 prose-pre:border prose-pre:border-white/10 prose-pre:rounded-2xl prose-pre:p-8 prose-pre:shadow-2xl
+				prose-blockquote:border-l-4 prose-blockquote:border-purple-500 prose-blockquote:bg-purple-900/10 prose-blockquote:px-8 prose-blockquote:py-4 prose-blockquote:rounded-r-xl prose-blockquote:italic prose-blockquote:text-gray-300
+				prose-img:rounded-3xl prose-img:shadow-2xl prose-img:border prose-img:border-white/10
+				prose-a:text-purple-400 prose-a:no-underline hover:prose-a:text-purple-300 hover:prose-a:underline transition-colors
+				prose-strong:text-white prose-strong:font-bold">
+				<Content />
+			</div>
+
+			<!-- Author Section -->
+			<div class="mt-24 pt-12 border-t border-white/10">
+				<div class="flex items-center space-x-6 bg-gray-900/30 p-8 rounded-3xl border border-white/5 backdrop-blur-sm">
+					<div class="w-16 h-16 rounded-full bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center text-2xl shadow-lg shadow-purple-500/20">
+						I
+					</div>
+					<div>
+						<h3 class="text-xl font-bold text-white mb-1">The Ionyx Team</h3>
+						<p class="text-gray-400">
+							Building the next generation of universal desktop development tools.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Share / Next Post Placeholder -->
+			<div class="mt-16 flex justify-between items-center text-gray-400">
+				<div class="flex space-x-4">
+					<span class="text-sm font-medium uppercase tracking-wider text-gray-500">Share This:</span>
+					<!-- Add share icons here if needed -->
+				</div>
+				<a href="/blog" class="text-purple-400 hover:text-purple-300 font-medium transition-colors">
+					View more posts →
+				</a>
+			</div>
+		</article>
+	</main>
+</Layout>
