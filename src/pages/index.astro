@@ -12,15 +12,15 @@ import Layout from '../layouts/Layout.astro';
 		
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 			<div class="text-center slide-in">
-				<div class="inline-flex items-center px-3 py-1 rounded-full bg-ionyx-100 text-ionyx-700 text-sm font-medium mb-6">
+				<div class="inline-flex items-center px-3 py-1 rounded-full bg-ionyx-100 dark:bg-ionyx-900/50 text-ionyx-700 dark:text-ionyx-300 text-sm font-medium mb-6">
 					🚀 Quantum leap in desktop development
 				</div>
 				
-				<h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+				<h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-gray-100 mb-6 leading-tight">
 					<span class="text-gradient">Ionyx Framework</span>
 				</h1>
 				
-				<p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+				<p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-8 max-w-3xl mx-auto leading-relaxed">
 					Universal desktop framework with Rust backend and agnostic frontend. Build high-performance, cross-platform desktop applications with ~3MB single binary distribution.
 				</p>
 				
@@ -28,13 +28,13 @@ import Layout from '../layouts/Layout.astro';
 					<a href="/docs" class="gradient-bg text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200 glow">
 						Get Started
 					</a>
-					<a href="https://github.com/ionyx-apps/ionyx" class="border border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 hover:border-gray-400 transform hover:-translate-y-1 transition-all duration-200">
+					<a href="https://github.com/ionyx-apps/ionyx" class="border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-400 dark:hover:border-gray-500 transform hover:-translate-y-1 transition-all duration-200">
 						View on GitHub
 					</a>
 				</div>
 				
 				<!-- Quick install command -->
-				<div class="bg-gray-900 rounded-lg p-6 max-w-2xl mx-auto shadow-2xl">
+				<div class="bg-gray-900 dark:bg-black rounded-lg p-6 max-w-2xl mx-auto shadow-2xl">
 					<div class="flex items-center justify-between mb-4">
 						<span class="text-sm text-gray-400 font-medium">Quick Install</span>
 						<button class="text-gray-400 hover:text-white transition-colors" onclick="navigator.clipboard.writeText('npx create-ionyx-app')">
