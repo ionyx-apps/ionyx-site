@@ -6,6 +6,7 @@ export interface TranslationKeys {
     examples: string;
     comparison: string;
     faq: string;
+    blog: string;
     resources: string;
   };
   common: {
@@ -55,6 +56,7 @@ export const translations: Record<string, TranslationKeys> = {
       examples: 'Examples',
       comparison: 'Framework Comparison',
       faq: 'FAQ',
+      blog: 'Blog',
       resources: 'Resources',
     },
     common: {
@@ -102,6 +104,7 @@ export const translations: Record<string, TranslationKeys> = {
       examples: 'Örnekler',
       comparison: 'Framework Karşılaştırması',
       faq: 'SSS',
+      blog: 'Blog',
       resources: 'Kaynaklar',
     },
     common: {
