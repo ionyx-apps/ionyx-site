@@ -1,0 +1,246 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../utils/i18n';
+
+const locale = 'en';
+const t = useTranslations(locale);
+---
+
+<BaseLayout title="Architecture | Ionyx Framework">
+	<section class="py-20 hero-gradient">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto text-center">
+				<h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+					Architecture
+				</h1>
+				<p class="text-xl text-gray-300 mb-8 leading-relaxed">
+					Deep dive into Ionyx's minimalist architecture and how it achieves high performance with low resource usage.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="py-20">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto space-y-16">
+
+				<!-- Overview -->
+				<div class="glass-dark p-8 rounded-xl">
+					<h2 class="text-3xl font-bold text-white mb-6">Overview</h2>
+					<p class="text-gray-300 leading-relaxed mb-6">
+						Ionyx follows a minimalist architecture focused on performance, security, and developer experience.
+						The framework consists of four main components working together seamlessly.
+					</p>
+					<div class="bg-slate-800/50 rounded-lg p-6">
+						<pre class="text-sm font-mono text-green-400"><code>Ionyx Architecture:
+├── 🦀 Rust Backend (Core)
+│   ├── WRY (WebView)
+│   ├── TAO (Windowing)
+│   └── IPC Bridge
+├── ⚡ CLI Tool (Development)
+│   ├── Process Orchestration
+│   └── Environment Management
+├── 🌐 Frontend (Any Framework)
+│   ├── Vite (Development)
+│   └── Web Technologies
+└── 📦 Build System (Production)
+    ├── Cargo (Rust)
+    └── Static Assets</code></pre>
+					</div>
+				</div>
+
+				<!-- Rust Backend -->
+				<div class="glass-dark p-8 rounded-xl">
+					<div class="flex items-start space-x-4 mb-6">
+						<div class="w-12 h-12 bg-gradient-to-r from-red-500 to-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+							<span class="text-white font-bold text-lg">🦀</span>
+						</div>
+						<div>
+							<h2 class="text-3xl font-bold text-white mb-4">Rust Backend</h2>
+							<p class="text-gray-300 leading-relaxed">
+								The heart of Ionyx is written in Rust, providing memory safety, high performance, and native system access.
+							</p>
+						</div>
+					</div>
+
+					<div class="grid md:grid-cols-2 gap-6">
+						<div class="bg-slate-800/30 rounded-lg p-6">
+							<h3 class="text-xl font-semibold text-white mb-4">WRY WebView</h3>
+							<ul class="space-y-2 text-gray-300">
+								<li>• Cross-platform WebView (WebKit/Gecko)</li>
+								<li>• Chromium on Windows/Linux</li>
+								<li>• WebKit on macOS</li>
+								<li>• Native JavaScript execution</li>
+							</ul>
+						</div>
+						<div class="bg-slate-800/30 rounded-lg p-6">
+							<h3 class="text-xl font-semibold text-white mb-4">TAO Windowing</h3>
+							<ul class="space-y-2 text-gray-300">
+								<li>• Cross-platform window management</li>
+								<li>• Native OS integrations</li>
+								<li>• Event handling</li>
+								<li>• GPU acceleration</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="bg-slate-800/30 rounded-lg p-6">
+						<h3 class="text-xl font-semibold text-white mb-4">IPC Bridge</h3>
+						<p class="text-gray-300 mb-4">
+							Bidirectional communication between Rust backend and frontend JavaScript.
+						</p>
+						<pre class="text-sm font-mono text-purple-400 bg-slate-900/50 p-4 rounded"><code>// Frontend side
+const response = await window.ionyx.invoke({
+  command: 'bridge.getApps',
+  payload: {}
+});
+
+// Rust side
+pub async fn handle_request_with_response(&self, request: String) -> Result<()> {
+    let ipc_request: IpcRequest = serde_json::from_str(&request)?;
+    match ipc_request.command.as_str() {
+        "bridge.getApps" => {
+            // Handle getApps command
+        }
+        _ => {}
+    }
+}</code></pre>
+					</div>
+				</div>
+
+				<!-- CLI System -->
+				<div class="glass-dark p-8 rounded-xl">
+					<div class="flex items-start space-x-4 mb-6">
+						<div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center flex-shrink-0">
+							<span class="text-white font-bold text-lg">⚡</span>
+						</div>
+						<div>
+							<h2 class="text-3xl font-bold text-white mb-4">CLI Development Tool</h2>
+							<p class="text-gray-300 leading-relaxed">
+								Automated development workflow with process orchestration and environment management.
+							</p>
+						</div>
+					</div>
+
+					<div class="space-y-6">
+						<div class="bg-slate-800/30 rounded-lg p-6">
+							<h3 class="text-xl font-semibold text-white mb-4">Process Orchestration</h3>
+							<pre class="text-sm font-mono text-green-400"><code>$ ionyx dev
+├── Start Vite dev server
+├── Wait for port 5173
+├── Set IONYX_URL=127.0.0.1:5173
+├── Launch Rust app
+└── Monitor processes</code></pre>
+						</div>
+
+						<div class="bg-slate-800/30 rounded-lg p-6">
+							<h3 class="text-xl font-semibold text-white mb-4">Environment Management</h3>
+							<ul class="space-y-2 text-gray-300">
+								<li>• Automatic dependency installation</li>
+								<li>• Port conflict resolution</li>
+								<li>• Single instance locking</li>
+								<li>• Cross-platform compatibility</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!-- Frontend Integration -->
+				<div class="glass-dark p-8 rounded-xl">
+					<div class="flex items-start space-x-4 mb-6">
+						<div class="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-500 rounded-lg flex items-center justify-center flex-shrink-0">
+							<span class="text-white font-bold text-lg">🌐</span>
+						</div>
+						<div>
+							<h2 class="text-3xl font-bold text-white mb-4">Frontend Agnostic</h2>
+							<p class="text-gray-300 leading-relaxed">
+								Use any frontend framework or vanilla JavaScript. Ionyx adapts to your preferred stack.
+							</p>
+						</div>
+					</div>
+
+					<div class="grid md:grid-cols-3 gap-4 mb-6">
+						<div class="bg-slate-800/30 rounded-lg p-4 text-center">
+							<div class="text-2xl mb-2">⚛️</div>
+							<div class="text-blue-400 font-semibold">React</div>
+						</div>
+						<div class="bg-slate-800/30 rounded-lg p-4 text-center">
+							<div class="text-2xl mb-2">🟢</div>
+							<div class="text-green-400 font-semibold">Vue</div>
+						</div>
+						<div class="bg-slate-800/30 rounded-lg p-4 text-center">
+							<div class="text-2xl mb-2">🧡</div>
+							<div class="text-orange-400 font-semibold">Svelte</div>
+						</div>
+					</div>
+
+					<div class="bg-slate-800/30 rounded-lg p-6">
+						<h3 class="text-xl font-semibold text-white mb-4">Development vs Production</h3>
+						<div class="grid md:grid-cols-2 gap-6">
+							<div>
+								<h4 class="text-purple-400 font-semibold mb-2">Development</h4>
+								<ul class="text-sm text-gray-300 space-y-1">
+									<li>• Hot Module Replacement</li>
+									<li>• Source maps</li>
+									<li>• DevTools integration</li>
+									<li>• Fast rebuilds</li>
+								</ul>
+							</div>
+							<div>
+								<h4 class="text-green-400 font-semibold mb-2">Production</h4>
+								<ul class="text-sm text-gray-300 space-y-1">
+									<li>• Minified bundles</li>
+									<li>• Tree shaking</li>
+									<li>• Asset optimization</li>
+									<li>• Single binary</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Security & Performance -->
+				<div class="glass-dark p-8 rounded-xl">
+					<h2 class="text-3xl font-bold text-white mb-6">Security & Performance</h2>
+
+					<div class="grid md:grid-cols-2 gap-6">
+						<div class="bg-slate-800/30 rounded-lg p-6">
+							<h3 class="text-xl font-semibold text-green-400 mb-4">🛡️ Security</h3>
+							<ul class="space-y-2 text-gray-300">
+								<li>• Memory safe Rust backend</li>
+								<li>• Sandboxed WebView</li>
+								<li>• Controlled IPC channels</li>
+								<li>• No Node.js runtime</li>
+							</ul>
+						</div>
+
+						<div class="bg-slate-800/30 rounded-lg p-6">
+							<h3 class="text-xl font-semibold text-blue-400 mb-4">⚡ Performance</h3>
+							<ul class="space-y-2 text-gray-300">
+								<li>• Sub-2MB binary size</li>
+								<li>• <30ms startup time</li>
+								<li>• Low memory footprint</li>
+								<li>• Native performance</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="mt-6 bg-slate-800/30 rounded-lg p-6">
+						<h3 class="text-xl font-semibold text-white mb-4">Build Process</h3>
+						<pre class="text-sm font-mono text-yellow-400"><code>Development Build:
+├── Frontend: Vite HMR server
+├── Backend: Cargo incremental build
+└── Output: Hot-reloaded app
+
+Production Build:
+├── Frontend: Static asset generation
+├── Backend: Cargo release build
+├── Assets: Embedded in binary
+└── Output: Single executable</code></pre>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+</BaseLayout>
