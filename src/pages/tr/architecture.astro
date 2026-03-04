@@ -1,9 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { useTranslations } from '../../utils/i18n';
 
 const locale = 'tr';
-const t = useTranslations(locale);
 ---
 
 <BaseLayout title="Mimari | Ionyx Framework">
@@ -24,35 +22,33 @@ const t = useTranslations(locale);
 		<div class="container mx-auto px-6">
 			<div class="max-w-4xl mx-auto space-y-16">
 
-				<!-- Overview -->
 				<div class="glass-dark p-8 rounded-xl">
 					<h2 class="text-3xl font-bold text-white mb-6">Genel Bakış</h2>
 					<p class="text-gray-300 leading-relaxed mb-6">
 						Ionyx, performans, güvenlik ve geliştirici deneyimine odaklanan minimalist bir mimari izler.
 						Framework, kusursuz bir şekilde birlikte çalışan dört ana bileşenden oluşur.
 					</p>
-					<div class="bg-slate-800/50 rounded-lg p-6">
-						<pre class="text-sm font-mono text-green-400"><code>Ionyx Mimari:
+					<div class="bg-slate-800 bg-opacity-50 rounded-lg p-6">
+						<pre class="text-sm font-mono text-green-400"><code is:raw>Ionyx Mimari:
 ├── 🦀 Rust Backend (Çekirdek)
-│   ├── WRY (WebView)
-│   ├── TAO (Pencere Yönetimi)
-│   └── IPC Köprüsü
+│   ├── WRY (WebView)
+│   ├── TAO (Pencere Yönetimi)
+│   └── IPC Köprüsü
 ├── ⚡ CLI Aracı (Geliştirme)
-│   ├── Süreç Orkestrasyonu
-│   └── Ortam Yönetimi
+│   ├── Süreç Orkestrasyonu
+│   └── Ortam Yönetimi
 ├── 🌐 Frontend (Herhangi Bir Framework)
-│   ├── Vite (Geliştirme)
-│   └── Web Teknolojileri
+│   ├── Vite (Geliştirme)
+│   └── Web Teknolojileri
 └── 📦 Build Sistemi (Üretim)
-    ├── Cargo (Rust)
-    └── Statik Varlıklar</code></pre>
+    ├── Cargo (Rust)
+    └── Statik Varlıklar</code></pre>
 					</div>
 				</div>
 
-				<!-- Rust Backend -->
 				<div class="glass-dark p-8 rounded-xl">
 					<div class="flex items-start space-x-4 mb-6">
-						<div class="w-12 h-12 bg-gradient-to-r from-red-500 to-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+						<div class="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
 							<span class="text-white font-bold text-lg">🦀</span>
 						</div>
 						<div>
@@ -64,7 +60,7 @@ const t = useTranslations(locale);
 					</div>
 
 					<div class="grid md:grid-cols-2 gap-6">
-						<div class="bg-slate-800/30 rounded-lg p-6">
+						<div class="bg-slate-800 bg-opacity-30 rounded-lg p-6">
 							<h3 class="text-xl font-semibold text-white mb-4">WRY WebView</h3>
 							<ul class="space-y-2 text-gray-300">
 								<li>• Cross-platform WebView (WebKit/Gecko)</li>
@@ -73,7 +69,7 @@ const t = useTranslations(locale);
 								<li>• Native JavaScript yürütme</li>
 							</ul>
 						</div>
-						<div class="bg-slate-800/30 rounded-lg p-6">
+						<div class="bg-slate-800 bg-opacity-30 rounded-lg p-6">
 							<h3 class="text-xl font-semibold text-white mb-4">TAO Pencere Yönetimi</h3>
 							<ul class="space-y-2 text-gray-300">
 								<li>• Cross-platform pencere yönetimi</li>
@@ -84,34 +80,33 @@ const t = useTranslations(locale);
 						</div>
 					</div>
 
-					<div class="bg-slate-800/30 rounded-lg p-6">
+					<div class="bg-slate-800 bg-opacity-30 rounded-lg p-6">
 						<h3 class="text-xl font-semibold text-white mb-4">IPC Köprüsü</h3>
 						<p class="text-gray-300 mb-4">
 							Rust backend ve frontend JavaScript arasında çift yönlü iletişim.
 						</p>
-						<pre class="text-sm font-mono text-purple-400 bg-slate-900/50 p-4 rounded"><code>// Frontend tarafı
+						<pre class="text-sm font-mono text-purple-400 bg-slate-900 bg-opacity-50 p-4 rounded"><code is:raw>// Frontend tarafı
 const response = await window.ionyx.invoke({
-  command: 'bridge.getApps',
-  payload: {}
+  command: 'bridge.getApps',
+  payload: {}
 });
 
 // Rust tarafı
 pub async fn handle_request_with_response(&self, request: String) -> Result<()> {
-    let ipc_request: IpcRequest = serde_json::from_str(&request)?;
-    match ipc_request.command.as_str() {
-        "bridge.getApps" => {
-            // getApps komutunu işle
-        }
-        _ => {}
-    }
+    let ipc_request: IpcRequest = serde_json::from_str(&request)?;
+    match ipc_request.command.as_str() {
+        "bridge.getApps" => {
+            // getApps komutunu işle
+        }
+        _ => {}
+    }
 }</code></pre>
 					</div>
 				</div>
 
-				<!-- CLI System -->
 				<div class="glass-dark p-8 rounded-xl">
 					<div class="flex items-start space-x-4 mb-6">
-						<div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center flex-shrink-0">
+						<div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
 							<span class="text-white font-bold text-lg">⚡</span>
 						</div>
 						<div>
@@ -123,9 +118,9 @@ pub async fn handle_request_with_response(&self, request: String) -> Result<()> 
 					</div>
 
 					<div class="space-y-6">
-						<div class="bg-slate-800/30 rounded-lg p-6">
+						<div class="bg-slate-800 bg-opacity-30 rounded-lg p-6">
 							<h3 class="text-xl font-semibold text-white mb-4">Süreç Orkestrasyonu</h3>
-							<pre class="text-sm font-mono text-green-400"><code>$ ionyx dev
+							<pre class="text-sm font-mono text-green-400"><code is:raw>$ ionyx dev
 ├── Vite dev sunucusunu başlat
 ├── 5173 portunu bekle
 ├── IONYX_URL=127.0.0.1:5173 ayarla
@@ -133,7 +128,7 @@ pub async fn handle_request_with_response(&self, request: String) -> Result<()> 
 └── Süreçleri izle</code></pre>
 						</div>
 
-						<div class="bg-slate-800/30 rounded-lg p-6">
+						<div class="bg-slate-800 bg-opacity-30 rounded-lg p-6">
 							<h3 class="text-xl font-semibold text-white mb-4">Ortam Yönetimi</h3>
 							<ul class="space-y-2 text-gray-300">
 								<li>• Otomatik dependency kurulumu</li>
@@ -145,10 +140,9 @@ pub async fn handle_request_with_response(&self, request: String) -> Result<()> 
 					</div>
 				</div>
 
-				<!-- Frontend Integration -->
 				<div class="glass-dark p-8 rounded-xl">
 					<div class="flex items-start space-x-4 mb-6">
-						<div class="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-500 rounded-lg flex items-center justify-center flex-shrink-0">
+						<div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0">
 							<span class="text-white font-bold text-lg">🌐</span>
 						</div>
 						<div>
@@ -160,21 +154,21 @@ pub async fn handle_request_with_response(&self, request: String) -> Result<()> 
 					</div>
 
 					<div class="grid md:grid-cols-3 gap-4 mb-6">
-						<div class="bg-slate-800/30 rounded-lg p-4 text-center">
+						<div class="bg-slate-800 bg-opacity-30 rounded-lg p-4 text-center">
 							<div class="text-2xl mb-2">⚛️</div>
 							<div class="text-blue-400 font-semibold">React</div>
 						</div>
-						<div class="bg-slate-800/30 rounded-lg p-4 text-center">
+						<div class="bg-slate-800 bg-opacity-30 rounded-lg p-4 text-center">
 							<div class="text-2xl mb-2">🟢</div>
 							<div class="text-green-400 font-semibold">Vue</div>
 						</div>
-						<div class="bg-slate-800/30 rounded-lg p-4 text-center">
+						<div class="bg-slate-800 bg-opacity-30 rounded-lg p-4 text-center">
 							<div class="text-2xl mb-2">🧡</div>
 							<div class="text-orange-400 font-semibold">Svelte</div>
 						</div>
 					</div>
 
-					<div class="bg-slate-800/30 rounded-lg p-6">
+					<div class="bg-slate-800 bg-opacity-30 rounded-lg p-6">
 						<h3 class="text-xl font-semibold text-white mb-4">Geliştirme vs Üretim</h3>
 						<div class="grid md:grid-cols-2 gap-6">
 							<div>
@@ -199,12 +193,11 @@ pub async fn handle_request_with_response(&self, request: String) -> Result<()> 
 					</div>
 				</div>
 
-				<!-- Security & Performance -->
 				<div class="glass-dark p-8 rounded-xl">
 					<h2 class="text-3xl font-bold text-white mb-6">Güvenlik & Performans</h2>
 
 					<div class="grid md:grid-cols-2 gap-6">
-						<div class="bg-slate-800/30 rounded-lg p-6">
+						<div class="bg-slate-800 bg-opacity-30 rounded-lg p-6">
 							<h3 class="text-xl font-semibold text-green-400 mb-4">🛡️ Güvenlik</h3>
 							<ul class="space-y-2 text-gray-300">
 								<li>• Memory safe Rust backend</li>
@@ -214,7 +207,7 @@ pub async fn handle_request_with_response(&self, request: String) -> Result<()> 
 							</ul>
 						</div>
 
-						<div class="bg-slate-800/30 rounded-lg p-6">
+						<div class="bg-slate-800 bg-opacity-30 rounded-lg p-6">
 							<h3 class="text-xl font-semibold text-blue-400 mb-4">⚡ Performans</h3>
 							<ul class="space-y-2 text-gray-300">
 								<li>• Sub-2MB binary boyutu</li>
@@ -225,9 +218,9 @@ pub async fn handle_request_with_response(&self, request: String) -> Result<()> 
 						</div>
 					</div>
 
-					<div class="mt-6 bg-slate-800/30 rounded-lg p-6">
+					<div class="mt-6 bg-slate-800 bg-opacity-30 rounded-lg p-6">
 						<h3 class="text-xl font-semibold text-white mb-4">Build Süreci</h3>
-						<pre class="text-sm font-mono text-yellow-400"><code>Geliştirme Build:
+						<pre class="text-sm font-mono text-yellow-400"><code is:raw>Geliştirme Build:
 ├── Frontend: Vite HMR sunucusu
 ├── Backend: Cargo incremental build
 └── Çıktı: Hot-reloaded uygulama
