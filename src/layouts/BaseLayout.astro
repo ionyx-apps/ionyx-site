@@ -35,6 +35,8 @@ const currentTheme = 'dark';
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+	<link rel="manifest" href="/manifest.webmanifest">
+	<meta name="theme-color" content="#8b5cf6">
 </head>
 <body class="bg-black text-gray-100 min-h-screen transition-colors duration-200">
 	<div class="min-h-screen flex flex-col">
@@ -153,5 +155,16 @@ const currentTheme = 'dark';
 			</div>
 		</footer>
 	</div>
+	<script>
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register('/sw.js')
+				.then(registration => {
+					console.log('ServiceWorker registration successful');
+				})
+				.catch(err => {
+					console.log('ServiceWorker registration failed: ', err);
+				});
+		}
+	</script>
 </body>
 </html>
