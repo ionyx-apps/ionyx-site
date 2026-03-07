@@ -15,18 +15,19 @@ Create a new Ionyx project programmatically.
 
 ```javascript
 const app = ionyx.create({
-  template: 'react',
-  name: 'my-app',
-  directory: './my-app'
+  template: "react",
+  name: "my-app",
+  directory: "./my-app",
 });
 ```
 
 **Parameters:**
+
 - `template` (string): Frontend template ('react', 'vue', 'svelte', 'vanilla')
 - `name` (string): Project name
 - `directory` (string): Output directory (optional, defaults to `./{name}`)
 
-**Returns:** Promise<Project>
+**Returns:** `Promise<Project>`
 
 ### ionyx.build(options)
 
@@ -34,18 +35,19 @@ Build your application for production.
 
 ```javascript
 await ionyx.build({
-  target: 'production',
+  target: "production",
   optimize: true,
-  platform: 'all'
+  platform: "all",
 });
 ```
 
 **Parameters:**
+
 - `target` (string): Build target ('development', 'production')
 - `optimize` (boolean): Enable optimizations
 - `platform` (string): Target platform ('windows', 'macos', 'linux', 'all')
 
-**Returns:** Promise<BuildResult>
+**Returns:** `Promise<BuildResult>`
 
 ### ionyx.dev(options)
 
@@ -54,12 +56,13 @@ Start the development server.
 ```javascript
 ionyx.dev({
   port: 3000,
-  host: 'localhost',
-  open: true
+  host: "localhost",
+  open: true,
 });
 ```
 
 **Parameters:**
+
 - `port` (number): Server port (default: 3000)
 - `host` (string): Server host (default: 'localhost')
 - `open` (boolean): Open browser automatically (default: false)
@@ -73,10 +76,11 @@ ionyx.dev({
 Set the window title.
 
 ```javascript
-window.setTitle('My Application');
+window.setTitle("My Application");
 ```
 
 **Parameters:**
+
 - `title` (string): Window title
 
 ### window.setSize(width, height)
@@ -88,6 +92,7 @@ window.setSize(1200, 800);
 ```
 
 **Parameters:**
+
 - `width` (number): Window width in pixels
 - `height` (number): Window height in pixels
 
@@ -130,40 +135,43 @@ window.close();
 Read a file from the file system.
 
 ```javascript
-const content = await fs.readFile('./config.json');
+const content = await fs.readFile("./config.json");
 ```
 
 **Parameters:**
+
 - `path` (string): File path
 
-**Returns:** Promise<string>
+**Returns:** `Promise<string>`
 
 ### fs.writeFile(path, content)
 
 Write content to a file.
 
 ```javascript
-await fs.writeFile('./data.json', JSON.stringify(data));
+await fs.writeFile("./data.json", JSON.stringify(data));
 ```
 
 **Parameters:**
+
 - `path` (string): File path
 - `content` (string): File content
 
-**Returns:** Promise<void>
+**Returns:** `Promise<void>`
 
 ### fs.exists(path)
 
 Check if a file or directory exists.
 
 ```javascript
-const exists = await fs.exists('./config.json');
+const exists = await fs.exists("./config.json");
 ```
 
 **Parameters:**
+
 - `path` (string): Path to check
 
-**Returns:** Promise<boolean>
+**Returns:** `Promise<boolean>`
 
 ## System API
 
@@ -172,10 +180,11 @@ const exists = await fs.exists('./config.json');
 Show a system notification.
 
 ```javascript
-sys.showNotification('Update Available', 'A new version is ready to download');
+sys.showNotification("Update Available", "A new version is ready to download");
 ```
 
 **Parameters:**
+
 - `title` (string): Notification title
 - `body` (string): Notification body
 
@@ -184,10 +193,11 @@ sys.showNotification('Update Available', 'A new version is ready to download');
 Open a URL in the default browser.
 
 ```javascript
-sys.openUrl('https://github.com/ionyx-apps/ionyx');
+sys.openUrl("https://github.com/ionyx-apps/ionyx");
 ```
 
 **Parameters:**
+
 - `url` (string): URL to open
 
 ### sys.showMessageBox(options)
@@ -196,20 +206,21 @@ Show a message box dialog.
 
 ```javascript
 const result = await sys.showMessageBox({
-  type: 'question',
-  title: 'Confirm',
-  message: 'Are you sure you want to exit?',
-  buttons: ['Yes', 'No']
+  type: "question",
+  title: "Confirm",
+  message: "Are you sure you want to exit?",
+  buttons: ["Yes", "No"],
 });
 ```
 
 **Parameters:**
+
 - `type` (string): Dialog type ('info', 'warning', 'error', 'question')
 - `title` (string): Dialog title
 - `message` (string): Dialog message
 - `buttons` (string[]): Available buttons
 
-**Returns:** Promise<string> - The button that was clicked
+**Returns:** `Promise<string>` - The button that was clicked
 
 ## Events
 
@@ -219,7 +230,7 @@ Called when the window is about to close.
 
 ```javascript
 onWindowClose(() => {
-  console.log('Window is closing');
+  console.log("Window is closing");
   return false; // Prevent closing
 });
 ```
@@ -240,7 +251,7 @@ Called when files are dropped on the window.
 
 ```javascript
 onFileDrop((files) => {
-  console.log('Files dropped:', files);
+  console.log("Files dropped:", files);
 });
 ```
 
@@ -251,10 +262,11 @@ onFileDrop((files) => {
 Get a configuration value.
 
 ```javascript
-const theme = config.get('theme');
+const theme = config.get("theme");
 ```
 
 **Parameters:**
+
 - `key` (string): Configuration key
 
 **Returns:** any
@@ -264,10 +276,11 @@ const theme = config.get('theme');
 Set a configuration value.
 
 ```javascript
-config.set('theme', 'dark');
+config.set("theme", "dark");
 ```
 
 **Parameters:**
+
 - `key` (string): Configuration key
 - `value` (any): Configuration value
 
