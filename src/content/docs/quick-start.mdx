@@ -12,7 +12,7 @@ Create your first Ionyx application in minutes with our intuitive CLI tool.
 Start by creating a new Ionyx project:
 
 ```bash
-ionyx create my-app
+ionyx init my-app
 ```
 
 This will prompt you to choose a template and configure your project.
@@ -22,23 +22,27 @@ This will prompt you to choose a template and configure your project.
 Ionyx supports multiple frontend frameworks:
 
 ### React
+
 ```bash
-ionyx create my-app --template react
+ionyx init my-app --template react
 ```
 
 ### Vue
+
 ```bash
-ionyx create my-app --template vue
+ionyx init my-app --template vue
 ```
 
 ### Svelte
+
 ```bash
-ionyx create my-app --template svelte
+ionyx init my-app --template svelte
 ```
 
 ### Vanilla JavaScript
+
 ```bash
-ionyx create my-app --template vanilla
+ionyx init my-app --template vanilla
 ```
 
 ## Project Structure
@@ -66,6 +70,7 @@ ionyx dev
 ```
 
 This will:
+
 - Start the development server on `http://localhost:3000`
 - Enable hot reload for frontend changes
 - Auto-recompile Rust backend on changes

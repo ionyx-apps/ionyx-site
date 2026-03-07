@@ -1,0 +1,62 @@
+---
+title: CLI Araçları
+description: Ionyx CLI ile tanı ve paketleme.
+---
+
+# CLI Araçları
+
+Ionyx CLI (`@ionyx-apps/cli`), sadece bir proje oluşturucu olmanın ötesinde; tam bir tanı ve dağıtım paketidir.
+
+## Ionyx Doctor
+
+`flutter doctor` komutundan esinlenen bu komut, geliştirme ortamınızın doğru şekilde yapılandırıldığından emin olmanıza yardımcı olur.
+
+### Kullanım
+
+```bash
+ionyx doctor
+```
+
+Şunları kontrol eder:
+
+- **Rust Araç Zinciri**: `rustc` ve `cargo` kullanılabilirliği.
+- **Node.js**: Doğru Node ve NPM versiyonu.
+- **Paketleme Bağımlılıkları**: Yükleyici (installer) oluşturmak için **NSIS** veya **WiX Toolset**'in yüklü olup olmadığını tespit eder.
+- **Platform Detayları**: Ana işletim sistemi için sistem gereksinimlerini doğrular.
+
+## Uygulama Paketleme (Bundling)
+
+Ionyx, `bundle` komutunu kullanarak uygulamanızı dağıtım için paketlemenizi kolaylaştırır.
+
+### Standart Build
+
+Gömülü varlıklarla (assets) birlikte tek bir binary oluşturur:
+
+```bash
+ionyx build
+```
+
+### Yerel Yükleyiciler (Native Installers)
+
+Üretime hazır yükleyiciler (`.exe`, `.msi`, `.dmg`, `.deb`) oluşturmak için:
+
+```bash
+ionyx bundle
+```
+
+### Taşınabilir Dağıtımlar (Portable)
+
+Kurulum gerektirmeden çalışan taşınabilir bir ZIP sürümü oluşturun:
+
+```bash
+ionyx bundle --portable
+```
+
+## Durum ve Eklenti Yönetimi
+
+CLI ayrıca yerel yapılandırmayı ve framework eklentilerini yönetmenize olanve sağlar:
+
+```bash
+ionyx config list
+ionyx plugin install [eklenti_adı]
+```

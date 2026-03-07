@@ -1,0 +1,62 @@
+---
+title: CLI Tooling
+description: Diagnostics and packaging with the Ionyx CLI.
+---
+
+# CLI Tooling
+
+The Ionyx CLI (`@ionyx-apps/cli`) is more than just a project generator; it's a complete diagnostic and distribution suite.
+
+## Ionyx Doctor
+
+Inspired by `flutter doctor`, this command helps you ensure your development environment is correctly configured.
+
+### Usage
+
+```bash
+ionyx doctor
+```
+
+It checks for:
+
+- **Rust Toolchain**: `rustc` and `cargo` availability.
+- **Node.js**: Correct version of Node and NPM.
+- **Bundling Dependencies**: Detects if tools like **NSIS** or **WiX Toolset** are installed for creating installers.
+- **Platform Specifics**: Verifies system requirements for the host OS.
+
+## Application Bundling
+
+Ionyx makes it easy to pack your application for distribution using the `bundle` command.
+
+### Standard Build
+
+Creates a standalone binary with embedded assets:
+
+```bash
+ionyx build
+```
+
+### Native Installers
+
+To create production-ready installers (`.exe`, `.msi`, `.dmg`, `.deb`):
+
+```bash
+ionyx bundle
+```
+
+### Portable Distributions
+
+Create a portable ZIP version that runs without installation:
+
+```bash
+ionyx bundle --portable
+```
+
+## Managing State & Plugins
+
+The CLI also allows you to manage local configuration and framework plugins:
+
+```bash
+ionyx config list
+ionyx plugin install [plugin_name]
+```

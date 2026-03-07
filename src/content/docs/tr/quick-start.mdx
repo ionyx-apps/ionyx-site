@@ -1,0 +1,113 @@
+---
+title: Hızlı Başlangıç
+description: Dakikalar içinde ilk Ionyx uygulamanızı oluşturun.
+---
+
+# Hızlı Başlangıç
+
+Sezgisel CLI aracımızla dakikalar içinde ilk Ionyx uygulamanızı oluşturun.
+
+## Projenizi Oluşturun
+
+Yeni bir Ionyx projesi oluşturarak başlayın:
+
+```bash
+ionyx init my-app
+```
+
+Bu komut size bir şablon seçmeniz ve projenizi yapılandırmanız için rehberlik edecektir.
+
+## Şablonunuzu Seçin
+
+Ionyx birden fazla frontend framework'ünü destekler:
+
+### React
+
+```bash
+ionyx init my-app --template react
+```
+
+### Vue
+
+```bash
+ionyx init my-app --template vue
+```
+
+### Svelte
+
+```bash
+ionyx init my-app --template svelte
+```
+
+### Vanilla JavaScript
+
+```bash
+ionyx init my-app --template vanilla
+```
+
+## Proje Yapısı
+
+Projenizi oluşturduktan sonra şu yapıyı göreceksiniz:
+
+```
+my-app/
+├── src/
+│   ├── frontend/          # Frontend kodlarınız
+│   ├── backend/           # Rust backend kodlarınız
+│   └── assets/            # Statik varlıklar
+├── ionyx.config.toml      # Ionyx yapılandırması
+├── package.json           # Node.js bağımlılıkları
+└── Cargo.toml            # Rust bağımlılıkları
+```
+
+## Geliştirme
+
+Projenize gidin ve geliştirme sunucusunu başlatın:
+
+```bash
+cd my-app
+ionyx dev
+```
+
+Bu şunları yapacaktır:
+
+- `http://localhost:5173` adresinde geliştirme sunucusunu başlatır.
+- Frontend değişiklikleri için hot reload'u etkinleştirir.
+- Değişikliklerde Rust backend'ini otomatik olarak yeniden derler.
+
+## Üretim İçin Derleme (Build)
+
+Uygulamanızı dağıtmaya hazır olduğunuzda:
+
+```bash
+ionyx build
+```
+
+Bu, `dist/` dizininde bağımsız bir binary oluşturur.
+
+## Yapılandırma
+
+Uygulamanızı özelleştirmek için `ionyx.config.toml` dosyasını düzenleyin:
+
+```toml
+[app]
+name = "Uygulamam"
+version = "1.0.0"
+description = "Örnek bir Ionyx uygulaması"
+
+[window]
+width = 1200
+height = 800
+resizable = true
+title = "Uygulamam"
+
+[build]
+target = "production"
+optimize = true
+```
+
+## Sonraki Adımlar
+
+- [API hakkında bilgi edinin](/tr/docs/api-reference)
+- [Yapılandırma seçeneklerini keşfedin](/tr/docs/configuration)
+- [Dağıtım rehberlerini görüntüleyin](/tr/docs/deployment)

@@ -29,6 +29,14 @@ const configCode = `// ionyx.config.json\n{\n  "window": {\n    "title": "Ionyx 
             </ul>
           </div>
           <div>
+            <h5 class="text-white font-bold mb-4 text-xs tracking-widest uppercase opacity-50">Özellikler (Yeni)</h5>
+            <ul class="space-y-3 border-l border-slate-800 ml-1">
+              <li><a href="/tr/docs/guides/fusion" class="block pl-4 -ml-px border-l border-transparent hover:text-purple-400 transition-all text-sm">Native Fusion</a></li>
+              <li><a href="/tr/docs/guides/webgpu" class="block pl-4 -ml-px border-l border-transparent hover:text-purple-400 transition-all text-sm">WebGPU</a></li>
+              <li><a href="/tr/docs/guides/cli-tooling" class="block pl-4 -ml-px border-l border-transparent hover:text-purple-400 transition-all text-sm">CLI & Paketleme</a></li>
+            </ul>
+          </div>
+          <div>
             <h5 class="text-white font-bold mb-4 text-xs tracking-widest uppercase opacity-50">Blog</h5>
             <ul class="space-y-3 border-l border-slate-800 ml-1">
               <li><a href="/tr/blog" class="block pl-4 -ml-px border-l border-transparent hover:text-purple-400 transition-all">CLI Tanıtımı</a></li>
@@ -55,10 +63,27 @@ const configCode = `// ionyx.config.json\n{\n  "window": {\n    "title": "Ionyx 
               <span>v1.0.0 Kararlı Sürüm Yayında</span>
             </div>
             <h1 id="dokümantasyon-başlığı" aria-labelledby="dokümantasyon-başlığı" class="text-5xl font-black text-white mb-6 tracking-tighter">Dokümantasyon</h1>
-            <p class="text-xl text-slate-400 leading-relaxed font-light">
+            <p class="text-xl text-slate-400 leading-relaxed font-light text-left">
                 Ionyx, Rust ile yüksek performanslı masaüstü uygulamaları geliştirmek için tasarlanmış minimalist bir araç setidir. Ekosistemdeki en küçük binary boyutunu sunar.
             </p>
           </header>
+
+          <section id="whats-new" class="scroll-mt-32 mb-24 p-8 rounded-3xl bg-gradient-to-br from-purple-500/10 via-transparent to-emerald-500/10 border border-white/5 relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-4 opacity-10">
+                <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24"><path d="M11 15h2v2h-2v-2m0-8h2v6h-2V7m1-5C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+            </div>
+            <h2 class="text-2xl font-bold text-white mb-4">v0.1.1 İle Gelen Yenilikler</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <a href="/tr/docs/guides/fusion" class="group p-4 rounded-xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all text-left">
+                    <h3 class="text-purple-400 font-bold mb-1 group-hover:translate-x-1 transition-transform text-left">🧬 Native Fusion</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed text-left text-left">NW.js tarzı birleşik bağlam gücü artık Ionyx'te. Rust ve JS arasında anında durum senkronizasyonu.</p>
+                </a>
+                <a href="/tr/docs/guides/webgpu" class="group p-4 rounded-xl bg-white/5 border border-white/10 hover:border-emerald-500/50 transition-all text-left">
+                    <h3 class="text-emerald-400 font-bold mb-1 group-hover:translate-x-1 transition-transform text-left">🎮 WebGPU Native</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed text-left text-left">Yeni nesil grafikler. Her şablon WebGPU desteğiyle güncellendi. Performans artık bir seçenek değil.</p>
+                </a>
+            </div>
+          </section>
 
           <section id="comparison" class="scroll-mt-32 mb-24">
             <h2 id="ekosistem-karşılaştırması" aria-labelledby="ekosistem-karşılaştırması" class="text-3xl font-bold text-white mb-8 tracking-tight">Ekosistem Karşılaştırması</h2>

@@ -1,0 +1,48 @@
+---
+title: Ionyx Native Fusion
+description: Rust ve JavaScript arasında pürüzsüz durum senkronizasyonunu öğrenin.
+---
+
+# Ionyx Native Fusion
+
+NW.js'in **Unified Context** yapısından esinlenilen **Ionyx Native Fusion**, Rust backend'iniz ve JavaScript frontend'iniz arasında pürüzsüz bir senkronizasyon katmanı oluşturur.
+
+## Konsept
+
+Geleneksel olarak, native bir backend ve frontend arasındaki iletişim manuel IPC çağrıları ve olay dinleyicileri gerektirir. **Native Fusion**, her iki dünyada aynı anda var olan paylaşımlı, reaktif bir durum nesnesi sağlayarak bu karmaşıklığı ortadan kaldırır.
+
+## Nasıl Çalışır?
+
+1. **Paylaşımlı Durum**: Rust, "Gerçeğin Kaynağı"nı (Source of Truth) tanımlar ve yönetir.
+2. **Şeffaf Proxy**: Frontend, standart bir JavaScript nesnesi olan `window.fusion` ile etkileşime girer.
+3. **Çift Yönlü Senkronizasyon**: Rust'taki değişiklikler anında JS'e iletilir. JS'deki değişiklikler ise arka planda Rust'a bir IPC güncellemesi tetikler.
+
+## JavaScript Kullanımı
+
+Temel durum erişimi için `invoke` veya `await` kullanmanıza gerek yoktur. Sadece `fusion` nesnesini kullanın:
+
+```javascript
+// Durumu okuma (Senkron benzeri deneyim)
+console.log("Uygulama Versiyonu:", fusion.app_version);
+console.log("İşletim Sistemi:", fusion.os);
+
+// Durumu güncelleme (Otomatik olarak Rust'a senkronize olur)
+fusion.user_theme = "dark";
+fusion.last_login = Date.now();
+```
+
+## Rust Kullanımı
+
+Ionyx backend'inizde durumu istediğiniz zaman değiştirebilirsiniz ve bu anında UI'a yansır:
+
+```rust
+// Bir Rust fonksiyonu veya olay işleyicisi içinde
+fusion.set("status", json!("Veriler işleniyor..."));
+// Frontend 'fusion.status' değerinin otomatik güncellendiğini görür!
+```
+
+## Faydalar
+
+- **Sıfır Boilerplate**: Artık manuel köprü kodu yazmanıza gerek yok.
+- **Geliştirici Hızı**: İletişim protokolüne değil, uygulama mantığınıza odaklanın.
+- **Bütünleşik Deneyim**: Backend ve Frontend tek bir organizma gibi hissettirir.

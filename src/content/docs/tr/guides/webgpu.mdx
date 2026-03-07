@@ -1,0 +1,50 @@
+---
+title: WebGPU Desteği
+description: Masaüstü uygulamalarınızda modern grafik performansı.
+---
+
+# WebGPU Desteği
+
+Ionyx, web için yeni nesil grafik ve hesaplama standardı olan **WebGPU** için birinci sınıf destek sunar.
+
+## Neden WebGPU?
+
+WebGPU, WebGL'e göre önemli performans iyileştirmeleri sunar:
+
+- GPU donanımına daha düşük overhead ile doğrudan erişim.
+- Modern grafik özelliklerine (Ray Tracing, Compute Shaders) daha iyi destek.
+- Multithreading ve öngörülebilir performans.
+
+## Ionyx'te WebGPU Kullanımı
+
+WebGPU, tüm Ionyx şablonlarında varsayılan olarak etkindir. Standart `navigator.gpu` API'si üzerinden erişebilirsiniz.
+
+### Destek Kontrolü
+
+```javascript
+async function initGPU() {
+  if (!navigator.gpu) {
+    console.error("WebGPU bu cihazda/platformda desteklenmiyor.");
+    return;
+  }
+
+  const adapter = await navigator.gpu.requestAdapter();
+  if (!adapter) {
+    console.error("Uygun GPU adaptörü bulunamadı.");
+    return;
+  }
+
+  const device = await adapter.requestDevice();
+  // GPU hızlandırmalı sihrinizi başlatın!
+}
+```
+
+## Şablon Entegrasyonu
+
+`ionyx init` kullanarak bir proje başlattığınızda, sağlanan şablonlar (React, Vue, Svelte) hemen başlamanız için yerleşik WebGPU destek kontrolleri ve örnek kodlar içerir.
+
+## Performans İpuçları
+
+- **Doku Yönetimi**: Varlıkları doğrudan GPU belleğine yüklemek için Ionyx'in native dosya sistemi API'lerini kullanın.
+- **Hesaplama Shader'ları**: UI thread'ini bloke edecek ağır hesaplamalar için GPU'nun gücünden yararlanın.
+- **Native Birlikte Çalışabilirlik**: Yakında - Rust `wgpu` ve WebView'ın WebGPU bağlamı arasında doğrudan etkileşim.

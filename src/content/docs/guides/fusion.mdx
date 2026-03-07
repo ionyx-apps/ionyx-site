@@ -1,0 +1,48 @@
+---
+title: Ionyx Native Fusion
+description: Learn how to synchronize state seamlessly between Rust and JavaScript.
+---
+
+# Ionyx Native Fusion
+
+Inspired by the **Unified Context** of NW.js, **Ionyx Native Fusion** creates a seamless synchronization layer between your Rust backend and JavaScript frontend.
+
+## The Concept
+
+Traditionally, communicating between a native backend and a frontend requires manual IPC calls and event listeners. **Native Fusion** eliminates this boilerplate by providing a shared, reactive state object that exists in both worlds simultaneously.
+
+## How it Works
+
+1. **Shared State**: Rust defines and manages the "Source of Truth".
+2. **Transparent Proxy**: The frontend interacts with a standard JavaScript object (`window.fusion`).
+3. **Bi-directional Sync**: Changes in Rust are pushed to JS instantly. Changes in JS trigger a background IPC update to Rust.
+
+## Usage in JavaScript
+
+You don't need to `invoke` or `await` for basic state access. Simply use the `fusion` object:
+
+```javascript
+// Reading state (Synchronous-like experience)
+console.log("App Version:", fusion.app_version);
+console.log("Current OS:", fusion.os);
+
+// Updating state (Auto-syncs to Rust)
+fusion.user_theme = "dark";
+fusion.last_login = Date.now();
+```
+
+## Usage in Rust
+
+In your Ionyx backend, you can modify the state at any time, and it will be reflected in the UI:
+
+```rust
+// Inside a Rust function/event handler
+fusion.set("status", json!("Processing data..."));
+// The frontend sees 'fusion.status' update automatically!
+```
+
+## Benefits
+
+- **Zero Boilerplate**: No more manual bridge code.
+- **Developer Speed**: Focus on your app logic, not the communication protocol.
+- **Unified Experience**: Backend and Frontend feel like a single, cohesive unit.
