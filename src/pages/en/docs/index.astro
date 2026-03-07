@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
 
 const createCode = `ionyx create my-app --template react`;
 const devCode = `cd my-app\nionyx dev`;
@@ -36,9 +36,17 @@ const configCode = `// ionyx.config.json\n{\n  "window": {\n    "title": "My Ion
             </ul>
           </div>
           <div>
+            <h5 class="text-white font-bold mb-4 text-xs tracking-widest uppercase opacity-50">Guides</h5>
+            <ul class="space-y-3 border-l border-slate-800 ml-1">
+              <li><a href="/en/docs/guides/building-applications" class="block pl-4 -ml-px border-l border-transparent hover:text-purple-400 transition-all text-sm">Building Apps</a></li>
+              <li><a href="/en/docs/guides/deployment" class="block pl-4 -ml-px border-l border-transparent hover:text-purple-400 transition-all text-sm">Deployment</a></li>
+              <li><a href="/en/docs/guides/performance" class="block pl-4 -ml-px border-l border-transparent hover:text-purple-400 transition-all text-sm">Performance</a></li>
+            </ul>
+          </div>
+          <div>
             <h5 class="text-white font-bold mb-4 text-xs tracking-widest uppercase opacity-50">Blog</h5>
             <ul class="space-y-3 border-l border-slate-800 ml-1">
-              <li><a href="/en/blog" class="block pl-4 -ml-px border-l border-transparent hover:text-purple-400 transition-all">CLI Introduction</a></li>
+              <li><a href="/en/blog/2026-03-07-v0-1-1-release" class="block pl-4 -ml-px border-l border-transparent hover:text-purple-400 transition-all">v0.1.1 Release</a></li>
             </ul>
           </div>
         </nav>
@@ -124,7 +132,7 @@ const configCode = `// ionyx.config.json\n{\n  "window": {\n    "title": "My Ion
                 <div class="w-3 h-3 rounded-full bg-slate-700"></div>
                 <span class="ml-2 text-[10px] text-slate-500 font-mono">zsh — ionyx-install</span>
               </div>
-              <pre class="text-sm font-mono leading-relaxed"><code class="text-emerald-400">npm install -g ionyx</code></pre>
+              <pre class="text-sm font-mono leading-relaxed"><code class="text-emerald-400">npm install -g @ionyx-apps/cli</code></pre>
             </div>
           </section>
 
