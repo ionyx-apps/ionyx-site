@@ -1,0 +1,91 @@
+---
+title: "Ionyx CLI v0.5.0: Detailed Template Architectures & Clean Codebase"
+description: "Major update featuring comprehensive template overhauls, removed placeholders, and enhanced developer experience with detailed, production-ready architectures."
+pubDate: 2026-03-09
+heroImage: "/blog-placeholder-about.jpg"
+---
+
+# Ionyx CLI v0.5.0: Clean Codebase, Detailed Architectures 🚀
+
+We're excited to announce **Ionyx CLI v0.5.0**, a significant update that focuses on code quality, comprehensive template architectures, and enhanced developer experience. This release eliminates all placeholders and implements detailed, real-world application structures across our framework templates.
+
+## 🧹 Complete Codebase Cleanup
+
+### Removed All Placeholders
+- **Build Scripts**: Eliminated placeholder HTML generation in all template build.rs files
+- **CLI Commands**: Implemented fully functional `build` and `run` commands with proper error handling
+- **Template Components**: Removed demo-only todo_list components and placeholder code
+- **Protocol Handlers**: Cleaned up placeholder comments in WebAssembly protocol implementations
+
+### Enhanced CLI Functionality
+The CLI now provides complete development workflow support:
+- **Build Command**: `ionyx build` - Compiles frontend and backend with proper error reporting
+- **Run Command**: `ionyx run` - Executes the built application with port configuration
+- **WiX MSI Support**: Added professional Windows installer generation with proper XML configuration
+
+## 🏗️ Detailed Template Architectures
+
+### Unified Page Navigation System
+All major templates now feature comprehensive navigation architectures inspired by the Seed framework:
+
+#### Yew Template Updates
+- **Page-Based Navigation**: Home, Counter, and GPU information pages
+- **Reactive State Management**: Proper signal-based state handling
+- **Component Architecture**: Clean separation of concerns with reusable components
+
+#### Dioxus Template Enhancements
+- **Router Integration**: Maintained existing routing while removing demo-only components
+- **State Management**: Cleaned up context-based state for better performance
+- **Real Components**: Counter and GPU detection without placeholder implementations
+
+#### Leptos Template Implementation
+- **Signal-Based Architecture**: Modern reactive system with proper page navigation
+- **WebAssembly Optimization**: Efficient component updates and memory management
+- **Cross-Platform Compatibility**: Consistent behavior across different environments
+
+### Feature-Rich Components
+Each template now includes:
+- **Interactive Counter**: Demonstrates framework-specific state management
+- **GPU Detection**: Real hardware detection with WebGL/WebGPU support
+- **Navigation System**: Page-based routing with active state indicators
+- **Responsive Design**: Modern CSS with proper component styling
+
+## 🔧 Technical Improvements
+
+### Build System Enhancements
+- **Cargo Integration**: Proper Rust compilation with release optimizations
+- **NPM Integration**: Frontend build pipelines with error handling
+- **Cross-Platform Bundling**: Professional installer creation for Windows, macOS, and Linux
+
+### Code Quality Standards
+- **Type Safety**: Comprehensive type definitions across all templates
+- **Error Handling**: Proper error propagation and user-friendly messages
+- **Performance Optimization**: Efficient rendering and state updates
+- **Maintainability**: Clean code structure with clear separation of concerns
+
+## 📦 Installation & Usage
+
+Update to the latest version:
+
+```bash
+npm install -g @ionyx-apps/cli@latest
+```
+
+The CLI now provides a more robust development experience with detailed template architectures that serve as excellent starting points for production applications.
+
+## 🚀 What's Next
+
+This release establishes a new standard for template quality in the Rust web ecosystem. Future updates will focus on:
+
+- Additional framework templates (Svelte, Angular, Vue)
+- Advanced state management patterns
+- Performance optimizations
+- Community-contributed templates
+
+---
+
+The Ionyx team is committed to providing developers with the highest quality tools and templates. Version 0.5.0 represents a significant step toward that goal.
+
+**Happy coding with Ionyx!**
+
+**The Ionyx Team**
